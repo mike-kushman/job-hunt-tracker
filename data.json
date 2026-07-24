@@ -2,7 +2,7 @@
  "meta": {
   "name": "Job Hunt — Michael Kushman",
   "subtitle": "Artist who builds · kushman.work · github.com/never-nude · data.json is the source of truth; sheet and site are generated views",
-  "updated": "July 24, 2026 — Gmail audit restored the 7/23 five (all ATS-confirmed) → 49 in · 7/24 wave: 13 submitted in one day · Lunon staged awaiting submit",
+  "updated": "July 24, 2026, afternoon — exec outreach begins: Replit, Canva, Val Town sent (3 of 13) · Amjad autoresponder says email unmanaged → X DM next · 49 applications in, 26 ATS confirmations · Lunon still staged, not yet submitted",
   "scoreboard": {
    "applications_in": 49,
    "ats_confirmations": 26,
@@ -11,7 +11,7 @@
    "rejections": 1,
    "in_pipeline": 5,
    "backlog": 6,
-   "cold_intros": 8,
+   "cold_intros": 11,
    "skipped": 14
   },
   "counting_rule": "Delivered = counts; drafts and bounces don't. Scoreboard maintained from the ledger."
@@ -788,16 +788,16 @@
    ]
   },
   {
-   "title": "EXEC OUTREACH — 13 DRAFTS SAVED 7/13, NONE SENT",
+   "title": "EXEC OUTREACH — 3 SENT 7/24, 10 DRAFTS REMAINING",
    "rows": [
     {
      "company": "Replit",
      "role": "Amjad Masad (CEO)",
      "salary": "",
      "location": "",
-     "status": "Draft",
-     "date": "7/13",
-     "note": "Strongest single fit · Atrium + Ad Arma",
+     "status": "Emailed 7/24",
+     "date": "7/24",
+     "note": "Sent Mike's rewrite (“A few things I’ve built with AI”) · instant autoresponder from amjad@repl.it — email unmanaged, asks for text instead → X DM is the live channel",
      "url": "https://replit.com"
     },
     {
@@ -805,9 +805,9 @@
      "role": "Cameron Adams (co-founder)",
      "salary": "",
      "location": "",
-     "status": "Draft",
-     "date": "7/13",
-     "note": "Atrium",
+     "status": "Emailed 7/24",
+     "date": "7/24",
+     "note": "Sent “An artist building software with AI” to Cameron’s themaninblue.com address · hooked on his Prompted premise",
      "url": "https://www.canva.com"
     },
     {
@@ -815,9 +815,9 @@
      "role": "Steve Krouse (CEO)",
      "salary": "",
      "location": "",
-     "status": "Draft",
-     "date": "7/13",
-     "note": "Ad Arma + Atrium",
+     "status": "Emailed 7/24",
+     "date": "7/24",
+     "note": "Sent “Six products since February, built with Claude Code” · hooks Steve’s 33-parallel-Claude-Code-agents update · second touch after 7/7 cold email",
      "url": "https://www.val.town"
     },
     {

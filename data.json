@@ -2,9 +2,9 @@
  "meta": {
   "name": "Job Hunt — Michael Kushman",
   "subtitle": "Artist who builds · kushman.work · github.com/never-nude · data.json is the source of truth; sheet and site are generated views",
-  "updated": "July 24, 2026, afternoon — exec outreach begins: Replit, Canva, Val Town sent (3 of 13) · Amjad autoresponder says email unmanaged → X DM next · 49 applications in, 26 ATS confirmations · Lunon still staged, not yet submitted",
+  "updated": "July 24, 2026, evening — added the 4:37–5:07pm direct-email wave: Yuzu, AIRE, Mavenly, Lantern, LightSight (5 delivered) → 54 in · Sylow bounced · Vertex got a second direct touch (Paul Chung) · exec outreach: Replit/Canva/Val Town sent (Amjad autoresponder → X DM)",
   "scoreboard": {
-   "applications_in": 49,
+   "applications_in": 54,
    "ats_confirmations": 26,
    "live_conversations": 1,
    "human_replies": 0,
@@ -337,7 +337,7 @@
      "location": "Remote US",
      "status": "Submitted ✓",
      "date": "7/24",
-     "note": "Was in backlog — applied via Workday · mention HN to Paul Chung if contacted · Workday confirmation 7/24",
+     "note": "Was in backlog — applied via Workday · mention HN to Paul Chung if contacted · Workday confirmation 7/24 · 7/24: also emailed Paul Chung directly (paul.chung@vertexinc.com) citing HN — two touches",
      "url": "https://www.vertexinc.com"
     },
     {
@@ -459,6 +459,61 @@
      "date": "7/24",
      "note": "Not on the day's list — Greenhouse confirmation 7/24 found in Gmail · role not named in receipt, fill in",
      "url": "https://hightouch.com"
+    }
+   ]
+  },
+  {
+   "title": "DIRECT-EMAIL APPLICATIONS — 7/24 WAVE, 5 IN",
+   "rows": [
+    {
+     "company": "Yuzu",
+     "role": "Product Engineer",
+     "salary": "—",
+     "location": "—",
+     "status": "Emailed 7/24",
+     "date": "7/24",
+     "note": "HN post · hooks “Smart > Experienced” + “Most of our code is written by AI” · kev@yuzu.health OOO → re-forwarded to ryan@yuzu.health same day",
+     "url": "https://yuzu.health"
+    },
+    {
+     "company": "AIRE",
+     "role": "Founding Engineer",
+     "salary": "—",
+     "location": "—",
+     "status": "Emailed 7/24",
+     "date": "7/24",
+     "note": "recruitment@aire.xyz · consumer-product instinct + production AI + full-stack ownership pitch",
+     "url": "https://aire.xyz"
+    },
+    {
+     "company": "Mavenly",
+     "role": "Founding Full-Stack Engineer",
+     "salary": "—",
+     "location": "—",
+     "status": "Emailed 7/24",
+     "date": "7/24",
+     "note": "careers@mavenly.ai · civic software for nontechnical operators — WPCNA maps 1:1",
+     "url": "https://mavenly.ai"
+    },
+    {
+     "company": "Lantern",
+     "role": "Junior Software Engineer",
+     "salary": "—",
+     "location": "—",
+     "status": "Emailed 7/24",
+     "date": "7/24",
+     "note": "maksym@withlantern.com · HN post · “human-in-the-loop checkpoints” — the review layer I shipped in WPCNA",
+     "url": "https://withlantern.com"
+    },
+    {
+     "company": "LightSight",
+     "role": "Forward Deployed Software Engineer",
+     "salary": "—",
+     "location": "—",
+     "status": "Emailed 7/24",
+     "date": "7/24",
+     "note": "contact@lightsight.ai · HN post · co-create-with-clients / leave-them-software-they-own pitch",
+     "url": "https://lightsight.ai"
     }
    ]
   },
@@ -925,6 +980,16 @@
   {
    "title": "BOUNCED (NEVER DELIVERED) + SKIPPED",
    "rows": [
+    {
+     "company": "Sylow",
+     "role": "Design Engineer",
+     "salary": "—",
+     "location": "—",
+     "status": "Bounced 7/24",
+     "date": "7/24",
+     "note": "careers@sylow.io address not found — find real channel; “Good taste” listing is a strong fit",
+     "url": "https://sylow.io"
+    },
     {
      "company": "Browserbase",
      "role": "Creative technologist",

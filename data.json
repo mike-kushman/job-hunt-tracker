@@ -2,15 +2,15 @@
  "meta": {
   "name": "Job Hunt — Michael Kushman",
   "subtitle": "Artist who builds · kushman.work · github.com/never-nude · data.json is the source of truth; sheet and site are generated views",
-  "updated": "July 24, 2026, evening — added the 4:37–5:07pm direct-email wave: Yuzu, AIRE, Mavenly, Lantern, LightSight (5 delivered) → 54 in · Sylow bounced · Vertex got a second direct touch (Paul Chung) · exec outreach: Replit/Canva/Val Town sent (Amjad autoresponder → X DM)",
+  "updated": "July 24, 2026, evening — MAJOR correction: found a 12-application cold-email sprint (5:13–5:59pm) that wasn't logged. Direct-email wave now 17: Yuzu, AIRE, Mavenly, Lantern, LightSight, Pax Historia, Catalyst·Wayfare, Hotwash, Ephanti, Cora AI (from backlog), Atria, Teckfinity, Riot IQ, DearHiringManager, Kanary, Kadoa, Emergences → 66 applications in, 26 ATS confirmations",
   "scoreboard": {
-   "applications_in": 54,
+   "applications_in": 66,
    "ats_confirmations": 26,
    "live_conversations": 1,
    "human_replies": 0,
    "rejections": 1,
    "in_pipeline": 5,
-   "backlog": 6,
+   "backlog": 5,
    "cold_intros": 11,
    "skipped": 14
   },
@@ -463,7 +463,7 @@
    ]
   },
   {
-   "title": "DIRECT-EMAIL APPLICATIONS — 7/24 WAVE, 5 IN",
+   "title": "DIRECT-EMAIL APPLICATIONS — 7/24 WAVE, 17 IN",
    "rows": [
     {
      "company": "Yuzu",
@@ -514,6 +514,126 @@
      "date": "7/24",
      "note": "contact@lightsight.ai · HN post · co-create-with-clients / leave-them-software-they-own pitch",
      "url": "https://lightsight.ai"
+    },
+    {
+     "company": "Pax Historia",
+     "role": "Founding Engineer (Full Stack Web)",
+     "salary": "—",
+     "location": "—",
+     "status": "Emailed 7/24",
+     "date": "7/24",
+     "note": "Emailed Eli & Ryan · open-ended systems + history + strategy + AI — Ad Arma maps 1:1, the single strongest thematic fit of the wave",
+     "url": "https://paxhistoria.co"
+    },
+    {
+     "company": "Catalyst·Wayfare",
+     "role": "AI Engineer, Agent Builder",
+     "salary": "—",
+     "location": "—",
+     "status": "Emailed 7/24",
+     "date": "7/24",
+     "note": "Six-products-since-February pitch · owns product→UX→deploy→handoff",
+     "url": "https://cwai.co"
+    },
+    {
+     "company": "Hotwash",
+     "role": "Founding Engineer",
+     "salary": "—",
+     "location": "—",
+     "status": "Emailed 7/24",
+     "date": "7/24",
+     "note": "Ross · messy time-sensitive human input → institutional memory for nontechnical users — WPCNA fit",
+     "url": "https://hotwash.com"
+    },
+    {
+     "company": "Ephanti",
+     "role": "Founding Engineer, Agentic AI",
+     "salary": "—",
+     "location": "—",
+     "status": "Emailed 7/24",
+     "date": "7/24",
+     "note": "Agents that turn conversations into completed work — the boundary I build on",
+     "url": "https://ephanti.com"
+    },
+    {
+     "company": "Cora AI",
+     "role": "Founding Full Stack / Applied AI Engineer",
+     "salary": "—",
+     "location": "—",
+     "status": "Emailed 7/24",
+     "date": "7/24",
+     "note": "MOVED FROM BACKLOG — applied 7/24 · wants Claude Code as default · agents handling execution",
+     "url": "https://cora.ai"
+    },
+    {
+     "company": "Atria",
+     "role": "Staff Software Engineer, Agentic AI",
+     "salary": "—",
+     "location": "—",
+     "status": "Emailed 7/24",
+     "date": "7/24",
+     "note": "Healthcare agentic systems — the hard part is deciding what an agent should do · autoresponder received",
+     "url": "https://atria.org"
+    },
+    {
+     "company": "Teckfinity",
+     "role": "AI / Agent Engineer",
+     "salary": "—",
+     "location": "—",
+     "status": "Emailed 7/24",
+     "date": "7/24",
+     "note": "“Agents that finish work” · one person owns a slice across product/code/deploy — a production agent workflow with real users",
+     "url": "https://teckfinity.com"
+    },
+    {
+     "company": "Riot IQ",
+     "role": "AI-native Software Engineer",
+     "salary": "—",
+     "location": "—",
+     "status": "Emailed 7/24",
+     "date": "7/24",
+     "note": "Robert · product sense, taste, ownership, fast learning — how I've approached building",
+     "url": "https://riotiq.com"
+    },
+    {
+     "company": "DearHiringManager.io",
+     "role": "Full-stack Engineer",
+     "salary": "—",
+     "location": "—",
+     "status": "Emailed 7/24",
+     "date": "7/24",
+     "note": "Lars · “living the problem it solves” · full-stack TypeScript, ships",
+     "url": "https://dearhiringmanager.io"
+    },
+    {
+     "company": "Kanary",
+     "role": "Full Stack Engineer",
+     "salary": "—",
+     "location": "—",
+     "status": "Emailed 7/24",
+     "date": "7/24",
+     "note": "Steven · web automation + AI classification + human escalation · privacy as a systems problem",
+     "url": "https://kanary.com"
+    },
+    {
+     "company": "Kadoa",
+     "role": "Senior Software Engineer",
+     "salary": "—",
+     "location": "—",
+     "status": "Emailed 7/24",
+     "date": "7/24",
+     "note": "Adrian · HN · reliable extraction from messy, changing inputs",
+     "url": "https://kadoa.com"
+    },
+    {
+     "company": "Emergences / NeoHuman",
+     "role": "AI / Systems Engineer",
+     "salary": "—",
+     "location": "—",
+     "status": "Emailed 7/24",
+     "date": "7/24",
+     "note": "Jack · HN · evaluates how people WORK with AI, not just polished outputs — my daily practice",
+     "url": "https://emergences.ai"
     }
    ]
   },
@@ -716,16 +836,6 @@
      "url": "https://jobs.ashbyhq.com/sailorhealth"
     },
     {
-     "company": "Cora AI",
-     "role": "Founding Applied-AI Engineer",
-     "salary": "$190–250K + eq",
-     "location": "Remote US",
-     "status": "New find",
-     "date": "",
-     "note": "Wants Claude Code \"as your default\"",
-     "url": "https://cora.ai"
-    },
-    {
      "company": "Flotive AI",
      "role": "Founding Software Engineer",
      "salary": "$150–180K + eq",
@@ -862,7 +972,7 @@
      "location": "",
      "status": "Emailed 7/24",
      "date": "7/24",
-     "note": "Sent “An artist building software with AI” to Cameron’s themaninblue.com address · hooked on his Prompted premise",
+     "note": "Sent “An artist building software with AI” to 2018@themaninblue.com · reply: address DECOMMISSIONED, no longer monitored → X (@themaninblue) is the only channel",
      "url": "https://www.canva.com"
     },
     {

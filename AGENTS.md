@@ -65,7 +65,7 @@ with status `Rejected`, `live_conversations` = rows with status `Conversation`.
 `ats_confirmations` is cumulative — increment on a new confirmation, never
 decrement.
 
-**Never invent a value.** If salary, location, or role is not stated anywhere,
+**Never invent a value.** If salary or location is not stated anywhere,
 write `—` rather than guessing. A receipt that omits the role title gets
 `"Role not stated (Greenhouse confirmation)"`, not an inferred title.
 

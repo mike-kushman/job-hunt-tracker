@@ -1,4 +1,8 @@
-# generated artifacts — rebuild them from data.json, don't commit them
+# Job_Hunt_Ledger.pdf IS committed on purpose — it is published at
+# https://mike-kushman.github.io/job-hunt-tracker/Job_Hunt_Ledger.pdf
+# so it can be linked and handed to people. Regenerate it with
+# `python3 build_pdf.py` after any change to data.json, then commit it.
+
+# generated, not published — rebuild from data.json instead
 Job_Application_Tracker.xlsx
-Job_Hunt_Ledger.pdf
 print.html

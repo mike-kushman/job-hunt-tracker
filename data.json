@@ -2,13 +2,13 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "July 26, 2026 — 92 verified applications after Gmail, Drive, and portal-workbook reconciliation",
+    "updated": "July 27, 2026 — 92 verified applications · Rillet and AIRE passed · first human reply of the campaign (Sage Recruiting)",
     "scoreboard": {
       "applications_in": 92,
       "ats_confirmations": 37,
       "live_conversations": 1,
-      "human_replies": 0,
-      "rejections": 1,
+      "human_replies": 1,
+      "rejections": 3,
       "in_pipeline": 5,
       "backlog": 4
     },
@@ -153,9 +153,9 @@
           "role": "Founding Engineer",
           "salary": "$100–250K + eq",
           "location": "Remote US/Canada · NYC preferred",
-          "status": "Submitted",
+          "status": "Rejected",
           "date": "7/24",
-          "note": "Direct email to recruitment@aire.xyz · delivered; no bounce",
+          "note": "Passed 7/27 — Ashley at Sage Recruiting replied by hand: not a fit for the current role, keeping him on their hotlist for future openings · FIRST human reply of the campaign · cold email to recruitment@aire.xyz 7/24",
           "url": "https://aire.xyz"
         },
         {
@@ -648,9 +648,9 @@
           "role": "Design Engineer",
           "salary": "$150–240K",
           "location": "NYC / SF hybrid",
-          "status": "Submitted ✓",
+          "status": "Rejected",
           "date": "7/23",
-          "note": "Restored 7/24 audit — Ashby confirmation 7/23 · full arc concept → shipped · AI-native design-to-code",
+          "note": "Ashby rejection 7/27 — “moving forward with other candidates,” invited to reapply as new roles open · Ashby confirmation 7/23 · full arc concept → shipped · AI-native design-to-code",
           "url": "https://www.rillet.com"
         }
       ]

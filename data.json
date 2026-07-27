@@ -2,10 +2,10 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "July 27, 2026 — 92 verified applications · Rillet and AIRE passed · first human reply of the campaign (Sage Recruiting)",
+    "updated": "July 27, 2026 — 94 verified applications · Sailor Health and Dench.com confirmed · Rillet and AIRE passed · first human reply of the campaign (Sage Recruiting)",
     "scoreboard": {
-      "applications_in": 92,
-      "ats_confirmations": 37,
+      "applications_in": 94,
+      "ats_confirmations": 39,
       "live_conversations": 1,
       "human_replies": 1,
       "rejections": 3,
@@ -15,6 +15,31 @@
     "counting_rule": "Submitted applications and delivered live-role emails count; drafts, bounces, opened forms, research, speculative outreach, and duplicate resends do not."
   },
   "sections": [
+    {
+      "title": "JULY 27, 2026 — 2 VERIFIED",
+      "rows": [
+        {
+          "company": "Dench.com",
+          "role": "Founding Engineer",
+          "salary": "—",
+          "location": "—",
+          "status": "Submitted ✓",
+          "date": "7/27",
+          "note": "Applied via Work at a Startup (YC) · confirmation 7/27",
+          "url": ""
+        },
+        {
+          "company": "Sailor Health",
+          "role": "Founding Engineer",
+          "salary": "—",
+          "location": "—",
+          "status": "Submitted ✓",
+          "date": "7/27",
+          "note": "Ashby confirmation 7/27",
+          "url": ""
+        }
+      ]
+    },
     {
       "title": "JULY 26, 2026 — 10 VERIFIED",
       "rows": [

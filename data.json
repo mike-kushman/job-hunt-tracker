@@ -2,10 +2,10 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "July 27, 2026 — 105 verified applications · Livefront confirmed · Colonist rejected · 44 ATS confirmations · first human reply of the campaign (Sage Recruiting)",
+    "updated": "July 27, 2026 — 106 verified applications · Jukebox Health and Livefront confirmed · Colonist rejected · 45 ATS confirmations · first human reply of the campaign (Sage Recruiting)",
     "scoreboard": {
-      "applications_in": 105,
-      "ats_confirmations": 44,
+      "applications_in": 106,
+      "ats_confirmations": 45,
       "live_conversations": 1,
       "human_replies": 1,
       "rejections": 4,
@@ -16,7 +16,7 @@
   },
   "sections": [
     {
-      "title": "JULY 27, 2026 — 13 VERIFIED",
+      "title": "JULY 27, 2026 — 14 VERIFIED",
       "rows": [
         {
           "company": "Bjak",
@@ -57,6 +57,16 @@
           "date": "7/27",
           "note": "Direct email to chris.duranti@govstream.ai · résumé attached; no bounce",
           "url": "https://elixirforum.com/t/senior-full-stack-engineer-govstream-ai-remote-usa-seattle/72855"
+        },
+        {
+          "company": "Jukebox Health",
+          "role": "Role not stated (Greenhouse confirmation)",
+          "salary": "—",
+          "location": "—",
+          "status": "Submitted ✓",
+          "date": "7/27",
+          "note": "Greenhouse confirmation 7/27 · receipt omitted the role title; deliberately not inferred",
+          "url": "https://job-boards.greenhouse.io/jukeboxhealth"
         },
         {
           "company": "Livefront",

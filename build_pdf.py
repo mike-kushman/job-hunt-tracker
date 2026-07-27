@@ -118,12 +118,13 @@ CHANNEL_PATTERNS = [
 CHANNEL_FALLBACK = "Not recorded"
 
 # Expected counts from the contract, used as a self-check (warn, never fake).
-EXPECTED_STATUS = {"submitted": 53, "confirmed": 35, "rejected": 3, "engaged": 1}
+# Resnapshotted after the 7/27 Sailor Health (Ashby) and Dench.com (YC) receipts.
+EXPECTED_STATUS = {"submitted": 53, "confirmed": 37, "rejected": 3, "engaged": 1}
 EXPECTED_CHANNEL = {
     "Direct email": 36,
-    "Company application system": 28,
+    "Company application system": 29,
     "Not recorded": 24,
-    "YC board": 3,
+    "YC board": 4,
     "Web form": 1,
 }
 

@@ -1,1248 +1,980 @@
 {
- "meta": {
-  "name": "Job Hunt — Michael Kushman",
-  "subtitle": "Artist who builds · kushman.work · github.com/never-nude · data.json is the source of truth; sheet and site are generated views",
-  "updated": "July 24, 2026, evening — MAJOR correction: found a 12-application cold-email sprint (5:13–5:59pm) that wasn't logged. Direct-email wave now 17: Yuzu, AIRE, Mavenly, Lantern, LightSight, Pax Historia, Catalyst·Wayfare, Hotwash, Ephanti, Cora AI (from backlog), Atria, Teckfinity, Riot IQ, DearHiringManager, Kanary, Kadoa, Emergences → 66 applications in, 26 ATS confirmations",
-  "scoreboard": {
-   "applications_in": 66,
-   "ats_confirmations": 26,
-   "live_conversations": 1,
-   "human_replies": 0,
-   "rejections": 1,
-   "in_pipeline": 5,
-   "backlog": 5,
-   "cold_intros": 11,
-   "skipped": 14
+  "meta": {
+    "name": "Job Hunt — Michael Kushman",
+    "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
+    "updated": "July 26, 2026 — 92 verified applications after Gmail, Drive, and portal-workbook reconciliation",
+    "scoreboard": {
+      "applications_in": 92,
+      "ats_confirmations": 37,
+      "live_conversations": 1,
+      "human_replies": 0,
+      "rejections": 1,
+      "in_pipeline": 5,
+      "backlog": 4
+    },
+    "counting_rule": "Submitted applications and delivered live-role emails count; drafts, bounces, opened forms, research, speculative outreach, and duplicate resends do not."
   },
-  "counting_rule": "Delivered = counts; drafts and bounces don't. Scoreboard maintained from the ledger."
- },
- "sections": [
-  {
-   "title": "BIG COMPANIES — 6 IN",
-   "rows": [
+  "sections": [
     {
-     "company": "Hugging Face",
-     "role": "Wild Card application",
-     "salary": "—",
-     "location": "Remote",
-     "status": "Submitted ✓",
-     "date": "7/14",
-     "note": "The one that started the campaign · Workable confirmation · fresh anchor application queued",
-     "url": "https://huggingface.co"
+      "title": "JULY 26, 2026 — 10 VERIFIED",
+      "rows": [
+        {
+          "company": "Aurorin CAD",
+          "role": "Founding Engineer",
+          "salary": "$120–160K + 3–4%",
+          "location": "San Francisco, CA",
+          "status": "Submitted ✓",
+          "date": "7/26",
+          "note": "Applied via Polymer · successful submission confirmed",
+          "url": "https://www.ycombinator.com/companies/aurorin-cad/jobs/R3tKam9-founding-engineer"
+        },
+        {
+          "company": "Awell Health",
+          "role": "Product Engineer",
+          "salary": "$100–180K + eq",
+          "location": "Remote · US-time-zone hours",
+          "status": "Submitted",
+          "date": "7/26",
+          "note": "Direct email to careers@awellhealth.com · corrected resend added résumé · counted once",
+          "url": "https://awellhealth.com/careers/product-engineer"
+        },
+        {
+          "company": "Eagle",
+          "role": "Design Engineer",
+          "salary": "$150–300K + eq",
+          "location": "NYC · on-site",
+          "status": "Submitted",
+          "date": "7/26",
+          "note": "Direct email to tom@eagleeng.com · résumé attached",
+          "url": "https://jobs.ashbyhq.com/eagle/b5dd7b60-24d5-4053-a753-463cf7140822"
+        },
+        {
+          "company": "Guac",
+          "role": "Fullstack Engineer",
+          "salary": "$150–250K + 0.5–1%",
+          "location": "NYC · on-site 5d/wk",
+          "status": "Submitted",
+          "date": "7/26",
+          "note": "Direct email to jack@guac-ai.com · résumé attached",
+          "url": "https://www.ycombinator.com/companies/guac/jobs/s9SJAAT-fullstack-engineer"
+        },
+        {
+          "company": "InstaLILY AI",
+          "role": "Design Engineer",
+          "salary": "$100–120K + eq",
+          "location": "NYC",
+          "status": "Submitted ✓",
+          "date": "7/26",
+          "note": "Greenhouse confirmation received · moved from backlog",
+          "url": "https://job-boards.greenhouse.io/instalilyai/jobs/4271810009"
+        },
+        {
+          "company": "Outmarket",
+          "role": "Front-End AI Engineer",
+          "salary": "Competitive + eq",
+          "location": "Remote · US or India",
+          "status": "Submitted",
+          "date": "7/26",
+          "note": "Direct email to careers@outmarket.ai · delivered; Gmail metadata shows no attachment",
+          "url": "https://outmarket.ai/careers/front-end-ai-engineer"
+        },
+        {
+          "company": "PrairieLearn",
+          "role": "Full-Stack Software Engineer",
+          "salary": "$100–180K + eq",
+          "location": "Remote US",
+          "status": "Submitted ✓",
+          "date": "7/26",
+          "note": "Ashby confirmation received",
+          "url": "https://jobs.ashbyhq.com/prairielearn/ee6fdbc3-1c3a-4fa3-bb3f-13ddab449baf"
+        },
+        {
+          "company": "Profound",
+          "role": "Design Engineer",
+          "salary": "$120–250K",
+          "location": "NYC / Buenos Aires · on-site",
+          "status": "Submitted",
+          "date": "7/26",
+          "note": "Direct email to dylan@tryprofound.com · résumé attached",
+          "url": "https://www.tryprofound.com/careers/e98d1d1d-aeec-4b8d-aef8-ea9b61546639"
+        },
+        {
+          "company": "ProxyBase",
+          "role": "Full-Stack Developer",
+          "salary": "$100–160K + eq",
+          "location": "Remote global",
+          "status": "Submitted",
+          "date": "7/26",
+          "note": "Direct email to jobs@proxybase.xyz · role-specific pitch delivered; Gmail metadata shows no attachment",
+          "url": "https://proxybase.xyz/"
+        },
+        {
+          "company": "Sylience (Chord)",
+          "role": "Founding Engineer",
+          "salary": "$100–150K + 1–5%",
+          "location": "Remote · US time zones",
+          "status": "Submitted",
+          "date": "7/26",
+          "note": "Direct email to careers@sylience.com · delivered; Gmail metadata shows no attachment",
+          "url": "https://sylience.com/careers/founding-engineer/"
+        }
+      ]
     },
     {
-     "company": "Luma AI",
-     "role": "Forward Deployed Creative [US]",
-     "salary": "$150–200K",
-     "location": "NY / LA / PA office",
-     "status": "Submitted ✓",
-     "date": "7/21",
-     "note": "Gem confirmation received",
-     "url": "https://lumalabs.ai"
+      "title": "JULY 25, 2026 — 2 VERIFIED",
+      "rows": [
+        {
+          "company": "Counterpart",
+          "role": "Product Engineer",
+          "salary": "$110K+ est.",
+          "location": "Remote US",
+          "status": "Submitted ✓",
+          "date": "7/25",
+          "note": "Greenhouse confirmation received",
+          "url": "https://job-boards.greenhouse.io/counterpart/jobs/4708299005"
+        },
+        {
+          "company": "elly",
+          "role": "Role not stated (Greenhouse confirmation)",
+          "salary": "—",
+          "location": "—",
+          "status": "Submitted ✓",
+          "date": "7/25",
+          "note": "Greenhouse receipt proves submission but omits title · role deliberately not inferred",
+          "url": "https://job-boards.greenhouse.io/elly"
+        }
+      ]
     },
     {
-     "company": "Runway",
-     "role": "Design Engineer, Runway Labs",
-     "salary": "$250–310K",
-     "location": "Remote",
-     "status": "Submitted ✓",
-     "date": "7/21",
-     "note": "Ashby confirmation · earlier 7/7 email to recruiting@ = same application",
-     "url": "https://runwayml.com"
+      "title": "JULY 24, 2026 — 43 VERIFIED",
+      "rows": [
+        {
+          "company": "AIRE",
+          "role": "Founding Engineer",
+          "salary": "$100–250K + eq",
+          "location": "Remote US/Canada · NYC preferred",
+          "status": "Submitted",
+          "date": "7/24",
+          "note": "Direct email to recruitment@aire.xyz · delivered; no bounce",
+          "url": "https://aire.xyz"
+        },
+        {
+          "company": "Arterial",
+          "role": "Junior Full-Stack Engineer",
+          "salary": "—",
+          "location": "Remote US",
+          "status": "Submitted ✓",
+          "date": "7/24",
+          "note": "Application receipt confirmed materials and role",
+          "url": "https://arterial.us/careers"
+        },
+        {
+          "company": "Atria Health",
+          "role": "Staff Software Engineer, Agentic AI",
+          "salary": "$230–290K",
+          "location": "NYC hybrid · Tue–Thu",
+          "status": "Submitted",
+          "date": "7/24",
+          "note": "Direct email to talent@atria.org delivered · auto-reply directed candidates to site",
+          "url": "https://apply.workable.com/atria-health/j/D4996B1513/"
+        },
+        {
+          "company": "Avery",
+          "role": "Software Engineer",
+          "salary": "—",
+          "location": "On-site / Remote US",
+          "status": "Submitted",
+          "date": "7/24",
+          "note": "Direct email to info@averyiq.com · delivered; no bounce",
+          "url": "https://averyiq.com/careers"
+        },
+        {
+          "company": "Catalyst Wayfare",
+          "role": "AI Engineer / Agent Builder",
+          "salary": "—",
+          "location": "Remote US · Eastern overlap",
+          "status": "Submitted",
+          "date": "7/24",
+          "note": "Direct email to talent@cwai.co · delivered; no bounce",
+          "url": "https://www.catalystwayfare.ai/"
+        },
+        {
+          "company": "Colonist",
+          "role": "Product Engineer",
+          "salary": "—",
+          "location": "—",
+          "status": "Submitted ✓",
+          "date": "7/24",
+          "note": "colonist.io · Ashby confirmation 7/24",
+          "url": "https://jobs.ashbyhq.com/colonist/109d62c4-52f3-4980-9c49-d31773818736"
+        },
+        {
+          "company": "Cora AI",
+          "role": "Founding Full Stack / Applied AI Engineer",
+          "salary": "$190–250K + eq",
+          "location": "Remote US / SF",
+          "status": "Submitted",
+          "date": "7/24",
+          "note": "Direct email to careers@cora.ai · moved from backlog",
+          "url": "https://www.cora.ai/about"
+        },
+        {
+          "company": "DearHiringManager.io",
+          "role": "Full-Stack Developer",
+          "salary": "$120–160K",
+          "location": "Remote · US/EU time zones",
+          "status": "Submitted",
+          "date": "7/24",
+          "note": "Direct email to lars@dearhiringmanager.io · delivered; no bounce",
+          "url": "https://www.dearhiringmanager.io/careers/full-stack-developer"
+        },
+        {
+          "company": "Deployment.io",
+          "role": "Forward Deployed Engineer",
+          "salary": "Competitive + eq",
+          "location": "Remote US or India",
+          "status": "Submitted",
+          "date": "7/24",
+          "note": "Direct email to jobs@deployment.io 7/24 · resent 7/26 · counted once",
+          "url": "https://deployment.io/careers/"
+        },
+        {
+          "company": "DwellSafe",
+          "role": "Full-Stack Engineer",
+          "salary": "—",
+          "location": "—",
+          "status": "Submitted",
+          "date": "7/24",
+          "note": "Direct email to careers@dwellsafe.ai · delivered; no bounce",
+          "url": "https://dwellsafe.ai"
+        },
+        {
+          "company": "Emergences",
+          "role": "AI / Systems Engineer",
+          "salary": "$120–150K + eq",
+          "location": "Remote US",
+          "status": "Submitted",
+          "date": "7/24",
+          "note": "Direct email to jack@emergences.ai · delivered; no bounce",
+          "url": "https://emergences.ai/careers/ai-engineer"
+        },
+        {
+          "company": "Ephanti",
+          "role": "Founding Engineer, Agentic AI",
+          "salary": "—",
+          "location": "Remote US/EU",
+          "status": "Submitted",
+          "date": "7/24",
+          "note": "Direct email to careers@ephanti.com · delivered; no bounce",
+          "url": "https://www.ephanti.com/company/careers"
+        },
+        {
+          "company": "FanShares",
+          "role": "Founding Engineer",
+          "salary": "$150–200K + eq",
+          "location": "United States",
+          "status": "Submitted",
+          "date": "7/24",
+          "note": "Direct email to leon@fansharesapp.com · delivered; no bounce",
+          "url": "https://www.fansharesapp.com/"
+        },
+        {
+          "company": "Hermes Web",
+          "role": "Founding Engineer",
+          "salary": "—",
+          "location": "Remote worldwide",
+          "status": "Submitted ✓",
+          "date": "7/24",
+          "note": "Open Core Ventures · Greenhouse confirmation 7/24 (as Open Core Ventures)",
+          "url": "https://job-boards.greenhouse.io/opencoreventures/jobs/5973925004"
+        },
+        {
+          "company": "Hightouch",
+          "role": "Role not stated (Greenhouse confirmation)",
+          "salary": "—",
+          "location": "—",
+          "status": "Submitted ✓",
+          "date": "7/24",
+          "note": "Greenhouse confirmation 7/24 · receipt omitted the role title; deliberately not inferred",
+          "url": "https://hightouch.com/careers"
+        },
+        {
+          "company": "Hotwash",
+          "role": "Founding Engineer",
+          "salary": "—",
+          "location": "Remote US · Boston a plus",
+          "status": "Submitted",
+          "date": "7/24",
+          "note": "Direct email to hiring@hotwash.com · delivered; no bounce",
+          "url": "https://www.hotwash.com/"
+        },
+        {
+          "company": "JustiGuide",
+          "role": "Frontend Engineer",
+          "salary": "—",
+          "location": "—",
+          "status": "Submitted",
+          "date": "7/24",
+          "note": "Direct email to careers@justiguide.com · delivered; no bounce",
+          "url": "https://justiguide.com"
+        },
+        {
+          "company": "Kadoa",
+          "role": "Senior Software Engineer",
+          "salary": "—",
+          "location": "Fully remote",
+          "status": "Submitted",
+          "date": "7/24",
+          "note": "Direct email to adrian@kadoa.com · delivered; no bounce",
+          "url": "https://www.kadoa.com/careers/senior-software-engineer"
+        },
+        {
+          "company": "Kanary",
+          "role": "Full Stack Engineer",
+          "salary": "—",
+          "location": "Remote US · Seattle hub",
+          "status": "Submitted",
+          "date": "7/24",
+          "note": "Direct email to steven@kanary.com · delivered; no bounce",
+          "url": "https://www.kanary.com/join-the-team"
+        },
+        {
+          "company": "Kyra",
+          "role": "Senior/Staff Product Engineer",
+          "salary": "—",
+          "location": "Remote US",
+          "status": "Submitted",
+          "date": "7/24",
+          "note": "Direct email to n@kyra.health · delivered; no bounce",
+          "url": "https://engineers.kyra.health/"
+        },
+        {
+          "company": "Lantern",
+          "role": "Junior Software Engineer",
+          "salary": "—",
+          "location": "Manhattan · 4d/wk",
+          "status": "Submitted",
+          "date": "7/24",
+          "note": "Direct email to maksym@withlantern.com 7/24 · resent 7/26 · counted once",
+          "url": "https://careers.moxxie.vc/companies/lantern-2/jobs/44610154-forward-deployed-engineer-junior-software-engineer"
+        },
+        {
+          "company": "LightSight",
+          "role": "Forward Deployed Software Engineer",
+          "salary": "—",
+          "location": "Remote US · travel",
+          "status": "Submitted",
+          "date": "7/24",
+          "note": "Direct email to contact@lightsight.ai · delivered; no bounce",
+          "url": "https://lightsight.ai/careers"
+        },
+        {
+          "company": "Lumen Energy",
+          "role": "Product Engineer",
+          "salary": "—",
+          "location": "Remote",
+          "status": "Submitted ✓",
+          "date": "7/24",
+          "note": "Solar/battery climatetech · Ashby confirmation 7/24",
+          "url": "https://jobs.ashbyhq.com/lumen.energy/4b67985e-b8cf-4069-84ef-8e13a1ca8024"
+        },
+        {
+          "company": "Mastra",
+          "role": "Product Engineer",
+          "salary": "—",
+          "location": "Remote worldwide",
+          "status": "Submitted ✓",
+          "date": "7/24",
+          "note": "TypeScript agent framework · Ashby confirmation 7/24 — if fit, recruiter call is next step",
+          "url": "https://jobs.ashbyhq.com/Mastra/3b06208b-34fe-4dda-b409-ee3fd9305cc3"
+        },
+        {
+          "company": "Mavenly",
+          "role": "Founding Engineer, Full-Stack",
+          "salary": "$170–210K + 0.75–1.5%",
+          "location": "Atlanta / Remote US",
+          "status": "Submitted",
+          "date": "7/24",
+          "note": "Direct email to careers@mavenly.ai · delivered; no bounce",
+          "url": "https://www.mavenly.ai/careers"
+        },
+        {
+          "company": "Onboarded",
+          "role": "Product Engineer, full-stack",
+          "salary": "—",
+          "location": "Global remote",
+          "status": "Submitted ✓",
+          "date": "7/24",
+          "note": "Applied via Lever · Lever confirmation 7/24",
+          "url": "https://jobs.lever.co/onboarded/42d66cfc-7780-4666-b3b2-008bf9198ace"
+        },
+        {
+          "company": "Ondo Finance",
+          "role": "Full-Stack Software Engineer",
+          "salary": "Competitive",
+          "location": "Remote US",
+          "status": "Submitted ✓",
+          "date": "7/24",
+          "note": "Greenhouse confirmation received",
+          "url": "https://job-boards.greenhouse.io/ondofinance/jobs/4297391009"
+        },
+        {
+          "company": "OnePay",
+          "role": "Design Engineer",
+          "salary": "$130–160K",
+          "location": "Fully remote",
+          "status": "Submitted ✓",
+          "date": "7/24",
+          "note": "React Native · Ashby confirmation 7/24",
+          "url": "https://jobs.ashbyhq.com/oneapp/b7ae2b9b-0f31-468d-9ac8-395536da8beb"
+        },
+        {
+          "company": "Ontix",
+          "role": "Technical Product Manager",
+          "salary": "—",
+          "location": "Remote US",
+          "status": "Submitted",
+          "date": "7/24",
+          "note": "Direct email to l33t@ontix.io · delivered; no bounce",
+          "url": "https://ontix.io/"
+        },
+        {
+          "company": "OpenEd",
+          "role": "Product Engineer",
+          "salary": "—",
+          "location": "—",
+          "status": "Submitted ✓",
+          "date": "7/24",
+          "note": "⚠️ Backers still unverified — sanity-check before investing more · Ashby confirmation 7/24",
+          "url": "https://jobs.ashbyhq.com/opened/22a17078-2584-4c7a-9056-cde6571db540"
+        },
+        {
+          "company": "Pax Historia",
+          "role": "Founding Engineer (Full Stack Web)",
+          "salary": "$150–215K + 0.25–1%",
+          "location": "San Francisco · in-person",
+          "status": "Submitted",
+          "date": "7/24",
+          "note": "Direct email to careers@paxhistoria.co · delivered; no bounce",
+          "url": "https://www.ycombinator.com/companies/pax-historia/jobs/sybd2W9-founding-engineer-full-stack-web"
+        },
+        {
+          "company": "Puma Browser",
+          "role": "AI/ML Engineer",
+          "salary": "—",
+          "location": "Remote-first",
+          "status": "Submitted",
+          "date": "7/24",
+          "note": "Direct email to careers+ai@pumabrowser.com · delivered; no bounce",
+          "url": "https://puma.tech/careers/ai-ml-engineer"
+        },
+        {
+          "company": "Resend",
+          "role": "Product Engineer",
+          "salary": "$151–170K",
+          "location": "Fully remote",
+          "status": "Submitted ✓",
+          "date": "7/24",
+          "note": "Ashby confirmation 7/24 — \"a real human will review\"",
+          "url": "https://resend.com/careers/9b68ba51-3895-4d29-8fd1-364bdf8956e7"
+        },
+        {
+          "company": "Riot IQ",
+          "role": "AI-native Software Engineer",
+          "salary": "—",
+          "location": "Seattle / Remote US",
+          "status": "Submitted",
+          "date": "7/24",
+          "note": "Direct email to robertneir@riotiq.com · delivered; no bounce",
+          "url": "https://www.riotiq.com/"
+        },
+        {
+          "company": "SalvoHealth",
+          "role": "Software Engineer",
+          "salary": "$100–160K",
+          "location": "NYC / Remote US",
+          "status": "Submitted ✓",
+          "date": "7/24",
+          "note": "Lever confirmation received",
+          "url": "https://jobs.lever.co/salvohealth/285d6b09-7961-490b-8927-3b24698affe9"
+        },
+        {
+          "company": "SecureFlow",
+          "role": "Junior Software Engineer",
+          "salary": "$80–110K + 0.1–0.3%",
+          "location": "Remote global",
+          "status": "Submitted",
+          "date": "7/24",
+          "note": "Direct email to Josephbbob@proton.me · delivered; no bounce",
+          "url": "https://secureflow.tech/careers/junior-software-engineer"
+        },
+        {
+          "company": "Span",
+          "role": "Product Engineer",
+          "salary": "$100–200K + eq",
+          "location": "Fully remote",
+          "status": "Submitted ✓",
+          "date": "7/24",
+          "note": "Ashby confirmation 7/24",
+          "url": "https://jobs.ashbyhq.com/span.app/d4c5c10e-3f8e-43a1-9f48-1cf7a883190b"
+        },
+        {
+          "company": "Teckfinity",
+          "role": "AI / Agent Engineer",
+          "salary": "—",
+          "location": "Remote",
+          "status": "Submitted",
+          "date": "7/24",
+          "note": "Direct email to recruitment@teckfinity.com · delivered; no bounce",
+          "url": "https://www.teckfinity.com/careers/ai-agent-engineer"
+        },
+        {
+          "company": "TrueBuilt",
+          "role": "Founding Engineer",
+          "salary": "—",
+          "location": "Remote-first",
+          "status": "Submitted",
+          "date": "7/24",
+          "note": "Pre-construction platform · no confirmation email yet",
+          "url": "https://job-boards.greenhouse.io/applytotruebuilt/jobs/4588866004"
+        },
+        {
+          "company": "Vertex",
+          "role": "AI Product Engineer",
+          "salary": "$101–136K",
+          "location": "Remote US",
+          "status": "Submitted ✓",
+          "date": "7/24",
+          "note": "Was in backlog — applied via Workday · mention HN to Paul Chung if contacted · Workday confirmation 7/24",
+          "url": "https://vertexinc.wd1.myworkdayjobs.com/en-US/VertexInc/job/AI-Product-Engineer_JR102443-1"
+        },
+        {
+          "company": "Wheelhouse",
+          "role": "Full Stack Engineer",
+          "salary": "—",
+          "location": "Remote-first",
+          "status": "Submitted ✓",
+          "date": "7/24",
+          "note": "React/Next/TS + dataviz · Greenhouse confirmation 7/24",
+          "url": "https://job-boards.greenhouse.io/wheelhouse/jobs/4666784005"
+        },
+        {
+          "company": "Wildflower Health",
+          "role": "Junior Software Engineer",
+          "salary": "—",
+          "location": "Remote US",
+          "status": "Submitted",
+          "date": "7/24",
+          "note": "Direct email to chris.reath@wildflowerhealth.com · delivered; exact role now archived",
+          "url": "https://www.wildflowerhealth.com/about"
+        },
+        {
+          "company": "Yuzu",
+          "role": "Product Engineer",
+          "salary": "$140–265K + eq",
+          "location": "NYC · 5d/wk",
+          "status": "Submitted",
+          "date": "7/24",
+          "note": "Direct email to kev@yuzu.health; OOO redirected to ryan@yuzu.health · counted once",
+          "url": "https://yuzu.health/careers/64191bf2-320d-47f5-a205-26adbef160b0"
+        }
+      ]
     },
     {
-     "company": "OpenAI",
-     "role": "Model Designer, Core Models",
-     "salary": "$266–295K + eq",
-     "location": "SF hybrid 3d/wk",
-     "status": "Submitted ✓",
-     "date": "7/21",
-     "note": "Their system parsed first name as \"White\" (autofill glitch) — correct casually if contacted",
-     "url": "https://openai.com"
+      "title": "JULY 23, 2026 — 7 VERIFIED",
+      "rows": [
+        {
+          "company": "AgentPress",
+          "role": "Full-Stack AI Engineer",
+          "salary": "—",
+          "location": "Remote US/Canada",
+          "status": "Submitted ✓",
+          "date": "7/23",
+          "note": "Direct email to apply@agent.press · automated receipt used legacy Emerge Haus branding",
+          "url": "https://www.agent.press/careers/full-stack-ai-engineer"
+        },
+        {
+          "company": "Airtable",
+          "role": "Design Technologist",
+          "salary": "$224–317.2K",
+          "location": "NYC / SF hybrid 2–3d/wk",
+          "status": "Submitted ✓",
+          "date": "7/23",
+          "note": "Restored 7/24 audit — confirmation from jobs@airtable.com 7/23 · AI-assisted workflow answers · Worldbook as latest AI experiment",
+          "url": "https://www.airtable.com"
+        },
+        {
+          "company": "Aqua Voice",
+          "role": "Design Engineer",
+          "salary": "$130–210K + eq/bonus",
+          "location": "NYC / SF on-site",
+          "status": "Submitted ✓",
+          "date": "7/23",
+          "note": "Restored 7/24 audit — Ashby confirmation 7/23 (received twice) · six solo products + ThreadKeep pitch",
+          "url": "https://aquavoice.com"
+        },
+        {
+          "company": "Ashby",
+          "role": "Junior Design Engineer, Americas",
+          "salary": "$122–220K + eq",
+          "location": "Remote US",
+          "status": "Submitted ✓",
+          "date": "7/23",
+          "note": "Was in backlog — applied 7/23 · Ashby confirmation received (found in Gmail)",
+          "url": "https://www.ashbyhq.com"
+        },
+        {
+          "company": "Gumloop",
+          "role": "Design Engineer",
+          "salary": "—",
+          "location": "NYC / SF / Vancouver on-site",
+          "status": "Submitted ✓",
+          "date": "7/23",
+          "note": "Restored 7/24 audit — Ashby confirmation 7/23 · agent-legibility pitch · confirmed NYC office availability",
+          "url": "https://www.gumloop.com"
+        },
+        {
+          "company": "Pace",
+          "role": "Design Engineer (first design hire)",
+          "salary": "Competitive + early eq",
+          "location": "NYC on-site",
+          "status": "Submitted ✓",
+          "date": "7/23",
+          "note": "Restored 7/24 audit — Ashby confirmation 7/23 · first Design Engineer · WPCNA maps 1:1 · $46M Series B insurance AI",
+          "url": "https://jobs.ashbyhq.com/withpace"
+        },
+        {
+          "company": "Rillet",
+          "role": "Design Engineer",
+          "salary": "$150–240K",
+          "location": "NYC / SF hybrid",
+          "status": "Submitted ✓",
+          "date": "7/23",
+          "note": "Restored 7/24 audit — Ashby confirmation 7/23 · full arc concept → shipped · AI-native design-to-code",
+          "url": "https://www.rillet.com"
+        }
+      ]
     },
     {
-     "company": "Anthropic",
-     "role": "Design Engineer, Web",
-     "salary": "$260–305K",
-     "location": "Remote, 25% office",
-     "status": "Submitted ✓",
-     "date": "7/21",
-     "note": "Greenhouse confirmation · timeline is Feb 2026 — never say two years",
-     "url": "https://www.anthropic.com"
+      "title": "JULY 22, 2026 — 18 VERIFIED",
+      "rows": [
+        {
+          "company": "Credal.ai",
+          "role": "Founding Design Engineer",
+          "salary": "$170–230K + eq",
+          "location": "Brooklyn, on-site",
+          "status": "Submitted ✓",
+          "date": "7/22",
+          "note": "Follow-up emailed to Ravin (CEO)",
+          "url": "https://www.credal.ai"
+        },
+        {
+          "company": "Dimely",
+          "role": "Founding Engineer, Full Stack",
+          "salary": "$100–140K + 1–3%",
+          "location": "Remote / Hybrid SF",
+          "status": "Submitted ✓",
+          "date": "7/22",
+          "note": "Dover confirmation — the \"lost form\" actually went through · YC S24, 4th hire",
+          "url": "https://usedimely.com"
+        },
+        {
+          "company": "Fifth Door",
+          "role": "Front End Engineer — games + AI",
+          "salary": "— + eq",
+          "location": "Remote US 🐕",
+          "status": "Submitted",
+          "date": "7/22",
+          "note": "Daniel · Ad Arma maps 1:1 — strongest-fit pitch of the run",
+          "url": "https://fifthdoor.com"
+        },
+        {
+          "company": "Finta",
+          "role": "Founding Designer (employee #3)",
+          "salary": "$140–220K + 1–5%",
+          "location": "SF / Remote 🐕",
+          "status": "Submitted",
+          "date": "7/22",
+          "note": "Andy · designs-in-code pitch · portfolio-review interview",
+          "url": "https://www.finta.com"
+        },
+        {
+          "company": "Git AI",
+          "role": "Founding Engineer",
+          "salary": "$190–220K + eq",
+          "location": "NYC in-person",
+          "status": "Submitted",
+          "date": "7/22",
+          "note": "Pitch sent direct to founder (Aidan) · alternate Gmail draft is dead — delete",
+          "url": "https://usegitai.com"
+        },
+        {
+          "company": "Hera",
+          "role": "Founding Product Designer",
+          "salary": "€80–130K + eq",
+          "location": "Berlin pref / NY remote",
+          "status": "Submitted",
+          "date": "7/22",
+          "note": "Peter (CEO) · \"slope not intercept\"",
+          "url": "https://hera.video"
+        },
+        {
+          "company": "Humwork",
+          "role": "Founding Engineer",
+          "salary": "$120–150K + 2.5–10%",
+          "location": "SF in-person",
+          "status": "Submitted",
+          "date": "7/22",
+          "note": "Email to founders@ (their preferred channel) · they reply within 48h — watch inbox",
+          "url": "https://humwork.ai"
+        },
+        {
+          "company": "Infisical",
+          "role": "Developer Advocate",
+          "salary": "$120–190K",
+          "location": "Remote US/CA",
+          "status": "Submitted",
+          "date": "7/22",
+          "note": "Tony · teaching/translation pitch · 7/24: they viewed Mike’s LinkedIn — worth a look at their other openings",
+          "url": "https://infisical.com"
+        },
+        {
+          "company": "Infisical",
+          "role": "Design Engineer, Brand",
+          "salary": "$100–180K",
+          "location": "Remote US/CA",
+          "status": "Submitted",
+          "date": "7/22",
+          "note": "Double-apply flagged as intentional",
+          "url": "https://infisical.com"
+        },
+        {
+          "company": "Nixo",
+          "role": "Founding Member of Technical Staff",
+          "salary": "$150–250K + eq",
+          "location": "Remote US",
+          "status": "Submitted",
+          "date": "7/22",
+          "note": "Priya · WPCNA deployment-mess story",
+          "url": "https://www.ycombinator.com/companies/nixo"
+        },
+        {
+          "company": "Novig",
+          "role": "AI Automation Engineer",
+          "salary": "$200–230K",
+          "location": "NYC",
+          "status": "Submitted ✓",
+          "date": "7/22",
+          "note": "Gambling domain — ignore any reply",
+          "url": "https://novig.com"
+        },
+        {
+          "company": "Onlook",
+          "role": "Founding Engineer — \"Cursor for Designers\"",
+          "salary": "$130–200K + eq",
+          "location": "Remote US 🐕",
+          "status": "Submitted",
+          "date": "7/22",
+          "note": "Daniel · \"the user Onlook exists for\" pitch",
+          "url": "https://www.onlook.com"
+        },
+        {
+          "company": "Pillar",
+          "role": "Founding Designer",
+          "salary": "—",
+          "location": "Remote US 🐕",
+          "status": "Submitted",
+          "date": "7/22",
+          "note": "Creator-economy suite · \"I was your user for 20 years\"",
+          "url": "https://www.ycombinator.com/companies/pillar-2"
+        },
+        {
+          "company": "ProhostAI",
+          "role": "Founding Engineer, Full Stack",
+          "salary": "$100–180K + eq",
+          "location": "Remote US",
+          "status": "Submitted",
+          "date": "7/22",
+          "note": "Bill · Airbnb/Dropbox founders · honest-gap pitch",
+          "url": "https://www.prohost.ai"
+        },
+        {
+          "company": "Rivet",
+          "role": "Full Stack Engineer (early team)",
+          "salary": "Not posted — quoted $110–140K",
+          "location": "Remote US 🐕",
+          "status": "Submitted",
+          "date": "7/22",
+          "note": "Google Form recorded · AI direct-to-fan platform for artists · favorite band: Tool",
+          "url": "https://www.rivet.app"
+        },
+        {
+          "company": "Scott AI",
+          "role": "Design Engineer",
+          "salary": "$140–250K + 0.5–1.5%",
+          "location": "NYC / SF office",
+          "status": "Submitted",
+          "date": "7/22",
+          "note": "YC F25 · planning layer for coding-agent teams · Metro-North commutable",
+          "url": "https://www.tryscott.ai"
+        },
+        {
+          "company": "The Company Company",
+          "role": "Founding Design Engineer",
+          "salary": "$130–200K + eq",
+          "location": "Remote US",
+          "status": "Submitted",
+          "date": "7/22",
+          "note": "Julius · 1-person YC P26 · watch WaaS inbox",
+          "url": "https://www.workatastartup.com/companies/the-company-company"
+        },
+        {
+          "company": "Tsenta",
+          "role": "Founding Engineer",
+          "salary": "—",
+          "location": "Remote US",
+          "status": "Conversation",
+          "date": "7/22",
+          "note": "Applied via Ashby · live conversation — the only human contact so far",
+          "url": "https://www.tsenta.com"
+        }
+      ]
     },
     {
-     "company": "GitHub",
-     "role": "Design Engineer III (Req 5478)",
-     "salary": "$153.9–285.9K",
-     "location": "Remote",
-     "status": "REJECTED 7/23",
-     "date": "7/21",
-     "note": "iCIMS rejection 7/23 — reviewed by a Talent Partner, \"moving forward with other candidates\" · first decision of the campaign",
-     "url": "https://github.com"
+      "title": "JULY 21, 2026 — 5 VERIFIED",
+      "rows": [
+        {
+          "company": "Anthropic",
+          "role": "Design Engineer, Web",
+          "salary": "$260–305K",
+          "location": "Remote, 25% office",
+          "status": "Submitted ✓",
+          "date": "7/21",
+          "note": "Greenhouse confirmation · timeline is Feb 2026 — never say two years",
+          "url": "https://www.anthropic.com"
+        },
+        {
+          "company": "GitHub",
+          "role": "Design Engineer III (Req 5478)",
+          "salary": "$153.9–285.9K",
+          "location": "Remote",
+          "status": "Rejected",
+          "date": "7/21",
+          "note": "iCIMS rejection 7/23 — reviewed by a Talent Partner, \"moving forward with other candidates\" · first decision of the campaign",
+          "url": "https://github.com"
+        },
+        {
+          "company": "Luma AI",
+          "role": "Forward Deployed Creative [US]",
+          "salary": "$150–200K",
+          "location": "NY / LA / PA office",
+          "status": "Submitted ✓",
+          "date": "7/21",
+          "note": "Gem confirmation received",
+          "url": "https://lumalabs.ai"
+        },
+        {
+          "company": "OpenAI",
+          "role": "Model Designer, Core Models",
+          "salary": "$266–295K + eq",
+          "location": "SF hybrid 3d/wk",
+          "status": "Submitted ✓",
+          "date": "7/21",
+          "note": "Their system parsed first name as \"White\" (autofill glitch) — correct casually if contacted",
+          "url": "https://openai.com"
+        },
+        {
+          "company": "Runway",
+          "role": "Design Engineer, Runway Labs",
+          "salary": "$250–310K",
+          "location": "Remote",
+          "status": "Submitted ✓",
+          "date": "7/21",
+          "note": "Ashby confirmation · earlier 7/7 email to recruiting@ = same application",
+          "url": "https://runwayml.com"
+        }
+      ]
+    },
+    {
+      "title": "JULY 14, 2026 — 1 VERIFIED",
+      "rows": [
+        {
+          "company": "Hugging Face",
+          "role": "Wild Card application",
+          "salary": "—",
+          "location": "Remote",
+          "status": "Submitted ✓",
+          "date": "7/14",
+          "note": "The one that started the campaign · Workable confirmation · fresh anchor application queued",
+          "url": "https://huggingface.co"
+        }
+      ]
+    },
+    {
+      "title": "JULY 7, 2026 — 6 VERIFIED",
+      "rows": [
+        {
+          "company": "Arize",
+          "role": "Open Source Design Engineer",
+          "salary": "—",
+          "location": "—",
+          "status": "Submitted",
+          "date": "7/7",
+          "note": "No reply",
+          "url": "https://arize.com"
+        },
+        {
+          "company": "Collier.Simon",
+          "role": "Creative Technologist",
+          "salary": "—",
+          "location": "—",
+          "status": "Submitted",
+          "date": "7/7",
+          "note": "One thread (original + 2 corrections) · no reply",
+          "url": "https://colliersimon.com"
+        },
+        {
+          "company": "Felt",
+          "role": "Spatial tools / creative technologist",
+          "salary": "—",
+          "location": "—",
+          "status": "Submitted ✓",
+          "date": "7/7",
+          "note": "\"Application received\" auto-ack",
+          "url": "https://felt.com"
+        },
+        {
+          "company": "Lightning Labs",
+          "role": "AI Product Engineer",
+          "salary": "—",
+          "location": "—",
+          "status": "Submitted",
+          "date": "7/7",
+          "note": "No reply",
+          "url": "https://lightning.engineering"
+        },
+        {
+          "company": "Scenario",
+          "role": "Creative Technologist",
+          "salary": "—",
+          "location": "—",
+          "status": "Submitted",
+          "date": "7/7",
+          "note": "Canned ack only (29s after send)",
+          "url": "https://www.scenario.com"
+        },
+        {
+          "company": "USB Club / garden3d",
+          "role": "Part-time Design Engineer",
+          "salary": "—",
+          "location": "—",
+          "status": "Submitted",
+          "date": "7/7",
+          "note": "Sent to Hugh · no reply",
+          "url": "https://garden3d.net"
+        }
+      ]
     }
-   ]
-  },
-  {
-   "title": "STARTUPS — 7/21–22 WAVE, 18 IN",
-   "rows": [
-    {
-     "company": "Tsenta",
-     "role": "Founding Engineer",
-     "salary": "—",
-     "location": "Remote US",
-     "status": "Submitted · TALKED",
-     "date": "7/22",
-     "note": "Applied via Ashby · live conversation — the only human contact so far",
-     "url": "https://www.tsenta.com"
-    },
-    {
-     "company": "Credal.ai",
-     "role": "Founding Design Engineer",
-     "salary": "$170–230K + eq",
-     "location": "Brooklyn, on-site",
-     "status": "Submitted ✓",
-     "date": "7/22",
-     "note": "Follow-up emailed to Ravin (CEO)",
-     "url": "https://www.credal.ai"
-    },
-    {
-     "company": "Dimely",
-     "role": "Founding Engineer, Full Stack",
-     "salary": "$100–140K + 1–3%",
-     "location": "Remote / Hybrid SF",
-     "status": "Submitted ✓",
-     "date": "7/22",
-     "note": "Dover confirmation — the \"lost form\" actually went through · YC S24, 4th hire",
-     "url": "https://usedimely.com"
-    },
-    {
-     "company": "Humwork",
-     "role": "Founding Engineer",
-     "salary": "$120–150K + 2.5–10%",
-     "location": "SF in-person",
-     "status": "Submitted",
-     "date": "7/22",
-     "note": "Email to founders@ (their preferred channel) · they reply within 48h — watch inbox",
-     "url": "https://humwork.ai"
-    },
-    {
-     "company": "Git AI",
-     "role": "Founding Engineer",
-     "salary": "$190–220K + eq",
-     "location": "NYC in-person",
-     "status": "Submitted",
-     "date": "7/22",
-     "note": "Pitch sent direct to founder (Aidan) · alternate Gmail draft is dead — delete",
-     "url": "https://usegitai.com"
-    },
-    {
-     "company": "Rivet",
-     "role": "Full Stack Engineer (early team)",
-     "salary": "Not posted — quoted $110–140K",
-     "location": "Remote US 🐕",
-     "status": "Submitted",
-     "date": "7/22",
-     "note": "Google Form recorded · AI direct-to-fan platform for artists · favorite band: Tool",
-     "url": "https://www.rivet.app"
-    },
-    {
-     "company": "Novig",
-     "role": "AI Automation Engineer",
-     "salary": "$200–230K",
-     "location": "NYC",
-     "status": "Submitted ✓ (deprioritized)",
-     "date": "7/22",
-     "note": "Gambling domain — ignore any reply",
-     "url": "https://novig.com"
-    },
-    {
-     "company": "Scott AI",
-     "role": "Design Engineer",
-     "salary": "$140–250K + 0.5–1.5%",
-     "location": "NYC / SF office",
-     "status": "Applied via WaaS",
-     "date": "7/22",
-     "note": "YC F25 · planning layer for coding-agent teams · Metro-North commutable",
-     "url": "https://www.tryscott.ai"
-    },
-    {
-     "company": "The Company Company",
-     "role": "Founding Design Engineer",
-     "salary": "$130–200K + eq",
-     "location": "Remote US",
-     "status": "Applied via WaaS",
-     "date": "7/22",
-     "note": "Julius · 1-person YC P26 · watch WaaS inbox",
-     "url": "https://www.workatastartup.com/companies/the-company-company"
-    },
-    {
-     "company": "Infisical",
-     "role": "Developer Advocate",
-     "salary": "$120–190K",
-     "location": "Remote US/CA",
-     "status": "Applied via WaaS",
-     "date": "7/22",
-     "note": "Tony · teaching/translation pitch · 7/24: they viewed Mike’s LinkedIn — worth a look at their other openings",
-     "url": "https://infisical.com"
-    },
-    {
-     "company": "Infisical",
-     "role": "Design Engineer, Brand",
-     "salary": "$100–180K",
-     "location": "Remote US/CA",
-     "status": "Applied via WaaS",
-     "date": "7/22",
-     "note": "Double-apply flagged as intentional",
-     "url": "https://infisical.com"
-    },
-    {
-     "company": "Hera",
-     "role": "Founding Product Designer",
-     "salary": "€80–130K + eq",
-     "location": "Berlin pref / NY remote",
-     "status": "Applied via WaaS",
-     "date": "7/22",
-     "note": "Peter (CEO) · \"slope not intercept\"",
-     "url": "https://hera.video"
-    },
-    {
-     "company": "ProhostAI",
-     "role": "Founding Engineer, Full Stack",
-     "salary": "$100–180K + eq",
-     "location": "Remote US",
-     "status": "Applied via WaaS",
-     "date": "7/22",
-     "note": "Bill · Airbnb/Dropbox founders · honest-gap pitch",
-     "url": "https://www.prohost.ai"
-    },
-    {
-     "company": "Nixo",
-     "role": "Founding Member of Technical Staff",
-     "salary": "$150–250K + eq",
-     "location": "Remote US",
-     "status": "Applied via WaaS",
-     "date": "7/22",
-     "note": "Priya · WPCNA deployment-mess story",
-     "url": "https://www.ycombinator.com/companies/nixo"
-    },
-    {
-     "company": "Onlook",
-     "role": "Founding Engineer — \"Cursor for Designers\"",
-     "salary": "$130–200K + eq",
-     "location": "Remote US 🐕",
-     "status": "Applied via WaaS",
-     "date": "7/22",
-     "note": "Daniel · \"the user Onlook exists for\" pitch",
-     "url": "https://www.onlook.com"
-    },
-    {
-     "company": "Pillar",
-     "role": "Founding Designer",
-     "salary": "—",
-     "location": "Remote US 🐕",
-     "status": "Applied via WaaS",
-     "date": "7/22",
-     "note": "Creator-economy suite · \"I was your user for 20 years\"",
-     "url": "https://www.ycombinator.com/companies/pillar-2"
-    },
-    {
-     "company": "Finta",
-     "role": "Founding Designer (employee #3)",
-     "salary": "$140–220K + 1–5%",
-     "location": "SF / Remote 🐕",
-     "status": "Applied via WaaS",
-     "date": "7/22",
-     "note": "Andy · designs-in-code pitch · portfolio-review interview",
-     "url": "https://www.finta.com"
-    },
-    {
-     "company": "Fifth Door",
-     "role": "Front End Engineer — games + AI",
-     "salary": "— + eq",
-     "location": "Remote US 🐕",
-     "status": "Applied via WaaS",
-     "date": "7/22",
-     "note": "Daniel · Ad Arma maps 1:1 — strongest-fit pitch of the run",
-     "url": "https://fifthdoor.com"
-    }
-   ]
-  },
-  {
-   "title": "STARTUPS — 7/23–24 WAVE, 19 IN",
-   "rows": [
-    {
-     "company": "Ashby",
-     "role": "Junior Design Engineer, Americas",
-     "salary": "$122–220K + eq",
-     "location": "Remote US",
-     "status": "Submitted ✓",
-     "date": "7/23",
-     "note": "Was in backlog — applied 7/23 · Ashby confirmation received (found in Gmail)",
-     "url": "https://www.ashbyhq.com"
-    },
-    {
-     "company": "Airtable",
-     "role": "Design Technologist",
-     "salary": "$224–317.2K",
-     "location": "NYC / SF hybrid 2–3d/wk",
-     "status": "Submitted ✓",
-     "date": "7/23",
-     "note": "Restored 7/24 audit — confirmation from jobs@airtable.com 7/23 · AI-assisted workflow answers · Worldbook as latest AI experiment",
-     "url": "https://www.airtable.com"
-    },
-    {
-     "company": "Aqua Voice",
-     "role": "Design Engineer",
-     "salary": "$130–210K + eq/bonus",
-     "location": "NYC / SF on-site",
-     "status": "Submitted ✓",
-     "date": "7/23",
-     "note": "Restored 7/24 audit — Ashby confirmation 7/23 (received twice) · six solo products + ThreadKeep pitch",
-     "url": "https://aquavoice.com"
-    },
-    {
-     "company": "Pace",
-     "role": "Design Engineer (first design hire)",
-     "salary": "Competitive + early eq",
-     "location": "NYC on-site",
-     "status": "Submitted ✓",
-     "date": "7/23",
-     "note": "Restored 7/24 audit — Ashby confirmation 7/23 · first Design Engineer · WPCNA maps 1:1 · $46M Series B insurance AI",
-     "url": "https://jobs.ashbyhq.com/withpace"
-    },
-    {
-     "company": "Rillet",
-     "role": "Design Engineer",
-     "salary": "$150–240K",
-     "location": "NYC / SF hybrid",
-     "status": "Submitted ✓",
-     "date": "7/23",
-     "note": "Restored 7/24 audit — Ashby confirmation 7/23 · full arc concept → shipped · AI-native design-to-code",
-     "url": "https://www.rillet.com"
-    },
-    {
-     "company": "Gumloop",
-     "role": "Design Engineer",
-     "salary": "—",
-     "location": "NYC / SF / Vancouver on-site",
-     "status": "Submitted ✓",
-     "date": "7/23",
-     "note": "Restored 7/24 audit — Ashby confirmation 7/23 · agent-legibility pitch · confirmed NYC office availability",
-     "url": "https://www.gumloop.com"
-    },
-    {
-     "company": "Vertex",
-     "role": "AI Product Engineer",
-     "salary": "$101–136K",
-     "location": "Remote US",
-     "status": "Submitted ✓",
-     "date": "7/24",
-     "note": "Was in backlog — applied via Workday · mention HN to Paul Chung if contacted · Workday confirmation 7/24 · 7/24: also emailed Paul Chung directly (paul.chung@vertexinc.com) citing HN — two touches",
-     "url": "https://www.vertexinc.com"
-    },
-    {
-     "company": "OnePay",
-     "role": "Design Engineer",
-     "salary": "$130–160K",
-     "location": "Fully remote",
-     "status": "Submitted ✓",
-     "date": "7/24",
-     "note": "React Native · Ashby confirmation 7/24",
-     "url": "https://www.onepay.com"
-    },
-    {
-     "company": "Mastra",
-     "role": "Product Engineer",
-     "salary": "—",
-     "location": "Remote worldwide",
-     "status": "Submitted ✓",
-     "date": "7/24",
-     "note": "TypeScript agent framework · Ashby confirmation 7/24 — if fit, recruiter call is next step",
-     "url": "https://mastra.ai"
-    },
-    {
-     "company": "Lumen Energy",
-     "role": "Product Engineer",
-     "salary": "—",
-     "location": "Remote",
-     "status": "Submitted ✓",
-     "date": "7/24",
-     "note": "Solar/battery climatetech · Ashby confirmation 7/24",
-     "url": "https://www.lumen.energy"
-    },
-    {
-     "company": "Span",
-     "role": "Product Engineer",
-     "salary": "$100–200K + eq",
-     "location": "Fully remote",
-     "status": "Submitted ✓",
-     "date": "7/24",
-     "note": "Ashby confirmation 7/24",
-     "url": "https://www.span.io"
-    },
-    {
-     "company": "OpenEd",
-     "role": "Product Engineer",
-     "salary": "—",
-     "location": "—",
-     "status": "Submitted ✓",
-     "date": "7/24",
-     "note": "⚠️ Backers still unverified — sanity-check before investing more · Ashby confirmation 7/24",
-     "url": "https://opened.co"
-    },
-    {
-     "company": "TrueBuilt",
-     "role": "Founding Engineer",
-     "salary": "—",
-     "location": "Remote-first",
-     "status": "Submitted",
-     "date": "7/24",
-     "note": "Pre-construction platform · no confirmation email yet",
-     "url": "https://www.truebuilt.build"
-    },
-    {
-     "company": "Hermes Web",
-     "role": "Founding Engineer",
-     "salary": "—",
-     "location": "Remote worldwide",
-     "status": "Submitted ✓",
-     "date": "7/24",
-     "note": "Open Core Ventures · Greenhouse confirmation 7/24 (as Open Core Ventures)",
-     "url": "https://opencoreventures.com"
-    },
-    {
-     "company": "Wheelhouse",
-     "role": "Full Stack Engineer",
-     "salary": "—",
-     "location": "Remote-first",
-     "status": "Submitted ✓",
-     "date": "7/24",
-     "note": "React/Next/TS + dataviz · Greenhouse confirmation 7/24",
-     "url": "https://usewheelhouse.com"
-    },
-    {
-     "company": "Colonist",
-     "role": "Product Engineer",
-     "salary": "—",
-     "location": "—",
-     "status": "Submitted ✓",
-     "date": "7/24",
-     "note": "colonist.io · Ashby confirmation 7/24",
-     "url": "https://colonist.io"
-    },
-    {
-     "company": "Onboarded",
-     "role": "Product Engineer, full-stack",
-     "salary": "—",
-     "location": "Global remote",
-     "status": "Submitted ✓",
-     "date": "7/24",
-     "note": "Applied via Lever · Lever confirmation 7/24",
-     "url": "https://www.onboarded.com"
-    },
-    {
-     "company": "Resend",
-     "role": "Product Engineer",
-     "salary": "$151–170K",
-     "location": "Fully remote",
-     "status": "Submitted ✓",
-     "date": "7/24",
-     "note": "Ashby confirmation 7/24 — \"a real human will review\"",
-     "url": "https://resend.com"
-    },
-    {
-     "company": "Hightouch",
-     "role": "—",
-     "salary": "—",
-     "location": "—",
-     "status": "Submitted ✓",
-     "date": "7/24",
-     "note": "Not on the day's list — Greenhouse confirmation 7/24 found in Gmail · role not named in receipt, fill in",
-     "url": "https://hightouch.com"
-    }
-   ]
-  },
-  {
-   "title": "DIRECT-EMAIL APPLICATIONS — 7/24 WAVE, 17 IN",
-   "rows": [
-    {
-     "company": "Yuzu",
-     "role": "Product Engineer",
-     "salary": "—",
-     "location": "—",
-     "status": "Emailed 7/24",
-     "date": "7/24",
-     "note": "HN post · hooks “Smart > Experienced” + “Most of our code is written by AI” · kev@yuzu.health OOO → re-forwarded to ryan@yuzu.health same day",
-     "url": "https://yuzu.health"
-    },
-    {
-     "company": "AIRE",
-     "role": "Founding Engineer",
-     "salary": "—",
-     "location": "—",
-     "status": "Emailed 7/24",
-     "date": "7/24",
-     "note": "recruitment@aire.xyz · consumer-product instinct + production AI + full-stack ownership pitch",
-     "url": "https://aire.xyz"
-    },
-    {
-     "company": "Mavenly",
-     "role": "Founding Full-Stack Engineer",
-     "salary": "—",
-     "location": "—",
-     "status": "Emailed 7/24",
-     "date": "7/24",
-     "note": "careers@mavenly.ai · civic software for nontechnical operators — WPCNA maps 1:1",
-     "url": "https://mavenly.ai"
-    },
-    {
-     "company": "Lantern",
-     "role": "Junior Software Engineer",
-     "salary": "—",
-     "location": "—",
-     "status": "Emailed 7/24",
-     "date": "7/24",
-     "note": "maksym@withlantern.com · HN post · “human-in-the-loop checkpoints” — the review layer I shipped in WPCNA",
-     "url": "https://withlantern.com"
-    },
-    {
-     "company": "LightSight",
-     "role": "Forward Deployed Software Engineer",
-     "salary": "—",
-     "location": "—",
-     "status": "Emailed 7/24",
-     "date": "7/24",
-     "note": "contact@lightsight.ai · HN post · co-create-with-clients / leave-them-software-they-own pitch",
-     "url": "https://lightsight.ai"
-    },
-    {
-     "company": "Pax Historia",
-     "role": "Founding Engineer (Full Stack Web)",
-     "salary": "—",
-     "location": "—",
-     "status": "Emailed 7/24",
-     "date": "7/24",
-     "note": "Emailed Eli & Ryan · open-ended systems + history + strategy + AI — Ad Arma maps 1:1, the single strongest thematic fit of the wave",
-     "url": "https://paxhistoria.co"
-    },
-    {
-     "company": "Catalyst·Wayfare",
-     "role": "AI Engineer, Agent Builder",
-     "salary": "—",
-     "location": "—",
-     "status": "Emailed 7/24",
-     "date": "7/24",
-     "note": "Six-products-since-February pitch · owns product→UX→deploy→handoff",
-     "url": "https://cwai.co"
-    },
-    {
-     "company": "Hotwash",
-     "role": "Founding Engineer",
-     "salary": "—",
-     "location": "—",
-     "status": "Emailed 7/24",
-     "date": "7/24",
-     "note": "Ross · messy time-sensitive human input → institutional memory for nontechnical users — WPCNA fit",
-     "url": "https://hotwash.com"
-    },
-    {
-     "company": "Ephanti",
-     "role": "Founding Engineer, Agentic AI",
-     "salary": "—",
-     "location": "—",
-     "status": "Emailed 7/24",
-     "date": "7/24",
-     "note": "Agents that turn conversations into completed work — the boundary I build on",
-     "url": "https://ephanti.com"
-    },
-    {
-     "company": "Cora AI",
-     "role": "Founding Full Stack / Applied AI Engineer",
-     "salary": "—",
-     "location": "—",
-     "status": "Emailed 7/24",
-     "date": "7/24",
-     "note": "MOVED FROM BACKLOG — applied 7/24 · wants Claude Code as default · agents handling execution",
-     "url": "https://cora.ai"
-    },
-    {
-     "company": "Atria",
-     "role": "Staff Software Engineer, Agentic AI",
-     "salary": "—",
-     "location": "—",
-     "status": "Emailed 7/24",
-     "date": "7/24",
-     "note": "Healthcare agentic systems — the hard part is deciding what an agent should do · autoresponder received",
-     "url": "https://atria.org"
-    },
-    {
-     "company": "Teckfinity",
-     "role": "AI / Agent Engineer",
-     "salary": "—",
-     "location": "—",
-     "status": "Emailed 7/24",
-     "date": "7/24",
-     "note": "“Agents that finish work” · one person owns a slice across product/code/deploy — a production agent workflow with real users",
-     "url": "https://teckfinity.com"
-    },
-    {
-     "company": "Riot IQ",
-     "role": "AI-native Software Engineer",
-     "salary": "—",
-     "location": "—",
-     "status": "Emailed 7/24",
-     "date": "7/24",
-     "note": "Robert · product sense, taste, ownership, fast learning — how I've approached building",
-     "url": "https://riotiq.com"
-    },
-    {
-     "company": "DearHiringManager.io",
-     "role": "Full-stack Engineer",
-     "salary": "—",
-     "location": "—",
-     "status": "Emailed 7/24",
-     "date": "7/24",
-     "note": "Lars · “living the problem it solves” · full-stack TypeScript, ships",
-     "url": "https://dearhiringmanager.io"
-    },
-    {
-     "company": "Kanary",
-     "role": "Full Stack Engineer",
-     "salary": "—",
-     "location": "—",
-     "status": "Emailed 7/24",
-     "date": "7/24",
-     "note": "Steven · web automation + AI classification + human escalation · privacy as a systems problem",
-     "url": "https://kanary.com"
-    },
-    {
-     "company": "Kadoa",
-     "role": "Senior Software Engineer",
-     "salary": "—",
-     "location": "—",
-     "status": "Emailed 7/24",
-     "date": "7/24",
-     "note": "Adrian · HN · reliable extraction from messy, changing inputs",
-     "url": "https://kadoa.com"
-    },
-    {
-     "company": "Emergences / NeoHuman",
-     "role": "AI / Systems Engineer",
-     "salary": "—",
-     "location": "—",
-     "status": "Emailed 7/24",
-     "date": "7/24",
-     "note": "Jack · HN · evaluates how people WORK with AI, not just polished outputs — my daily practice",
-     "url": "https://emergences.ai"
-    }
-   ]
-  },
-  {
-   "title": "PRE-CAMPAIGN WAVE — 7/7 EMAILS, 6 IN",
-   "rows": [
-    {
-     "company": "Scenario",
-     "role": "Creative Technologist",
-     "salary": "—",
-     "location": "—",
-     "status": "Submitted",
-     "date": "7/7",
-     "note": "Canned ack only (29s after send)",
-     "url": "https://www.scenario.com"
-    },
-    {
-     "company": "Felt",
-     "role": "Spatial tools / creative technologist",
-     "salary": "—",
-     "location": "—",
-     "status": "Submitted ✓",
-     "date": "7/7",
-     "note": "\"Application received\" auto-ack",
-     "url": "https://felt.com"
-    },
-    {
-     "company": "Lightning Labs",
-     "role": "AI Product Engineer",
-     "salary": "—",
-     "location": "—",
-     "status": "Submitted",
-     "date": "7/7",
-     "note": "No reply",
-     "url": "https://lightning.engineering"
-    },
-    {
-     "company": "Arize",
-     "role": "Open Source Design Engineer",
-     "salary": "—",
-     "location": "—",
-     "status": "Submitted",
-     "date": "7/7",
-     "note": "No reply",
-     "url": "https://arize.com"
-    },
-    {
-     "company": "USB Club / garden3d",
-     "role": "Part-time Design Engineer",
-     "salary": "—",
-     "location": "—",
-     "status": "Submitted",
-     "date": "7/7",
-     "note": "Sent to Hugh · no reply",
-     "url": "https://garden3d.net"
-    },
-    {
-     "company": "Collier.Simon",
-     "role": "Creative Technologist",
-     "salary": "—",
-     "location": "—",
-     "status": "Submitted",
-     "date": "7/7",
-     "note": "One thread (original + 2 corrections) · no reply",
-     "url": "https://colliersimon.com"
-    }
-   ]
-  },
-  {
-   "title": "NOT COUNTED YET — DRAFTS / OPENED",
-   "rows": [
-    {
-     "company": "Booko",
-     "role": "Founding Forward-Deployed Engineer",
-     "salary": "$160–220K + 0.75–2.5%",
-     "location": "Remote US / NYC 🐕",
-     "status": "DRAFT — confirm send",
-     "date": "7/22",
-     "note": "Arjun · 2-person YC W26 · counts once sent",
-     "url": "https://www.ycombinator.com/companies/booko"
-    },
-    {
-     "company": "Orange Slice",
-     "role": "Founding Engineer",
-     "salary": "$150–250K + 0.5–5%",
-     "location": "Remote US / SF",
-     "status": "Opened, not submitted",
-     "date": "7/22",
-     "note": "Vihaar · AI agent workflows · TypeScript/React",
-     "url": "https://www.orangeslice.ai"
-    },
-    {
-     "company": "Zillow",
-     "role": "—",
-     "salary": "—",
-     "location": "—",
-     "status": "Account created, not submitted",
-     "date": "7/23",
-     "note": "Workday candidate account verified 7/23 — no application receipt in Gmail · finish or drop",
-     "url": "https://www.zillow.com"
-    },
-    {
-     "company": "Lunon",
-     "role": "Founding Design Engineer",
-     "salary": "$160–200K + 0.25–1% eq",
-     "location": "Remote (SF company)",
-     "status": "STAGED — submit ready",
-     "date": "7/24",
-     "note": "Top-priority submit: no experience bar, Claude Code-native workflow, paid work trial · Ashby form fully staged 7/24 — needs Mike’s click",
-     "url": "https://lunon.ai"
-    }
-   ]
-  },
-  {
-   "title": "DIRECT-CHANNEL PIPELINE — UP NEXT (BYPASSES WAAS CAP)",
-   "rows": [
-    {
-     "company": "Applied Labs",
-     "role": "Founding Engineer",
-     "salary": "$160–300K + eq",
-     "location": "NYC in-person (200 Park Ave S)",
-     "status": "BOUNCED — re-send",
-     "date": "7/22",
-     "note": "careers@ doesn't exist — find real address/portal · Metro-North commutable",
-     "url": "https://www.appliedlabs.ai"
-    },
-    {
-     "company": "Nessie",
-     "role": "Founding Engineer",
-     "salary": "$100–150K + 0.5–1%",
-     "location": "SF in-person",
-     "status": "Queued",
-     "date": "",
-     "note": "Email founders (Anna Zhang / Tiger Wang) · strongest thesis fit",
-     "url": "https://www.workatastartup.com/companies/nessie"
-    },
-    {
-     "company": "Avora",
-     "role": "Founding Product Engineer",
-     "salary": "$120–160K + 0.5–1.5%",
-     "location": "SF in-person",
-     "status": "Queued",
-     "date": "",
-     "note": "Notion-hosted careers portal · WPCNA + artist/design story",
-     "url": "https://www.ycombinator.com/companies/avora"
-    },
-    {
-     "company": "Vendra",
-     "role": "Software Engineer, Core",
-     "salary": "$100–140K + 0.05–0.2%",
-     "location": "SF",
-     "status": "Parked",
-     "date": "",
-     "note": "No public channel — decide channel first",
-     "url": "https://www.ycombinator.com/companies/vendra"
-    },
-    {
-     "company": "Hugging Face",
-     "role": "Wild Card (fresh anchor)",
-     "salary": "—",
-     "location": "US Remote",
-     "status": "Queued — anchor",
-     "date": "",
-     "note": "Dedicated careful session — do not rush",
-     "url": "https://huggingface.co"
-    }
-   ]
-  },
-  {
-   "title": "BACKLOG — NEW FINDS, DIRECT CHANNELS",
-   "rows": [
-    {
-     "company": "Mitty",
-     "role": "First Engineer",
-     "salary": "$150K + founding eq",
-     "location": "Honolulu or Remote",
-     "status": "New find",
-     "date": "",
-     "note": "AI video · Swift + creative sensibility is the differentiator",
-     "url": ""
-    },
-    {
-     "company": "Delta AI",
-     "role": "Full Stack / AI Founding Engineer",
-     "salary": "$120–140K + 1–1.5%",
-     "location": "SF Bay (flexible)",
-     "status": "New find",
-     "date": "",
-     "note": "Team \"leans hard on Claude Code\"",
-     "url": ""
-    },
-    {
-     "company": "Sailor Health",
-     "role": "Founding Full-Stack Engineer",
-     "salary": "$150–250K",
-     "location": "NYC hybrid",
-     "status": "New find",
-     "date": "",
-     "note": "Commutable · AI-native senior mental-health platform",
-     "url": "https://jobs.ashbyhq.com/sailorhealth"
-    },
-    {
-     "company": "Flotive AI",
-     "role": "Founding Software Engineer",
-     "salary": "$150–180K + eq",
-     "location": "Jersey City / NYC",
-     "status": "New find",
-     "date": "",
-     "note": "Commutable founding seat · permitting/compliance AI",
-     "url": "https://flotive.ai"
-    },
-    {
-     "company": "InstaLILY",
-     "role": "—",
-     "salary": "—",
-     "location": "Remote unconfirmed",
-     "status": "Maybe pile",
-     "date": "",
-     "note": "Remote status still unconfirmed — waiting before applying",
-     "url": "https://instalily.ai"
-    }
-   ]
-  },
-  {
-   "title": "COLD OUTREACH — 8 SENT",
-   "rows": [
-    {
-     "company": "Spline",
-     "role": "Sculptor who builds — browser 3D",
-     "salary": "",
-     "location": "",
-     "status": "Emailed",
-     "date": "7/22",
-     "note": "Silent ~1 wk → LinkedIn DM Alejandro Leon",
-     "url": "https://spline.design"
-    },
-    {
-     "company": "Polycam",
-     "role": "Atrium is built on your scan data",
-     "salary": "",
-     "location": "",
-     "status": "Emailed",
-     "date": "7/22",
-     "note": "Silent ~1 wk → LinkedIn DM founders",
-     "url": "https://poly.cam"
-    },
-    {
-     "company": "Rive",
-     "role": "Motion as first-class material",
-     "salary": "",
-     "location": "",
-     "status": "Emailed",
-     "date": "7/22",
-     "note": "Landed in support queue — LinkedIn DM is the real follow-up",
-     "url": "https://rive.app"
-    },
-    {
-     "company": "Replit",
-     "role": "Via Itai Sigler — \"six products, one unusual path\"",
-     "salary": "",
-     "location": "",
-     "status": "Emailed",
-     "date": "7/14",
-     "note": "No reply · exec draft to Amjad queued",
-     "url": "https://replit.com"
-    },
-    {
-     "company": "Ink & Switch",
-     "role": "Local-first creative technologist",
-     "salary": "",
-     "location": "",
-     "status": "Emailed",
-     "date": "7/7",
-     "note": "No reply",
-     "url": "https://www.inkandswitch.com"
-    },
-    {
-     "company": "The Browser Company",
-     "role": "Creative technologist / AI-native builder",
-     "salary": "",
-     "location": "",
-     "status": "Emailed",
-     "date": "7/7",
-     "note": "No reply",
-     "url": "https://thebrowser.company"
-    },
-    {
-     "company": "Val Town",
-     "role": "Creative technologist portfolio",
-     "salary": "",
-     "location": "",
-     "status": "Emailed ×2",
-     "date": "7/7",
-     "note": "Accidental duplicate (counts once) · exec draft to Steve Krouse queued",
-     "url": "https://www.val.town"
-    },
-    {
-     "company": "Glif",
-     "role": "Creative technologist portfolio",
-     "salary": "",
-     "location": "",
-     "status": "Emailed",
-     "date": "7/7",
-     "note": "No reply",
-     "url": "https://glif.app"
-    },
-    {
-     "company": "Observable",
-     "role": "Builder pitch (to Clint)",
-     "salary": "",
-     "location": "",
-     "status": "BOUNCED",
-     "date": "7/14",
-     "note": "Exec draft to Paul Buffa is the live path",
-     "url": "https://observablehq.com"
-    }
-   ]
-  },
-  {
-   "title": "EXEC OUTREACH — 3 SENT 7/24, 10 DRAFTS REMAINING",
-   "rows": [
-    {
-     "company": "Replit",
-     "role": "Amjad Masad (CEO)",
-     "salary": "",
-     "location": "",
-     "status": "Emailed 7/24",
-     "date": "7/24",
-     "note": "Sent Mike's rewrite (“A few things I’ve built with AI”) · instant autoresponder from amjad@repl.it — email unmanaged, asks for text instead → X DM is the live channel",
-     "url": "https://replit.com"
-    },
-    {
-     "company": "Canva",
-     "role": "Cameron Adams (co-founder)",
-     "salary": "",
-     "location": "",
-     "status": "Emailed 7/24",
-     "date": "7/24",
-     "note": "Sent “An artist building software with AI” to 2018@themaninblue.com · reply: address DECOMMISSIONED, no longer monitored → X (@themaninblue) is the only channel",
-     "url": "https://www.canva.com"
-    },
-    {
-     "company": "Val Town",
-     "role": "Steve Krouse (CEO)",
-     "salary": "",
-     "location": "",
-     "status": "Emailed 7/24",
-     "date": "7/24",
-     "note": "Sent “Six products since February, built with Claude Code” · hooks Steve’s 33-parallel-Claude-Code-agents update · second touch after 7/7 cold email",
-     "url": "https://www.val.town"
-    },
-    {
-     "company": "Hugging Face",
-     "role": "Jeff Boudier (Product & Growth)",
-     "salary": "",
-     "location": "",
-     "status": "Draft",
-     "date": "7/13",
-     "note": "Atrium",
-     "url": "https://huggingface.co"
-    },
-    {
-     "company": "Observable",
-     "role": "Paul Buffa (Product)",
-     "salary": "",
-     "location": "",
-     "status": "Draft",
-     "date": "7/13",
-     "note": "Atrium",
-     "url": "https://observablehq.com"
-    },
-    {
-     "company": "Figma",
-     "role": "Noah Levin (VP Design)",
-     "salary": "",
-     "location": "",
-     "status": "Draft",
-     "date": "7/13",
-     "note": "X likely better than email",
-     "url": "https://www.figma.com"
-    },
-    {
-     "company": "Notion",
-     "role": "Max Schoening (Head of Product)",
-     "salary": "",
-     "location": "",
-     "status": "Draft",
-     "date": "7/13",
-     "note": "Atrium + Ad Arma",
-     "url": "https://www.notion.com"
-    },
-    {
-     "company": "GitHub",
-     "role": "Mario Rodriguez (CPO)",
-     "salary": "",
-     "location": "",
-     "status": "Draft",
-     "date": "7/13",
-     "note": "Verify address first",
-     "url": "https://github.com"
-    },
-    {
-     "company": "Vercel",
-     "role": "Guillermo Rauch (CEO)",
-     "salary": "",
-     "location": "",
-     "status": "Draft",
-     "date": "7/13",
-     "note": "X is a good parallel channel",
-     "url": "https://vercel.com"
-    },
-    {
-     "company": "Mapbox",
-     "role": "Chris Whong (DevRel)",
-     "salary": "",
-     "location": "",
-     "status": "Draft",
-     "date": "7/13",
-     "note": "Best cultural fit · WPCNA neighborhood map",
-     "url": "https://www.mapbox.com"
-    },
-    {
-     "company": "Runway",
-     "role": "Alejandro Matamala Ortiz (co-founder Labs)",
-     "salary": "",
-     "location": "",
-     "status": "Draft",
-     "date": "7/13",
-     "note": "Atrium",
-     "url": "https://runwayml.com"
-    },
-    {
-     "company": "tldraw",
-     "role": "Steve Ruiz (CEO)",
-     "salary": "",
-     "location": "",
-     "status": "Draft",
-     "date": "7/13",
-     "note": "He prefers X · Ad Arma",
-     "url": "https://tldraw.com"
-    },
-    {
-     "company": "Luma AI",
-     "role": "Verena Puhm (Dream Lab LA)",
-     "salary": "",
-     "location": "",
-     "status": "Draft",
-     "date": "7/13",
-     "note": "Atrium",
-     "url": "https://lumalabs.ai"
-    }
-   ]
-  },
-  {
-   "title": "BOUNCED (NEVER DELIVERED) + SKIPPED",
-   "rows": [
-    {
-     "company": "Sylow",
-     "role": "Design Engineer",
-     "salary": "—",
-     "location": "—",
-     "status": "Bounced 7/24",
-     "date": "7/24",
-     "note": "careers@sylow.io address not found — find real channel; “Good taste” listing is a strong fit",
-     "url": "https://sylow.io"
-    },
-    {
-     "company": "Browserbase",
-     "role": "Creative technologist",
-     "salary": "",
-     "location": "",
-     "status": "Bounced",
-     "date": "7/7",
-     "note": "Re-send if still interesting",
-     "url": "https://www.browserbase.com"
-    },
-    {
-     "company": "n8n",
-     "role": "AI workflow builder",
-     "salary": "",
-     "location": "",
-     "status": "Bounced",
-     "date": "7/7",
-     "note": "contact@ not found",
-     "url": "https://n8n.io"
-    },
-    {
-     "company": "ElevenLabs",
-     "role": "Forward Deployed Creative",
-     "salary": "",
-     "location": "",
-     "status": "Bounced",
-     "date": "7/7",
-     "note": "Real role — worth re-sending via careers portal",
-     "url": "https://elevenlabs.io"
-    },
-    {
-     "company": "Cardboard",
-     "role": "Founding Design Engineer",
-     "salary": "",
-     "location": "",
-     "status": "Skip",
-     "date": "",
-     "note": "Posting was Bengaluru, India (₹3–7.5M)",
-     "url": "https://www.usecardboard.com"
-    },
-    {
-     "company": "Respan",
-     "role": "Designer, Product & Web",
-     "salary": "",
-     "location": "",
-     "status": "Skip",
-     "date": "",
-     "note": "In-person Alameda at $100K — weak deal",
-     "url": ""
-    },
-    {
-     "company": "Structured AI",
-     "role": "Architectural Design Engineer",
-     "salary": "",
-     "location": "",
-     "status": "Skip",
-     "date": "",
-     "note": "Requires trained building architect",
-     "url": "https://www.ycombinator.com/companies/structured-ai"
-    },
-    {
-     "company": "Operon",
-     "role": "Founding FDE",
-     "salary": "",
-     "location": "",
-     "status": "Skip",
-     "date": "",
-     "note": "Requires deep computer-vision background",
-     "url": ""
-    },
-    {
-     "company": "Firecrawl",
-     "role": "Dev Rel (Docs & YouTube)",
-     "salary": "",
-     "location": "",
-     "status": "Skip",
-     "date": "",
-     "note": "Requires owned YouTube channel",
-     "url": "https://www.firecrawl.dev"
-    },
-    {
-     "company": "Retell AI",
-     "role": "Developer Community Lead",
-     "salary": "",
-     "location": "",
-     "status": "Skip",
-     "date": "",
-     "note": "Requires prior partner-program scaling",
-     "url": "https://www.retellai.com"
-    },
-    {
-     "company": "Krea / Hedra",
-     "role": "Various",
-     "salary": "",
-     "location": "",
-     "status": "Skip",
-     "date": "",
-     "note": "SF on-site only — revisit if SF appeals",
-     "url": "https://www.krea.ai"
-    },
-    {
-     "company": "Foxglove",
-     "role": "Design Engineer",
-     "salary": "",
-     "location": "",
-     "status": "Skip",
-     "date": "7/24",
-     "note": "Defense customers — hard line (removed from backlog)",
-     "url": "https://foxglove.dev"
-    },
-    {
-     "company": "DrSwarm",
-     "role": "—",
-     "salary": "",
-     "location": "",
-     "status": "Skip",
-     "date": "7/24",
-     "note": "$45–70K — below salary floor",
-     "url": "https://drswarm.com"
-    },
-    {
-     "company": "TrueShort",
-     "role": "—",
-     "salary": "",
-     "location": "",
-     "status": "Skip",
-     "date": "7/24",
-     "note": "No screening work",
-     "url": "https://trueshort.com"
-    },
-    {
-     "company": "Airx Health",
-     "role": "—",
-     "salary": "",
-     "location": "",
-     "status": "Skip",
-     "date": "7/24",
-     "note": "Django-heavy · 4-year experience requirement",
-     "url": "https://www.airxhealth.com"
-    }
-   ]
-  }
- ],
- "standing_rules": "AI-native builder roles ~$100–140K+ · remote or NYC · open to relocation · small companies preferred · NO gambling · timeline is since February 2026 — never \"two years\" · REMOTE-FIRST because of Ricky 🐕 (office only if dog-friendly or easy NYC commute) · prefers wild-card / founding-generalist roles · will trade salary for higher equity · works solo — open to a team eventually, not off the bat · WaaS weekly cap hit 7/22 (11 this week) — direct channels bypass it · No defense customers — hard line (Foxglove removed 7/24).",
- "legend": "Green = submitted/confirmed · Blue = WaaS founder message · Yellow = draft/queued/backlog · Purple = cold outreach · Red = bounced/skipped. Edit any cell freely — this sheet is the editable angle; the live site mirrors it."
+  ],
+  "standing_rules": "Deduplicate by company, role, and earliest submission date. Resends update the existing row; distinct roles at the same company remain separate."
 }

@@ -1,0 +1,60 @@
+# Keeps the published PDF in step with the ledger.
+#
+# Deliberately NOT on a timer. build_pdf.py stamps a "Generated <time>"
+# colophon and Chrome embeds its own creation date, so every build produces
+# different bytes even when the data is identical — an hourly cron would
+# commit a fresh 1.5 MB binary 24 times a day forever. Triggering on the
+# data instead means the PDF is never stale AND never churns.
+name: Rebuild published PDF
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - data.json          # the ledger itself
+      - tracker.html       # holds the glossary the PDF appendix is built from
+      - build_pdf.py       # the generator
+  workflow_dispatch:       # and a manual button, for rebuilding on demand
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rebuild-pdf
+  cancel-in-progress: true
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Locate Chrome
+        run: |
+          CHROME_BIN="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium-browser || command -v chromium)"
+          if [ -z "$CHROME_BIN" ]; then
+            echo "::error::No Chrome/Chromium on the runner — build_pdf.py needs one to paginate."
+            exit 1
+          fi
+          echo "CHROME=$CHROME_BIN" >> "$GITHUB_ENV"
+          echo "Using $CHROME_BIN"
+
+      - name: Rebuild the PDF
+        run: python3 build_pdf.py data.json tracker.html Job_Hunt_Ledger.pdf
+
+      - name: Verify it before publishing
+        run: |
+          pip install --quiet pypdf
+          python3 verify_pdf.py
+
+      - name: Commit it back, only if it actually differs
+        run: |
+          git config user.name  "job-hunt-tracker bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Job_Hunt_Ledger.pdf
+          if git diff --cached --quiet; then
+            echo "PDF unchanged — nothing to commit."
+            exit 0
+          fi
+          git commit -m "Rebuild published PDF from ${GITHUB_SHA:0:7}"
+          git push

@@ -1,0 +1,317 @@
+name: Validate ledger
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+    branches: [main]
+    paths:
+      - data.json
+      - AGENTS.md
+      - .github/workflows/validate-ledger.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-ledger-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  ledger:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Enforce data-only ledger syncs
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          mapfile -t CHANGED_FILES < <(git diff --name-only "$BASE_SHA" "$HEAD_SHA")
+          printf 'Changed file: %s\n' "${CHANGED_FILES[@]}"
+          if printf '%s\n' "${CHANGED_FILES[@]}" | grep -Fxq data.json; then
+            echo "LEDGER_SYNC=true" >> "$GITHUB_ENV"
+            if [ "${#CHANGED_FILES[@]}" -ne 1 ]; then
+              echo "::error::A ledger sync that changes data.json may not change any other file."
+              exit 1
+            fi
+          else
+            echo "LEDGER_SYNC=false" >> "$GITHUB_ENV"
+          fi
+
+      - name: Require reviewable Gmail evidence
+        if: env.LEDGER_SYNC == 'true'
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          import re
+
+          event = json.load(open(os.environ["GITHUB_EVENT_PATH"], encoding="utf-8"))
+          body = event["pull_request"].get("body") or ""
+
+          def require(condition, message):
+              if not condition:
+                  raise SystemExit(f"FAIL: {message}")
+
+          questions = re.search(
+              r"(?ims)^#{1,6}\s+Open questions\s*$\n"
+              r"(.*?)(?=^#{1,6}\s|\Z)",
+              body,
+          )
+          require(
+              questions is not None and questions.group(1).strip() == "None.",
+              "PR Open questions section must say exactly `None.`",
+          )
+          require(
+              re.search(
+                  r"(?im)^.*Gmail message[- ]id.*\b[0-9a-f]{16}\b.*$",
+                  body,
+              ),
+              "PR body needs a Gmail message-id",
+          )
+          require(
+              re.search(r"(?im)^\s*(?:[-*]\s*)?Row change\s*:", body),
+              "PR body needs a `Row change:` entry",
+          )
+          require(
+              re.search(r"(?im)^\s*(?:[-*]\s*)?Validation\s*:", body),
+              "PR body needs a `Validation:` entry",
+          )
+          require(
+              re.search(r'(?m)^>\s+\S', body)
+              or re.search(r'["“][^"\n”]{4,}["”]', body),
+              "PR body needs a quoted decisive phrase",
+          )
+          print("OK: PR body contains reviewable Gmail evidence.")
+          PY
+
+      - name: Validate data.json contract
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          python3 - <<'PY'
+          import datetime
+          import json
+          import os
+          import re
+          import subprocess
+
+          path = "data.json"
+          raw = open(path, encoding="utf-8").read()
+          data = json.loads(raw)
+          base_raw = subprocess.check_output(
+              ["git", "show", f"{os.environ['BASE_SHA']}:data.json"],
+              text=True,
+          )
+          base_data = json.loads(base_raw)
+
+          def require(condition, message):
+              if not condition:
+                  raise SystemExit(f"FAIL: {message}")
+
+          require(
+              list(data) == ["meta", "sections", "standing_rules"],
+              "top-level keys or key order changed",
+          )
+          require(
+              list(data["meta"]) == [
+                  "name",
+                  "subtitle",
+                  "updated",
+                  "scoreboard",
+                  "counting_rule",
+              ],
+              "meta keys or key order changed",
+          )
+
+          scoreboard = data["meta"]["scoreboard"]
+          require(
+              list(scoreboard) == [
+                  "applications_in",
+                  "ats_confirmations",
+                  "live_conversations",
+                  "human_replies",
+                  "rejections",
+                  "in_pipeline",
+                  "backlog",
+              ],
+              "scoreboard keys or key order changed",
+          )
+          require(
+              all(isinstance(value, int) and value >= 0 for value in scoreboard.values()),
+              "scoreboard values must be non-negative integers",
+          )
+
+          allowed_statuses = {
+              "Submitted",
+              "Submitted ✓",
+              "Rejected",
+              "Conversation",
+          }
+          expected_row_keys = [
+              "company",
+              "role",
+              "salary",
+              "location",
+              "status",
+              "date",
+              "note",
+              "url",
+          ]
+          title_pattern = re.compile(
+              r"^([A-Z]+) ([0-9]{1,2}), ([0-9]{4}) — ([0-9]+) VERIFIED$"
+          )
+
+          all_rows = []
+          section_dates = []
+          seen_company_roles = set()
+          for section in data["sections"]:
+              require(list(section) == ["title", "rows"], "section keys or key order changed")
+              match = title_pattern.fullmatch(section["title"])
+              require(match is not None, f"invalid section title: {section['title']!r}")
+              month, day, year, stated_count = match.groups()
+              section_date = datetime.datetime.strptime(
+                  f"{month} {day} {year}", "%B %d %Y"
+              ).date()
+              section_dates.append(section_date)
+              rows = section["rows"]
+              require(
+                  int(stated_count) == len(rows),
+                  f"{section['title']!r} count does not match its rows",
+              )
+              require(
+                  [row["company"] for row in rows]
+                  == sorted((row["company"] for row in rows), key=str.casefold),
+                  f"{section['title']!r} rows are not alphabetical",
+              )
+
+              expected_date = f"{section_date.month}/{section_date.day}"
+              for row in rows:
+                  require(
+                      list(row) == expected_row_keys,
+                      f"row keys or key order changed for {row.get('company', '<unknown>')}",
+                  )
+                  require(
+                      all(isinstance(row[key], str) for key in expected_row_keys),
+                      f"row values must be strings for {row['company']}",
+                  )
+                  require(row["company"].strip(), "company cannot be empty")
+                  require(
+                      row["role"].strip() not in {"", "—"},
+                      f"{row['company']} needs a descriptive role placeholder",
+                  )
+                  require(
+                      row["status"] in allowed_statuses,
+                      f"invalid status for {row['company']}: {row['status']!r}",
+                  )
+                  require(
+                      row["date"] == expected_date,
+                      f"{row['company']} date does not match {section['title']!r}",
+                  )
+                  identity = (row["company"].casefold(), row["role"].casefold())
+                  require(
+                      identity not in seen_company_roles,
+                      f"duplicate company and role: {row['company']} / {row['role']}",
+                  )
+                  seen_company_roles.add(identity)
+                  all_rows.append(row)
+
+          require(
+              section_dates == sorted(section_dates, reverse=True),
+              "sections are not newest first",
+          )
+          require(
+              scoreboard["applications_in"] == len(all_rows),
+              "applications_in does not equal row count",
+          )
+          require(
+              scoreboard["rejections"]
+              == sum(row["status"] == "Rejected" for row in all_rows),
+              "rejections does not match current rows",
+          )
+          require(
+              scoreboard["live_conversations"]
+              == sum(row["status"] == "Conversation" for row in all_rows),
+              "live_conversations does not match current rows",
+          )
+          require(
+              scoreboard["human_replies"] >= scoreboard["live_conversations"],
+              "human_replies cannot be below live_conversations",
+          )
+          require(
+              scoreboard["ats_confirmations"]
+              >= sum(row["status"] == "Submitted ✓" for row in all_rows),
+              "cumulative ATS confirmations cannot be below confirmed rows",
+          )
+          require(
+              scoreboard["ats_confirmations"] <= len(all_rows),
+              "ATS confirmations cannot exceed applications",
+          )
+          for cumulative_key in ("ats_confirmations", "human_replies"):
+              require(
+                  scoreboard[cumulative_key]
+                  >= base_data["meta"]["scoreboard"][cumulative_key],
+                  f"{cumulative_key} is cumulative and cannot decrease",
+              )
+          require(
+              isinstance(data["standing_rules"], str) and data["standing_rules"].strip(),
+              "standing_rules must be a non-empty string",
+          )
+          require(
+              isinstance(data["meta"]["counting_rule"], str)
+              and data["meta"]["counting_rule"].strip(),
+              "counting_rule must be a non-empty string",
+          )
+
+          updated = data["meta"]["updated"]
+          require(isinstance(updated, str) and updated.strip(), "meta.updated is empty")
+          require("\n" not in updated, "meta.updated must be one line")
+          require(
+              f"{len(all_rows)} verified applications" in updated,
+              "meta.updated does not state the current application count",
+          )
+          require(
+              f"{scoreboard['ats_confirmations']} ATS confirmations" in updated,
+              "meta.updated does not state the cumulative ATS count",
+          )
+
+          canonical = json.dumps(data, ensure_ascii=False, indent=2) + "\n"
+          require(raw == canonical, "data.json is not canonical 2-space UTF-8 JSON")
+          print(
+              "OK:",
+              len(all_rows),
+              "rows;",
+              scoreboard["ats_confirmations"],
+              "ATS confirmations;",
+              scoreboard["rejections"],
+              "rejections",
+          )
+          PY
+
+      - name: Locate Chrome
+        run: |
+          CHROME_BIN="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium-browser || command -v chromium)"
+          if [ -z "$CHROME_BIN" ]; then
+            echo "::error::No Chrome/Chromium available for PDF validation."
+            exit 1
+          fi
+          echo "CHROME=$CHROME_BIN" >> "$GITHUB_ENV"
+
+      - name: Build candidate PDF
+        run: |
+          mkdir -p "$RUNNER_TEMP/ledger-pdf"
+          python3 build_pdf.py \
+            data.json \
+            tracker.html \
+            "$RUNNER_TEMP/ledger-pdf/Job_Hunt_Ledger.pdf"
+
+      - name: Verify candidate PDF
+        run: |
+          python3 -m pip install --quiet pypdf
+          python3 verify_pdf.py \
+            data.json \
+            tracker.html \
+            "$RUNNER_TEMP/ledger-pdf/Job_Hunt_Ledger.pdf"

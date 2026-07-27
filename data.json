@@ -2,10 +2,10 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "July 27, 2026 — 94 verified applications · Sailor Health and Dench.com confirmed · Rillet and AIRE passed · first human reply of the campaign (Sage Recruiting)",
+    "updated": "July 27, 2026 — 98 verified applications · Bjak, Customer.io, Moment, and ResortPass confirmed · Rillet and AIRE passed · first human reply of the campaign (Sage Recruiting)",
     "scoreboard": {
-      "applications_in": 94,
-      "ats_confirmations": 39,
+      "applications_in": 98,
+      "ats_confirmations": 43,
       "live_conversations": 1,
       "human_replies": 1,
       "rejections": 3,
@@ -16,8 +16,28 @@
   },
   "sections": [
     {
-      "title": "JULY 27, 2026 — 2 VERIFIED",
+      "title": "JULY 27, 2026 — 6 VERIFIED",
       "rows": [
+        {
+          "company": "Bjak",
+          "role": "Role not stated (Ashby confirmation)",
+          "salary": "—",
+          "location": "—",
+          "status": "Submitted ✓",
+          "date": "7/27",
+          "note": "Ashby confirmation 7/27 · receipt omitted the role title; deliberately not inferred",
+          "url": "https://jobs.ashbyhq.com/bjakcareer"
+        },
+        {
+          "company": "Customer.io",
+          "role": "Senior Software Engineer, Full Stack",
+          "salary": "$150–200K",
+          "location": "Remote · Americas",
+          "status": "Submitted ✓",
+          "date": "7/27",
+          "note": "Greenhouse confirmation 7/27",
+          "url": "https://job-boards.greenhouse.io/customerio/jobs/7776591"
+        },
         {
           "company": "Dench.com",
           "role": "Founding Engineer",
@@ -27,6 +47,26 @@
           "date": "7/27",
           "note": "Applied via Work at a Startup (YC) · confirmation 7/27",
           "url": ""
+        },
+        {
+          "company": "Moment",
+          "role": "Design Engineer",
+          "salary": "$175–275K",
+          "location": "NYC · on-site 5d/wk",
+          "status": "Submitted ✓",
+          "date": "7/27",
+          "note": "Ashby confirmation 7/27",
+          "url": "https://moment.com/careers/1db991e4-9480-4847-b300-c430cc057d56"
+        },
+        {
+          "company": "ResortPass",
+          "role": "Senior Software Engineer, Frontend",
+          "salary": "$170–210K + eq",
+          "location": "Flatiron, NYC · on-site",
+          "status": "Submitted ✓",
+          "date": "7/27",
+          "note": "Greenhouse confirmation 7/27",
+          "url": "https://job-boards.greenhouse.io/resortpass/jobs/5037441007"
         },
         {
           "company": "Sailor Health",

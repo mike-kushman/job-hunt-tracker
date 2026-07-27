@@ -118,6 +118,7 @@ tr:last-child td { border-bottom: none; }
 .headline { background: var(--card); border: 1px solid var(--line); border-left: 3px solid var(--green); border-radius: 8px; padding: 14px 18px; margin-bottom: 18px; font-size: 13.5px; }
 .headline b { color: var(--green); }
 .updated { color: var(--dim); font-size: 11px; margin-top: 16px; }
+.checked { color: var(--dimmer); }
 
 /* ---------- glossary tab ---------- */
 .gloss-group { margin-bottom: 26px; }
@@ -393,9 +394,13 @@ const TABLE_HEAD = '<tr><th>Company / Role</th><th>Salary</th><th>Location</th><
 const tableFor = rows => '<div class="wrap-x"><table>' + TABLE_HEAD + rows.map(rowHTML).join('') + '</table></div>';
 
 /* ---------- tabs ---------- */
+/* survives a re-render, so an hourly refresh doesn't yank the reader back to
+   the Overview tab while they are reading the ledger */
+let selectedTab = 0;
 function wireTabs(){
   const tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
   function select(i, focus){
+    selectedTab = i;
     tabs.forEach(function(t, j){
       const on = i === j;
       t.setAttribute('aria-selected', on ? 'true' : 'false');
@@ -416,7 +421,7 @@ function wireTabs(){
       if (n !== null) { e.preventDefault(); select(n, true); }
     });
   });
-  select(0);
+  select(Math.min(selectedTab, tabs.length - 1));
 }
 
 /* ---------- render ---------- */
@@ -519,14 +524,58 @@ function render(d){
     '<div role="tabpanel" id="p-glo"  aria-labelledby="t-glo"  tabindex="0" hidden>' + glossary + '</div>' +
 
     '<div class="note-box"><b>Standing rules:</b> ' + ann(d.standing_rules) + '</div>' +
-    '<div class="updated">Last updated ' + ann(d.meta.updated) + ' · ' + ann(d.meta.counting_rule) + '</div>';
+    '<div class="updated">Last updated ' + ann(d.meta.updated) + ' · ' + ann(d.meta.counting_rule) +
+      '<br><span id="checked" class="checked"></span></div>';
 
   wireTabs();
 }
 
-fetch('data.json?cb=' + Date.now()).then(r => r.json()).then(render)
-  .catch(e => { document.getElementById('app').innerHTML =
-    '<p class="err">Could not load data.json — ' + esc(e.message) + '</p>'; });
+/* ---------- hourly refresh ----------
+   The page is a live view of data.json, so an open tab should not go stale.
+   It re-checks once an hour, re-renders only when the file actually changed,
+   and keeps the reader's tab and scroll position when it does. */
+const REFRESH_MS = 60 * 60 * 1000;
+let lastRaw = '', lastCheck = 0, refreshTimer = 0;
+
+function stampChecked(){
+  const el = document.getElementById('checked');
+  if (!el || !lastCheck) return;
+  const mins = Math.floor((Date.now() - lastCheck) / 60000);
+  el.textContent = 'Page re-checks the ledger every hour · ' +
+    (mins < 1 ? 'checked just now' : mins === 1 ? 'checked 1 minute ago' : 'checked ' + mins + ' minutes ago');
+}
+
+function load(){
+  return fetch('data.json?cb=' + Date.now(), { cache: 'no-store' })
+    .then(res => { if (!res.ok) throw new Error('HTTP ' + res.status); return res.text(); })
+    .then(raw => {
+      lastCheck = Date.now();
+      if (raw !== lastRaw) {
+        lastRaw = raw;
+        const y = window.scrollY;
+        render(JSON.parse(raw));
+        window.scrollTo(0, y);        // re-render must not move the reader
+      }
+      stampChecked();
+    })
+    .catch(e => {
+      /* a failed re-check must never blank a page that is already showing data */
+      if (!lastRaw) document.getElementById('app').innerHTML =
+        '<p class="err">Could not load data.json — ' + esc(e.message) + '</p>';
+    });
+}
+
+function scheduleRefresh(){
+  clearTimeout(refreshTimer);
+  refreshTimer = setTimeout(() => { load().then(scheduleRefresh); }, REFRESH_MS);
+}
+
+load().then(scheduleRefresh);
+setInterval(stampChecked, 60000);
+/* a backgrounded tab gets throttled, so catch up the moment it is looked at */
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden && Date.now() - lastCheck > REFRESH_MS) load();
+});
 </script>
 </body>
 </html>

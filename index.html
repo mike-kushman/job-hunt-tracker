@@ -119,6 +119,10 @@ tr:last-child td { border-bottom: none; }
 .headline b { color: var(--green); }
 .updated { color: var(--dim); font-size: 11px; margin-top: 16px; }
 .checked { color: var(--dimmer); }
+.dl { display: inline-block; margin: 2px 0 18px; font-size: 12px; font-weight: 600;
+      color: var(--blue); border-bottom: 1px solid color-mix(in srgb, var(--blue) 45%, transparent); }
+.dl:hover { border-bottom-color: var(--blue); }
+.dl .sz { color: var(--dimmer); font-weight: 500; }
 
 /* ---------- glossary tab ---------- */
 .gloss-group { margin-bottom: 26px; }
@@ -509,6 +513,8 @@ function render(d){
   document.getElementById('app').innerHTML =
     '<h1>' + esc(d.meta.name) + '</h1>' +
     '<div class="sub">' + esc(d.meta.subtitle) + '</div>' +
+    '<a class="dl" href="Job_Hunt_Ledger.pdf" target="_blank" rel="noopener">' +
+      'Download the printed ledger <span class="sz">(PDF · ' + total + ' applications, rebuilt with the data)</span></a>' +
     '<div class="tiles">' + tiles + '</div>' +
 
     '<div class="tabs" role="tablist" aria-label="Views of the ledger">' +

@@ -2,13 +2,13 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "July 27, 2026 — 98 verified applications · Bjak, Customer.io, Moment, and ResortPass confirmed · Rillet and AIRE passed · first human reply of the campaign (Sage Recruiting)",
+    "updated": "July 27, 2026 — 106 verified applications · Jukebox Health and Livefront confirmed · Colonist rejected · 45 ATS confirmations · first human reply of the campaign (Sage Recruiting)",
     "scoreboard": {
-      "applications_in": 98,
-      "ats_confirmations": 43,
+      "applications_in": 106,
+      "ats_confirmations": 45,
       "live_conversations": 1,
       "human_replies": 1,
-      "rejections": 3,
+      "rejections": 4,
       "in_pipeline": 5,
       "backlog": 4
     },
@@ -16,7 +16,7 @@
   },
   "sections": [
     {
-      "title": "JULY 27, 2026 — 6 VERIFIED",
+      "title": "JULY 27, 2026 — 14 VERIFIED",
       "rows": [
         {
           "company": "Bjak",
@@ -49,6 +49,46 @@
           "url": ""
         },
         {
+          "company": "Govstream",
+          "role": "Senior Software Engineer",
+          "salary": "$150–180K + eq",
+          "location": "Remote US · Seattle preferred",
+          "status": "Submitted",
+          "date": "7/27",
+          "note": "Direct email to chris.duranti@govstream.ai · résumé attached; no bounce",
+          "url": "https://elixirforum.com/t/senior-full-stack-engineer-govstream-ai-remote-usa-seattle/72855"
+        },
+        {
+          "company": "Jukebox Health",
+          "role": "Role not stated (Greenhouse confirmation)",
+          "salary": "—",
+          "location": "—",
+          "status": "Submitted ✓",
+          "date": "7/27",
+          "note": "Greenhouse confirmation 7/27 · receipt omitted the role title; deliberately not inferred",
+          "url": "https://job-boards.greenhouse.io/jukeboxhealth"
+        },
+        {
+          "company": "Livefront",
+          "role": "AI Solutions Engineer",
+          "salary": "$130–175K",
+          "location": "Remote USA",
+          "status": "Submitted ✓",
+          "date": "7/27",
+          "note": "Greenhouse confirmation 7/27",
+          "url": "https://job-boards.greenhouse.io/livefront/jobs/4309632009"
+        },
+        {
+          "company": "Mitty / Pineapple Hi",
+          "role": "First Engineer",
+          "salary": "$150K+ + bonus + founding eq",
+          "location": "Honolulu, HI · remote-friendly",
+          "status": "Submitted",
+          "date": "7/27",
+          "note": "Direct email to Devin@pineapplehi.com · résumé attached; no bounce",
+          "url": "https://mitty.film/careers/first-engineer.html"
+        },
+        {
           "company": "Moment",
           "role": "Design Engineer",
           "salary": "$175–275K",
@@ -77,6 +117,46 @@
           "date": "7/27",
           "note": "Ashby confirmation 7/27",
           "url": ""
+        },
+        {
+          "company": "Smartsheet",
+          "role": "Software Engineer – Frontend",
+          "salary": "$150–175K",
+          "location": "Remote US · reports to Bellevue, WA",
+          "status": "Submitted",
+          "date": "7/27",
+          "note": "Direct email to apply@smartsheet.com · Ad Code PTBS · résumé attached; no bounce",
+          "url": "https://job-boards.greenhouse.io/smartsheetjobads/jobs/8029387"
+        },
+        {
+          "company": "Symetra",
+          "role": "Role not stated (direct application email)",
+          "salary": "—",
+          "location": "—",
+          "status": "Submitted",
+          "date": "7/27",
+          "note": "Direct email to elliot.wargo@symetra.com · AI Enablement team; formal role not stated · résumé attached",
+          "url": "https://www.symetra.com/careers/"
+        },
+        {
+          "company": "WireScreen",
+          "role": "Senior Software Engineer (Frontend)",
+          "salary": "$170–220K + eq",
+          "location": "NYC · hybrid",
+          "status": "Submitted",
+          "date": "7/27",
+          "note": "Direct email to leo.green@wirescreen.ai · résumé attached; no bounce",
+          "url": "https://jobs.ashbyhq.com/wirescreen/de6daaae-eb03-4551-809d-eaae9ce35b15/"
+        },
+        {
+          "company": "WME",
+          "role": "Senior Software Engineer",
+          "salary": "$150–200K",
+          "location": "Remote · NY and select states",
+          "status": "Submitted",
+          "date": "7/27",
+          "note": "Direct email to tkuhl@wmegrp.com · résumé attached; no bounce",
+          "url": "https://wmeimg.wd1.myworkdayjobs.com/en-US/WME/job/Senior-Software-Engineer_JR28401"
         }
       ]
     },
@@ -268,9 +348,9 @@
           "role": "Product Engineer",
           "salary": "—",
           "location": "—",
-          "status": "Submitted ✓",
+          "status": "Rejected",
           "date": "7/24",
-          "note": "colonist.io · Ashby confirmation 7/24",
+          "note": "Ashby confirmation 7/24 · rejection 7/27 — 'decided to move forward with other candidates'",
           "url": "https://jobs.ashbyhq.com/colonist/109d62c4-52f3-4980-9c49-d31773818736"
         },
         {

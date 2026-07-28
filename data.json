@@ -2,13 +2,13 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "July 28, 2026 — 120 verified applications · Stacklok Software Engineer II — Platform sent by direct email · 57 ATS confirmations · 5 rejections · 1 live conversation",
+    "updated": "July 28, 2026 — 120 verified applications · Smartsheet rejected Software Engineer – Frontend in a direct human reply · 57 ATS confirmations · 2 human replies · 6 rejections · 1 live conversation",
     "scoreboard": {
       "applications_in": 120,
       "ats_confirmations": 57,
       "live_conversations": 1,
-      "human_replies": 1,
-      "rejections": 5,
+      "human_replies": 2,
+      "rejections": 6,
       "in_pipeline": 5,
       "backlog": 4
     },
@@ -258,9 +258,9 @@
           "role": "Software Engineer – Frontend",
           "salary": "$150–175K",
           "location": "Remote US · reports to Bellevue, WA",
-          "status": "Submitted",
+          "status": "Rejected",
           "date": "7/27",
-          "note": "Direct email to apply@smartsheet.com · Ad Code PTBS · résumé attached; no bounce",
+          "note": "Direct email to apply@smartsheet.com · Ad Code PTBS · Justin Naughton replied by hand 7/28 — “we will be moving forward with candidates whose profiles are closer aligned with our current hiring needs”",
           "url": "https://job-boards.greenhouse.io/smartsheetjobads/jobs/8029387"
         },
         {

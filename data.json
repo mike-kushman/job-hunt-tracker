@@ -2,9 +2,9 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "July 28, 2026 — 119 verified applications · Buildout confirmed (Senior) Software Engineer · 57 ATS confirmations · 5 rejections · 1 live conversation",
+    "updated": "July 28, 2026 — 120 verified applications · Stacklok Software Engineer II — Platform sent by direct email · 57 ATS confirmations · 5 rejections · 1 live conversation",
     "scoreboard": {
-      "applications_in": 119,
+      "applications_in": 120,
       "ats_confirmations": 57,
       "live_conversations": 1,
       "human_replies": 1,
@@ -16,7 +16,7 @@
   },
   "sections": [
     {
-      "title": "JULY 28, 2026 — 11 VERIFIED",
+      "title": "JULY 28, 2026 — 12 VERIFIED",
       "rows": [
         {
           "company": "Buildout",
@@ -107,6 +107,16 @@
           "date": "7/28",
           "note": "Ashby confirmation 7/28 · receipt explicitly names the Founding Frontend Engineer (AI-Native) role",
           "url": ""
+        },
+        {
+          "company": "Stacklok",
+          "role": "Software Engineer II — Platform",
+          "salary": "—",
+          "location": "—",
+          "status": "Submitted",
+          "date": "7/28",
+          "note": "Direct email to hello@stacklok.com · résumé attached; no bounce",
+          "url": "https://job-boards.greenhouse.io/stacklok/jobs/5193327007"
         },
         {
           "company": "Timely Schools",

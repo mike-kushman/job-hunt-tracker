@@ -2,10 +2,10 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "July 28, 2026 — 115 verified applications · Waymark confirmed Junior Software Engineer · 53 ATS confirmations · 5 rejections · 1 live conversation",
+    "updated": "July 28, 2026 — 116 verified applications · Timely Schools confirmed Product Designer · 54 ATS confirmations · 5 rejections · 1 live conversation",
     "scoreboard": {
-      "applications_in": 115,
-      "ats_confirmations": 53,
+      "applications_in": 116,
+      "ats_confirmations": 54,
       "live_conversations": 1,
       "human_replies": 1,
       "rejections": 5,
@@ -16,7 +16,7 @@
   },
   "sections": [
     {
-      "title": "JULY 28, 2026 — 7 VERIFIED",
+      "title": "JULY 28, 2026 — 8 VERIFIED",
       "rows": [
         {
           "company": "Clarium",
@@ -76,6 +76,16 @@
           "status": "Submitted ✓",
           "date": "7/28",
           "note": "Ashby confirmation 7/28 · receipt explicitly names the Founding Frontend Engineer (AI-Native) role",
+          "url": ""
+        },
+        {
+          "company": "Timely Schools",
+          "role": "Product Designer",
+          "salary": "—",
+          "location": "—",
+          "status": "Submitted ✓",
+          "date": "7/28",
+          "note": "Ashby confirmation 7/28 · receipt explicitly names the Product Designer role",
           "url": ""
         },
         {

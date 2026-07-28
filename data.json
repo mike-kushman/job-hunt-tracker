@@ -2,9 +2,9 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "July 28, 2026 — 123 verified applications · Albert direct application sent for Full Stack Software Engineer · Voltus confirmed receipt for Software Engineer · 59 ATS confirmations · 2 human replies · 6 rejections · 1 live conversation",
+    "updated": "July 28, 2026 — 124 verified applications · Ethena direct application sent for Sales Engineer · 59 ATS confirmations · 2 human replies · 6 rejections · 1 live conversation",
     "scoreboard": {
-      "applications_in": 123,
+      "applications_in": 124,
       "ats_confirmations": 59,
       "live_conversations": 1,
       "human_replies": 2,
@@ -16,7 +16,7 @@
   },
   "sections": [
     {
-      "title": "JULY 28, 2026 — 15 VERIFIED",
+      "title": "JULY 28, 2026 — 16 VERIFIED",
       "rows": [
         {
           "company": "Albert",
@@ -57,6 +57,16 @@
           "date": "7/28",
           "note": "Greenhouse confirmation 7/28 · receipt explicitly names the UX Engineer role",
           "url": ""
+        },
+        {
+          "company": "Ethena",
+          "role": "Sales Engineer",
+          "salary": "—",
+          "location": "—",
+          "status": "Submitted",
+          "date": "7/28",
+          "note": "Direct email to jobs@goethena.com · résumé attached; no bounce",
+          "url": "https://jobs.lever.co/ethena/961ebde4-46c4-44b6-b502-55fcd56d17b6"
         },
         {
           "company": "Hovercraft",

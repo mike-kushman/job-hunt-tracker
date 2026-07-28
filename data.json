@@ -2,10 +2,10 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "July 27, 2026 — 108 verified applications · Herald confirmed and TrashLab sent · 46 ATS confirmations · 4 rejections · 1 live conversation",
+    "updated": "July 28, 2026 — 110 verified applications · Maple and Skiffra confirmed · 48 ATS confirmations · 4 rejections · 1 live conversation",
     "scoreboard": {
-      "applications_in": 108,
-      "ats_confirmations": 46,
+      "applications_in": 110,
+      "ats_confirmations": 48,
       "live_conversations": 1,
       "human_replies": 1,
       "rejections": 4,
@@ -15,6 +15,31 @@
     "counting_rule": "Submitted applications and delivered live-role emails count; drafts, bounces, opened forms, research, speculative outreach, and duplicate resends do not."
   },
   "sections": [
+    {
+      "title": "JULY 28, 2026 — 2 VERIFIED",
+      "rows": [
+        {
+          "company": "Maple",
+          "role": "Design Engineer",
+          "salary": "$120–250K + equity and bonus",
+          "location": "New York City, on-site five days per week",
+          "status": "Submitted ✓",
+          "date": "7/28",
+          "note": "Ashby confirmation 7/28 · receipt explicitly names the Design Engineer role",
+          "url": ""
+        },
+        {
+          "company": "Skiffra",
+          "role": "Founding Frontend Engineer (AI-Native)",
+          "salary": "—",
+          "location": "—",
+          "status": "Submitted ✓",
+          "date": "7/28",
+          "note": "Ashby confirmation 7/28 · receipt explicitly names the Founding Frontend Engineer (AI-Native) role",
+          "url": ""
+        }
+      ]
+    },
     {
       "title": "JULY 27, 2026 — 16 VERIFIED",
       "rows": [

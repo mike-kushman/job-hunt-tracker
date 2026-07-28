@@ -2,10 +2,10 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "July 28, 2026 — 114 verified applications · Mostest confirmed Applied AI Engineer (Remote - North American Timezones) · 52 ATS confirmations · 5 rejections · 1 live conversation",
+    "updated": "July 28, 2026 — 115 verified applications · Waymark confirmed Junior Software Engineer · 53 ATS confirmations · 5 rejections · 1 live conversation",
     "scoreboard": {
-      "applications_in": 114,
-      "ats_confirmations": 52,
+      "applications_in": 115,
+      "ats_confirmations": 53,
       "live_conversations": 1,
       "human_replies": 1,
       "rejections": 5,
@@ -16,7 +16,7 @@
   },
   "sections": [
     {
-      "title": "JULY 28, 2026 — 6 VERIFIED",
+      "title": "JULY 28, 2026 — 7 VERIFIED",
       "rows": [
         {
           "company": "Clarium",
@@ -76,6 +76,16 @@
           "status": "Submitted ✓",
           "date": "7/28",
           "note": "Ashby confirmation 7/28 · receipt explicitly names the Founding Frontend Engineer (AI-Native) role",
+          "url": ""
+        },
+        {
+          "company": "Waymark",
+          "role": "Junior Software Engineer",
+          "salary": "—",
+          "location": "—",
+          "status": "Submitted ✓",
+          "date": "7/28",
+          "note": "Greenhouse confirmation 7/28 · receipt explicitly names the Junior Software Engineer role",
           "url": ""
         }
       ]

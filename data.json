@@ -2,13 +2,13 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "July 28, 2026 — 111 verified applications · Hovercraft confirmed · 49 ATS confirmations · 4 rejections · 1 live conversation",
+    "updated": "July 28, 2026 — 111 verified applications · Airtable rejected Design Technologist · 49 ATS confirmations · 5 rejections · 1 live conversation",
     "scoreboard": {
       "applications_in": 111,
       "ats_confirmations": 49,
       "live_conversations": 1,
       "human_replies": 1,
-      "rejections": 4,
+      "rejections": 5,
       "in_pipeline": 5,
       "backlog": 4
     },
@@ -798,9 +798,9 @@
           "role": "Design Technologist",
           "salary": "$224–317.2K",
           "location": "NYC / SF hybrid 2–3d/wk",
-          "status": "Submitted ✓",
+          "status": "Rejected",
           "date": "7/23",
-          "note": "Restored 7/24 audit — confirmation from jobs@airtable.com 7/23 · AI-assisted workflow answers · Worldbook as latest AI experiment",
+          "note": "Confirmation from jobs@airtable.com 7/23 · Gem rejection 7/28 — “move forward with other candidates whose experience more closely aligns with our team's needs”",
           "url": "https://www.airtable.com"
         },
         {

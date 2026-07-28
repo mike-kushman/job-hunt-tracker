@@ -2,10 +2,10 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "July 28, 2026 — 117 verified applications · Maven Clinic confirmed Product Designer, Maternity Experience · 55 ATS confirmations · 5 rejections · 1 live conversation",
+    "updated": "July 28, 2026 — 118 verified applications · OpenSesame confirmed receipt without stating the role · 56 ATS confirmations · 5 rejections · 1 live conversation",
     "scoreboard": {
-      "applications_in": 117,
-      "ats_confirmations": 55,
+      "applications_in": 118,
+      "ats_confirmations": 56,
       "live_conversations": 1,
       "human_replies": 1,
       "rejections": 5,
@@ -16,7 +16,7 @@
   },
   "sections": [
     {
-      "title": "JULY 28, 2026 — 9 VERIFIED",
+      "title": "JULY 28, 2026 — 10 VERIFIED",
       "rows": [
         {
           "company": "Clarium",
@@ -76,6 +76,16 @@
           "status": "Submitted ✓",
           "date": "7/28",
           "note": "Ashby confirmation 7/28 · receipt explicitly names the Applied AI Engineer ( Remote - North American Timezones) role",
+          "url": ""
+        },
+        {
+          "company": "OpenSesame",
+          "role": "Role not stated (OpenSesame confirmation)",
+          "salary": "—",
+          "location": "—",
+          "status": "Submitted ✓",
+          "date": "7/28",
+          "note": "Confirmation 7/28 · receipt omitted the role title; deliberately not inferred",
           "url": ""
         },
         {

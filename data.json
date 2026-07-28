@@ -2,10 +2,10 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "July 28, 2026 — 118 verified applications · OpenSesame confirmed receipt without stating the role · 56 ATS confirmations · 5 rejections · 1 live conversation",
+    "updated": "July 28, 2026 — 119 verified applications · Buildout confirmed (Senior) Software Engineer · 57 ATS confirmations · 5 rejections · 1 live conversation",
     "scoreboard": {
-      "applications_in": 118,
-      "ats_confirmations": 56,
+      "applications_in": 119,
+      "ats_confirmations": 57,
       "live_conversations": 1,
       "human_replies": 1,
       "rejections": 5,
@@ -16,8 +16,18 @@
   },
   "sections": [
     {
-      "title": "JULY 28, 2026 — 10 VERIFIED",
+      "title": "JULY 28, 2026 — 11 VERIFIED",
       "rows": [
+        {
+          "company": "Buildout",
+          "role": "(Senior) Software Engineer",
+          "salary": "—",
+          "location": "—",
+          "status": "Submitted ✓",
+          "date": "7/28",
+          "note": "Ashby confirmation 7/28 · receipt explicitly names the (Senior) Software Engineer role",
+          "url": ""
+        },
         {
           "company": "Clarium",
           "role": "AI Engineer - Data Intelligence",

@@ -2,10 +2,10 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "July 28, 2026 — 111 verified applications · Airtable rejected Design Technologist · 49 ATS confirmations · 5 rejections · 1 live conversation",
+    "updated": "July 28, 2026 — 112 verified applications · Clarium confirmed AI Engineer - Data Intelligence · 50 ATS confirmations · 5 rejections · 1 live conversation",
     "scoreboard": {
-      "applications_in": 111,
-      "ats_confirmations": 49,
+      "applications_in": 112,
+      "ats_confirmations": 50,
       "live_conversations": 1,
       "human_replies": 1,
       "rejections": 5,
@@ -16,8 +16,18 @@
   },
   "sections": [
     {
-      "title": "JULY 28, 2026 — 3 VERIFIED",
+      "title": "JULY 28, 2026 — 4 VERIFIED",
       "rows": [
+        {
+          "company": "Clarium",
+          "role": "AI Engineer - Data Intelligence",
+          "salary": "—",
+          "location": "—",
+          "status": "Submitted ✓",
+          "date": "7/28",
+          "note": "Ashby confirmation 7/28 · receipt explicitly names the AI Engineer - Data Intelligence role",
+          "url": ""
+        },
         {
           "company": "Hovercraft",
           "role": "Role not stated (Greenhouse confirmation)",

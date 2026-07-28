@@ -2,10 +2,10 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "July 28, 2026 — 112 verified applications · Clarium confirmed AI Engineer - Data Intelligence · 50 ATS confirmations · 5 rejections · 1 live conversation",
+    "updated": "July 28, 2026 — 113 verified applications · Modern Classrooms Project confirmed an application (role not stated) · 51 ATS confirmations · 5 rejections · 1 live conversation",
     "scoreboard": {
-      "applications_in": 112,
-      "ats_confirmations": 50,
+      "applications_in": 113,
+      "ats_confirmations": 51,
       "live_conversations": 1,
       "human_replies": 1,
       "rejections": 5,
@@ -16,7 +16,7 @@
   },
   "sections": [
     {
-      "title": "JULY 28, 2026 — 4 VERIFIED",
+      "title": "JULY 28, 2026 — 5 VERIFIED",
       "rows": [
         {
           "company": "Clarium",
@@ -46,6 +46,16 @@
           "status": "Submitted ✓",
           "date": "7/28",
           "note": "Ashby confirmation 7/28 · receipt explicitly names the Design Engineer role",
+          "url": ""
+        },
+        {
+          "company": "Modern Classrooms Project",
+          "role": "Role not stated (ApplyToJob confirmation)",
+          "salary": "—",
+          "location": "—",
+          "status": "Submitted ✓",
+          "date": "7/28",
+          "note": "ApplyToJob confirmation 7/28 · receipt omitted the role title; deliberately not inferred",
           "url": ""
         },
         {

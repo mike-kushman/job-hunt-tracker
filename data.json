@@ -2,10 +2,10 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "July 28, 2026 — 120 verified applications · Smartsheet rejected Software Engineer – Frontend in a direct human reply · 57 ATS confirmations · 2 human replies · 6 rejections · 1 live conversation",
+    "updated": "July 28, 2026 — 121 verified applications · Clover Health confirmed receipt for UX Engineer · 58 ATS confirmations · 2 human replies · 6 rejections · 1 live conversation",
     "scoreboard": {
-      "applications_in": 120,
-      "ats_confirmations": 57,
+      "applications_in": 121,
+      "ats_confirmations": 58,
       "live_conversations": 1,
       "human_replies": 2,
       "rejections": 6,
@@ -16,7 +16,7 @@
   },
   "sections": [
     {
-      "title": "JULY 28, 2026 — 12 VERIFIED",
+      "title": "JULY 28, 2026 — 13 VERIFIED",
       "rows": [
         {
           "company": "Buildout",
@@ -36,6 +36,16 @@
           "status": "Submitted ✓",
           "date": "7/28",
           "note": "Ashby confirmation 7/28 · receipt explicitly names the AI Engineer - Data Intelligence role",
+          "url": ""
+        },
+        {
+          "company": "Clover Health",
+          "role": "UX Engineer",
+          "salary": "—",
+          "location": "—",
+          "status": "Submitted ✓",
+          "date": "7/28",
+          "note": "Greenhouse confirmation 7/28 · receipt explicitly names the UX Engineer role",
           "url": ""
         },
         {

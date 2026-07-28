@@ -2,10 +2,10 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "July 28, 2026 — 113 verified applications · Modern Classrooms Project confirmed an application (role not stated) · 51 ATS confirmations · 5 rejections · 1 live conversation",
+    "updated": "July 28, 2026 — 114 verified applications · Mostest confirmed Applied AI Engineer (Remote - North American Timezones) · 52 ATS confirmations · 5 rejections · 1 live conversation",
     "scoreboard": {
-      "applications_in": 113,
-      "ats_confirmations": 51,
+      "applications_in": 114,
+      "ats_confirmations": 52,
       "live_conversations": 1,
       "human_replies": 1,
       "rejections": 5,
@@ -16,7 +16,7 @@
   },
   "sections": [
     {
-      "title": "JULY 28, 2026 — 5 VERIFIED",
+      "title": "JULY 28, 2026 — 6 VERIFIED",
       "rows": [
         {
           "company": "Clarium",
@@ -56,6 +56,16 @@
           "status": "Submitted ✓",
           "date": "7/28",
           "note": "ApplyToJob confirmation 7/28 · receipt omitted the role title; deliberately not inferred",
+          "url": ""
+        },
+        {
+          "company": "Mostest",
+          "role": "Applied AI Engineer ( Remote - North American Timezones)",
+          "salary": "—",
+          "location": "Remote - North American Timezones",
+          "status": "Submitted ✓",
+          "date": "7/28",
+          "note": "Ashby confirmation 7/28 · receipt explicitly names the Applied AI Engineer ( Remote - North American Timezones) role",
           "url": ""
         },
         {

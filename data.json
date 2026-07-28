@@ -2,10 +2,10 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "July 28, 2026 — 121 verified applications · Clover Health confirmed receipt for UX Engineer · 58 ATS confirmations · 2 human replies · 6 rejections · 1 live conversation",
+    "updated": "July 28, 2026 — 123 verified applications · Albert direct application sent for Full Stack Software Engineer · Voltus confirmed receipt for Software Engineer · 59 ATS confirmations · 2 human replies · 6 rejections · 1 live conversation",
     "scoreboard": {
-      "applications_in": 121,
-      "ats_confirmations": 58,
+      "applications_in": 123,
+      "ats_confirmations": 59,
       "live_conversations": 1,
       "human_replies": 2,
       "rejections": 6,
@@ -16,8 +16,18 @@
   },
   "sections": [
     {
-      "title": "JULY 28, 2026 — 13 VERIFIED",
+      "title": "JULY 28, 2026 — 15 VERIFIED",
       "rows": [
+        {
+          "company": "Albert",
+          "role": "Full Stack Software Engineer",
+          "salary": "—",
+          "location": "—",
+          "status": "Submitted",
+          "date": "7/28",
+          "note": "Direct email to hello@albert.io · résumé attached; no bounce",
+          "url": ""
+        },
         {
           "company": "Buildout",
           "role": "(Senior) Software Engineer",
@@ -136,6 +146,16 @@
           "status": "Submitted ✓",
           "date": "7/28",
           "note": "Ashby confirmation 7/28 · receipt explicitly names the Product Designer role",
+          "url": ""
+        },
+        {
+          "company": "Voltus",
+          "role": "Software Engineer",
+          "salary": "—",
+          "location": "—",
+          "status": "Submitted ✓",
+          "date": "7/28",
+          "note": "Lever confirmation 7/28 · receipt explicitly names the Software Engineer role",
           "url": ""
         },
         {

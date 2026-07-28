@@ -2,10 +2,10 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "July 28, 2026 — 110 verified applications · Maple and Skiffra confirmed · 48 ATS confirmations · 4 rejections · 1 live conversation",
+    "updated": "July 28, 2026 — 111 verified applications · Hovercraft confirmed · 49 ATS confirmations · 4 rejections · 1 live conversation",
     "scoreboard": {
-      "applications_in": 110,
-      "ats_confirmations": 48,
+      "applications_in": 111,
+      "ats_confirmations": 49,
       "live_conversations": 1,
       "human_replies": 1,
       "rejections": 4,
@@ -16,8 +16,18 @@
   },
   "sections": [
     {
-      "title": "JULY 28, 2026 — 2 VERIFIED",
+      "title": "JULY 28, 2026 — 3 VERIFIED",
       "rows": [
+        {
+          "company": "Hovercraft",
+          "role": "Role not stated (Greenhouse confirmation)",
+          "salary": "—",
+          "location": "—",
+          "status": "Submitted ✓",
+          "date": "7/28",
+          "note": "Greenhouse confirmation 7/28 · receipt omitted the role title; deliberately not inferred",
+          "url": ""
+        },
         {
           "company": "Maple",
           "role": "Design Engineer",

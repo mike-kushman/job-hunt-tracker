@@ -1,0 +1,2039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0b1017">
+<meta name="description" content="A private-by-device strategy dashboard derived from Michael Kushman's verified job-application ledger.">
+<meta property="og:title" content="Job Hunt Compass — Michael Kushman">
+<meta property="og:description" content="A morning strategy view of application balance, age, salary ranges, projects and reapplication timing.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mike-kushman.github.io/job-hunt-tracker/compass/">
+<title>Job Hunt Compass — Michael Kushman</title>
+<style>
+:root {
+  --bg: #0b1017;
+  --surface: #111923;
+  --surface-2: #16212d;
+  --surface-3: #1b2937;
+  --line: #293746;
+  --line-strong: #3d5064;
+  --text: #f2f5f7;
+  --muted: #a8b4c0;
+  --quiet: #728293;
+  --mint: #63e6be;
+  --blue: #74c0fc;
+  --gold: #ffd166;
+  --coral: #ff8f70;
+  --violet: #b197fc;
+  --rose: #ff8787;
+  --green: #69db7c;
+  --shadow: 0 18px 50px rgba(0, 0, 0, .22);
+  --radius: 18px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+button, input, select, textarea { font: inherit; }
+button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+a { color: var(--blue); }
+a:hover { color: #a5d8ff; }
+button { color: inherit; }
+
+.skip-link {
+  position: fixed;
+  left: 16px;
+  top: 12px;
+  z-index: 100;
+  transform: translateY(-150%);
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: var(--text);
+  color: var(--bg);
+  font-weight: 800;
+}
+.skip-link:focus { transform: translateY(0); }
+
+.shell {
+  width: min(1440px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 78px;
+  gap: 20px;
+  border-bottom: 1px solid var(--line);
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+.mark {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  border: 1px solid #4c6a77;
+  border-radius: 12px;
+  background: #12242a;
+  color: var(--mint);
+  font: 800 17px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.brand-name { font-size: 15px; font-weight: 800; letter-spacing: -.01em; }
+.brand-meta { color: var(--quiet); font-size: 12px; }
+.site-nav { display: flex; align-items: center; gap: 8px; }
+.site-nav a,
+.button,
+.button-quiet,
+.chip {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border-radius: 11px;
+  border: 1px solid var(--line);
+  padding: 9px 13px;
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 750;
+  font-size: 13px;
+  cursor: pointer;
+}
+.site-nav a:hover,
+.button:hover,
+.button-quiet:hover,
+.chip:hover { border-color: var(--line-strong); background: var(--surface-2); }
+.button {
+  border-color: #42675e;
+  background: #143329;
+  color: #c8f7e8;
+}
+.button:hover { background: #194438; border-color: #568779; }
+.button-quiet { background: transparent; }
+.button-danger { border-color: #78494c; background: #351d21; color: #ffb3b3; }
+.chip {
+  min-height: 34px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+.chip[aria-pressed="true"] { border-color: var(--mint); color: var(--mint); background: #132c27; }
+
+main { padding: 48px 0 70px; }
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(340px, .7fr);
+  gap: 24px;
+  align-items: stretch;
+  margin-bottom: 24px;
+}
+.hero-copy,
+.brief-card,
+.card,
+.metric {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+.hero-copy {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(28px, 5vw, 58px);
+}
+.hero-copy::after {
+  content: "";
+  position: absolute;
+  right: -80px;
+  bottom: -110px;
+  width: 280px;
+  height: 280px;
+  border: 42px solid rgba(99, 230, 190, .07);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.eyebrow {
+  margin: 0 0 14px;
+  color: var(--mint);
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+h1 {
+  max-width: 780px;
+  margin: 0;
+  font-size: clamp(38px, 6vw, 72px);
+  line-height: .98;
+  letter-spacing: -.055em;
+}
+.lede {
+  max-width: 700px;
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: clamp(16px, 2vw, 20px);
+}
+.hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+.hero-tag {
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 12px;
+  background: rgba(255,255,255,.018);
+}
+.hero-tag strong { color: var(--text); }
+
+.brief-card { padding: 24px; display: flex; flex-direction: column; }
+.brief-top { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; }
+.brief-top h2 { margin: 0; font-size: 20px; letter-spacing: -.02em; }
+.today { color: var(--quiet); font-size: 12px; text-align: right; }
+.brief-list { list-style: none; padding: 0; margin: 20px 0; display: grid; gap: 12px; }
+.brief-item {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 10px;
+  align-items: start;
+}
+.brief-num {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 9px;
+  background: var(--surface-3);
+  color: var(--mint);
+  font: 800 12px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.brief-item strong { display: block; font-size: 13px; }
+.brief-item span { color: var(--muted); font-size: 12px; }
+.brief-actions { margin-top: auto; display: flex; gap: 8px; flex-wrap: wrap; }
+
+.loading,
+.error {
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--muted);
+}
+.error { border-color: #704548; color: #ffc1c1; }
+[hidden] { display: none !important; }
+
+.section-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 34px 0 14px;
+}
+.section-head h2 { margin: 0; font-size: 22px; letter-spacing: -.025em; }
+.section-head p { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
+.section-actions { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+}
+.metric { padding: 18px; box-shadow: none; }
+.metric dt { color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.metric dd { margin: 7px 0 0; font-size: clamp(24px, 3vw, 34px); font-weight: 850; letter-spacing: -.035em; }
+.metric small { display: block; margin-top: 4px; color: var(--quiet); font-size: 11px; }
+.metric[data-tone="mint"] dd { color: var(--mint); }
+.metric[data-tone="blue"] dd { color: var(--blue); }
+.metric[data-tone="gold"] dd { color: var(--gold); }
+.metric[data-tone="coral"] dd { color: var(--coral); }
+.metric[data-tone="violet"] dd { color: var(--violet); }
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.grid-wide {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, .9fr);
+  gap: 16px;
+}
+.card { padding: 22px; box-shadow: none; min-width: 0; }
+.card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 20px; }
+.card-header h3 { margin: 0; font-size: 17px; letter-spacing: -.015em; }
+.card-header p { margin: 4px 0 0; color: var(--muted); font-size: 12px; }
+.card-kicker {
+  flex: 0 0 auto;
+  padding: 5px 8px;
+  border-radius: 8px;
+  background: var(--surface-3);
+  color: var(--quiet);
+  font: 750 11px/1.3 ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.donut-layout {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 22px;
+  align-items: center;
+}
+.donut {
+  position: relative;
+  width: 180px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: conic-gradient(var(--line) 0 100%);
+}
+.donut::after {
+  content: "";
+  position: absolute;
+  inset: 33px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+.donut-center {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+.donut-center strong { font-size: 28px; line-height: 1; }
+.donut-center span { margin-top: 5px; color: var(--quiet); font-size: 10px; text-transform: uppercase; letter-spacing: .08em; }
+.legend { display: grid; gap: 7px; }
+.legend button {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 10px minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: center;
+  min-height: 36px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  padding: 5px 7px;
+  background: transparent;
+  color: var(--muted);
+  text-align: left;
+  cursor: pointer;
+}
+.legend button:hover,
+.legend button[aria-pressed="true"] { border-color: var(--line); background: var(--surface-2); color: var(--text); }
+.swatch { width: 9px; height: 9px; border-radius: 50%; background: var(--swatch); }
+.legend .count { color: var(--text); font-weight: 800; font-variant-numeric: tabular-nums; }
+
+.bars { display: grid; gap: 11px; }
+.bar-row {
+  display: grid;
+  grid-template-columns: minmax(110px, 160px) 1fr 38px;
+  gap: 10px;
+  align-items: center;
+  font-size: 12px;
+}
+.bar-label { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bar-track { height: 12px; border-radius: 999px; background: var(--surface-3); overflow: hidden; }
+.bar-fill { height: 100%; width: var(--w); min-width: 2px; border-radius: inherit; background: var(--bar, var(--blue)); }
+.bar-value { text-align: right; font-weight: 800; font-variant-numeric: tabular-nums; }
+
+.age-grid { display: grid; gap: 12px; }
+.age-row {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 12px;
+  align-items: center;
+}
+.age-label { font: 800 12px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--muted); }
+.age-stack { display: flex; min-height: 34px; border-radius: 9px; overflow: hidden; background: var(--surface-3); }
+.age-segment {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  color: #081018;
+  font-size: 11px;
+  font-weight: 900;
+}
+.age-segment[data-status="Submitted"] { background: var(--gold); }
+.age-segment[data-status="Submitted ✓"] { background: var(--blue); }
+.age-segment[data-status="Rejected"] { background: var(--rose); }
+.age-segment[data-status="Conversation"] { background: var(--mint); }
+.age-key { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; color: var(--muted); font-size: 11px; }
+.age-key span { display: inline-flex; align-items: center; gap: 6px; }
+.age-key i { width: 8px; height: 8px; border-radius: 50%; background: var(--dot); }
+
+.salary-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.salary-stat { padding: 13px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface-2); }
+.salary-stat strong { display: block; font-size: 21px; letter-spacing: -.025em; }
+.salary-stat span { color: var(--quiet); font-size: 10px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+.coverage {
+  height: 15px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--surface-3);
+  display: flex;
+  margin: 8px 0 16px;
+}
+.coverage span:first-child { background: var(--mint); }
+.coverage span:nth-child(2) { background: var(--gold); }
+.coverage span:last-child { background: #344557; }
+.coverage-note { color: var(--muted); font-size: 12px; }
+
+.notice {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--blue);
+  border-radius: 10px;
+  background: rgba(116, 192, 252, .045);
+  color: var(--muted);
+  font-size: 12px;
+}
+.notice strong { color: var(--text); }
+.notice[data-tone="gold"] { border-left-color: var(--gold); background: rgba(255, 209, 102, .04); }
+.notice[data-tone="mint"] { border-left-color: var(--mint); background: rgba(99, 230, 190, .04); }
+
+.queue { display: grid; gap: 9px; }
+.queue-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface-2);
+}
+.queue-title { display: flex; flex-wrap: wrap; gap: 7px; align-items: center; }
+.queue-title strong { font-size: 13px; }
+.status-pill,
+.source-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 23px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 7px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 800;
+}
+.status-pill[data-status="Conversation"] { border-color: #3f7b69; color: var(--mint); }
+.status-pill[data-status="Rejected"] { border-color: #7e4e53; color: #ffabab; }
+.status-pill[data-status="Submitted ✓"] { border-color: #426783; color: #a5d8ff; }
+.status-pill[data-status="Submitted"] { border-color: #796839; color: #ffe39b; }
+.queue-role { margin-top: 3px; color: var(--muted); font-size: 12px; }
+.queue-why { margin-top: 7px; color: var(--quiet); font-size: 11px; }
+.queue-actions { display: flex; gap: 7px; align-items: center; }
+.link-button {
+  border: 0;
+  padding: 4px;
+  background: transparent;
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.link-button:hover { color: #b9e2ff; text-decoration: underline; }
+
+.empty {
+  padding: 20px;
+  border: 1px dashed var(--line-strong);
+  border-radius: 12px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 12px;
+}
+
+.project-list { display: grid; gap: 10px; }
+.project {
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface-2);
+}
+.project-top { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+.project h4 { margin: 0; font-size: 14px; }
+.project time { color: var(--quiet); font-size: 11px; }
+.project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.project-tag { padding: 4px 7px; border-radius: 7px; background: var(--surface-3); color: var(--muted); font-size: 10px; }
+.project-note { margin-top: 9px; color: var(--muted); font-size: 11px; }
+
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+table { width: 100%; min-width: 760px; border-collapse: collapse; background: var(--surface-2); }
+caption { padding: 10px 12px; color: var(--quiet); text-align: left; font-size: 11px; }
+th, td { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+th { color: var(--quiet); font-size: 10px; text-transform: uppercase; letter-spacing: .07em; }
+td { color: var(--muted); font-size: 12px; }
+tbody tr:last-child td { border-bottom: none; }
+td strong { color: var(--text); }
+
+.site-footer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 26px 0 40px;
+  border-top: 1px solid var(--line);
+  color: var(--quiet);
+  font-size: 11px;
+}
+.footer-actions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
+
+dialog {
+  width: min(720px, calc(100% - 28px));
+  max-height: min(820px, calc(100vh - 32px));
+  border: 1px solid var(--line-strong);
+  border-radius: 18px;
+  padding: 0;
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, .6);
+}
+dialog::backdrop { background: rgba(3, 7, 12, .76); backdrop-filter: blur(4px); }
+.dialog-head {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+.dialog-head h2 { margin: 0; font-size: 18px; }
+.dialog-body { padding: 20px; }
+.dialog-foot {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 14px 20px;
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+}
+.close {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+.field { display: grid; gap: 7px; margin-bottom: 15px; }
+.field label, fieldset legend { color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; }
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  padding: 10px 11px;
+  background: var(--bg);
+  color: var(--text);
+}
+.field textarea { min-height: 88px; resize: vertical; }
+.field small { color: var(--quiet); font-size: 11px; }
+fieldset { border: 0; padding: 0; margin: 0 0 17px; }
+.checks { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 9px; }
+.check {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 10px;
+  color: var(--muted);
+  background: var(--surface-2);
+  font-size: 11px;
+  cursor: pointer;
+}
+.check:has(input:checked) { border-color: var(--mint); color: var(--mint); background: #132c27; }
+.check input { width: 15px; height: 15px; margin: 0; accent-color: var(--mint); }
+.target-grid { display: grid; grid-template-columns: 1fr 100px; gap: 8px 12px; align-items: center; }
+.target-grid label { color: var(--muted); font-size: 12px; }
+.target-grid input { width: 100%; min-height: 40px; border: 1px solid var(--line); border-radius: 9px; background: var(--bg); color: var(--text); padding: 8px; }
+.dialog-note { margin: 0 0 16px; color: var(--muted); font-size: 12px; }
+.company-editor { display: grid; gap: 8px; margin-top: 14px; }
+.company-row {
+  display: grid;
+  grid-template-columns: minmax(130px, 1fr) minmax(190px, 1fr) auto;
+  gap: 8px;
+  align-items: center;
+  padding: 9px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface-2);
+}
+.company-row strong { font-size: 12px; }
+.company-row select { min-height: 39px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--text); padding: 6px; font-size: 11px; }
+.company-row .source-pill { justify-self: end; }
+
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+
+@media (max-width: 1100px) {
+  .metrics { grid-template-columns: repeat(3, 1fr); }
+  .hero { grid-template-columns: 1fr; }
+}
+@media (max-width: 820px) {
+  .grid-2, .grid-wide { grid-template-columns: 1fr; }
+  .donut-layout { grid-template-columns: 150px 1fr; }
+  .donut { width: 150px; }
+  .site-footer { flex-direction: column; }
+  .footer-actions { justify-content: flex-start; }
+}
+@media (max-width: 620px) {
+  .shell { width: min(100% - 24px, 1440px); }
+  .site-header { align-items: flex-start; padding: 16px 0; }
+  .brand-meta { display: none; }
+  .site-nav a { padding: 8px 9px; min-height: 40px; }
+  .site-nav a span { display: none; }
+  main { padding-top: 28px; }
+  .hero-copy { padding: 28px 22px; }
+  h1 { font-size: 42px; }
+  .metrics { grid-template-columns: repeat(2, 1fr); }
+  .metric { padding: 14px; }
+  .card { padding: 17px; }
+  .donut-layout { grid-template-columns: 1fr; justify-items: center; }
+  .legend { width: 100%; }
+  .bar-row { grid-template-columns: 105px 1fr 32px; }
+  .salary-stats { grid-template-columns: 1fr; }
+  .section-head { align-items: flex-start; flex-direction: column; }
+  .section-actions { justify-content: flex-start; }
+  .queue-item { grid-template-columns: 1fr; }
+  .queue-actions { justify-content: flex-start; }
+  .company-row { grid-template-columns: 1fr; }
+  .company-row .source-pill { justify-self: start; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+}
+@media (forced-colors: active) {
+  .donut, .bar-fill, .coverage span, .age-segment, .swatch, .age-key i { forced-color-adjust: none; }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to dashboard</a>
+
+<header class="shell site-header">
+  <div class="brand">
+    <div class="mark" aria-hidden="true">MK</div>
+    <div>
+      <div class="brand-name">Job Hunt Compass</div>
+      <div class="brand-meta">Strategy derived from the verified ledger</div>
+    </div>
+  </div>
+  <nav class="site-nav" aria-label="Ledger navigation">
+    <a href="../" aria-label="Open canonical job ledger">↗ <span>Ledger</span></a>
+    <a href="../Job_Hunt_Ledger.pdf" aria-label="Open canonical PDF">↓ <span>PDF</span></a>
+  </nav>
+</header>
+
+<main id="main" class="shell">
+  <section class="hero" aria-labelledby="page-title">
+    <div class="hero-copy">
+      <p class="eyebrow">Morning strategy · evidence first</p>
+      <h1 id="page-title">See the whole search. Choose the next move.</h1>
+      <p class="lede">A visual layer for balance, application age, salary ranges, projects and reapplication timing—without turning guesses into ledger facts.</p>
+      <div class="hero-tags" aria-label="Compass principles">
+        <span class="hero-tag"><strong>Live</strong> ledger data</span>
+        <span class="hero-tag"><strong>Local</strong> strategy notes</span>
+        <span class="hero-tag"><strong>Zero</strong> automatic outreach</span>
+      </div>
+    </div>
+    <aside class="brief-card" aria-labelledby="brief-title">
+      <div class="brief-top">
+        <div>
+          <p class="eyebrow">Focus now</p>
+          <h2 id="brief-title">Morning brief</h2>
+        </div>
+        <time class="today" id="today-label"></time>
+      </div>
+      <ol class="brief-list" id="morning-brief">
+        <li class="brief-item"><span class="brief-num">…</span><span>Loading the verified ledger.</span></li>
+      </ol>
+      <div class="brief-actions">
+        <button class="button" id="mark-reviewed" type="button">Mark reviewed</button>
+        <button class="button-quiet" id="open-focus-dialog" type="button">Set focus plan</button>
+      </div>
+    </aside>
+  </section>
+
+  <div class="loading" id="loading-state" role="status">Loading Compass from the canonical ledger…</div>
+  <div class="error" id="error-state" role="alert" hidden></div>
+  <div class="notice" id="storage-warning" role="status" hidden>Compass could not save to browser storage. This visit still works, but local projects and preferences may not persist.</div>
+  <div class="notice" id="data-warning" data-tone="gold" role="status" hidden></div>
+
+  <div id="app" hidden>
+    <section aria-labelledby="state-title">
+      <div class="section-head">
+        <div>
+          <h2 id="state-title">Current state</h2>
+          <p id="ledger-updated"></p>
+        </div>
+      </div>
+      <dl class="metrics" id="status-metrics"></dl>
+    </section>
+
+    <section aria-labelledby="balance-title">
+      <div class="section-head">
+        <div>
+          <h2 id="balance-title">Attention balance</h2>
+          <p>Where the applications are concentrated, with incomplete classifications shown rather than guessed.</p>
+        </div>
+        <div class="section-actions">
+          <button class="button-quiet" id="clear-industry-filter" type="button" hidden>Clear filter</button>
+          <button class="button-quiet" id="open-industry-dialog" type="button">Review industries</button>
+        </div>
+      </div>
+      <div class="grid-2">
+        <article class="card">
+          <div class="card-header">
+            <div>
+              <h3>Industry mix</h3>
+              <p>Primary company category · all applications</p>
+            </div>
+            <span class="card-kicker" id="industry-coverage"></span>
+          </div>
+          <div id="industry-chart"></div>
+          <div class="notice" data-tone="gold" id="focus-gap-note"></div>
+        </article>
+        <article class="card">
+          <div class="card-header">
+            <div>
+              <h3>Role mix</h3>
+              <p>Explicit role-title families, not inferred skills</p>
+            </div>
+            <span class="card-kicker">applications</span>
+          </div>
+          <div class="bars" id="role-chart"></div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="time-title">
+      <div class="section-head">
+        <div>
+          <h2 id="time-title">Time and compensation</h2>
+          <p>Application age is not time in status. Manual activity dates can refine the review queue.</p>
+        </div>
+      </div>
+      <div class="grid-2">
+        <article class="card">
+          <div class="card-header">
+            <div>
+              <h3>Application age by current status</h3>
+              <p>Calendar days since the verified application date</p>
+            </div>
+            <span class="card-kicker">New York time</span>
+          </div>
+          <div id="age-chart"></div>
+        </article>
+        <article class="card">
+          <div class="card-header">
+            <div>
+              <h3>Salary range landscape</h3>
+              <p>Published or quoted compensation; no currency conversion</p>
+            </div>
+            <span class="card-kicker" id="salary-coverage"></span>
+          </div>
+          <div id="salary-chart"></div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="action-title">
+      <div class="section-head">
+        <div>
+          <h2 id="action-title">Review queue</h2>
+          <p>Conservative prompts for your judgment. Compass never sends, applies, or follows up.</p>
+        </div>
+        <div class="section-actions">
+          <button class="button-quiet" id="open-activity-dialog" type="button">Log activity</button>
+        </div>
+      </div>
+      <div class="grid-wide">
+        <article class="card">
+          <div class="card-header">
+            <div>
+              <h3>Worth a look</h3>
+              <p id="queue-filter-label">Across the full ledger</p>
+            </div>
+            <span class="card-kicker" id="queue-count"></span>
+          </div>
+          <div class="queue" id="action-list"></div>
+        </article>
+        <article class="card">
+          <div class="card-header">
+            <div>
+              <h3>Reapply radar</h3>
+              <p>Your review interval, not a company promise</p>
+            </div>
+            <span class="card-kicker" id="reapply-setting"></span>
+          </div>
+          <div class="queue" id="reapply-list"></div>
+          <div class="notice" data-tone="mint">A new project can surface a match early, but it never overrides a known company policy or create an automatic application.</div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="project-title">
+      <div class="section-head">
+        <div>
+          <h2 id="project-title">Project leverage</h2>
+          <p>Log new evidence and see which closed applications share its role or industry tags.</p>
+        </div>
+        <div class="section-actions">
+          <button class="button" id="open-project-dialog" type="button">Log a project</button>
+        </div>
+      </div>
+      <article class="card">
+        <div class="project-list" id="project-list"></div>
+      </article>
+    </section>
+
+    <section aria-labelledby="explore-title">
+      <div class="section-head">
+        <div>
+          <h2 id="explore-title">Explore the evidence</h2>
+          <p>A compact strategy view. The canonical ledger remains the complete record.</p>
+        </div>
+      </div>
+      <article class="card">
+        <div class="field">
+          <label for="application-search">Search company or role</label>
+          <input id="application-search" type="search" autocomplete="off" placeholder="Try “design”, “health”, or a company name">
+        </div>
+        <div class="table-wrap" role="region" aria-label="Compass application results" tabindex="0">
+          <table>
+            <caption id="results-caption">Applications in the current Compass view</caption>
+            <thead>
+              <tr>
+                <th scope="col">Company</th>
+                <th scope="col">Role</th>
+                <th scope="col">Industry</th>
+                <th scope="col">Status</th>
+                <th scope="col">Age</th>
+                <th scope="col">Compensation</th>
+              </tr>
+            </thead>
+            <tbody id="application-results"></tbody>
+          </table>
+        </div>
+        <p class="notice" id="result-announcement" aria-live="polite"></p>
+      </article>
+    </section>
+  </div>
+</main>
+
+<footer class="shell site-footer">
+  <div>
+    <strong>Verified facts stay in the ledger.</strong><br>
+    Projects, focus targets, industry overrides, review history and activity dates stay in this browser. Clear browser storage and they are gone.
+  </div>
+  <div class="footer-actions">
+    <button class="button-quiet" id="export-local" type="button">Export local data</button>
+    <button class="button-quiet" id="import-local" type="button">Import local data</button>
+    <button class="button-quiet button-danger" id="reset-local" type="button">Reset local data</button>
+    <input id="import-file" type="file" accept="application/json" hidden>
+  </div>
+</footer>
+
+<dialog id="focus-dialog" aria-labelledby="focus-dialog-title">
+  <form method="dialog" id="focus-form">
+    <div class="dialog-head">
+      <h2 id="focus-dialog-title">Set a focus plan</h2>
+      <button class="close" value="cancel" aria-label="Close focus plan">×</button>
+    </div>
+    <div class="dialog-body">
+      <p class="dialog-note">Optional targets compare applications made in the last seven calendar days with the mix you want. Leave every field at zero to disable target recommendations.</p>
+      <div class="target-grid" id="target-inputs"></div>
+      <div class="field" style="margin-top:18px">
+        <label for="reapply-days">Reapplication review interval</label>
+        <input id="reapply-days" name="reapplyDays" type="number" min="30" max="730" step="1" inputmode="numeric">
+        <small>Compass uses this as your review date. It is not a company policy.</small>
+      </div>
+      <p class="error" id="target-error" role="alert" hidden></p>
+    </div>
+    <div class="dialog-foot">
+      <button class="button-quiet" value="cancel">Cancel</button>
+      <button class="button" value="default">Save focus plan</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="industry-dialog" aria-labelledby="industry-dialog-title">
+  <form method="dialog" id="industry-form">
+    <div class="dialog-head">
+      <h2 id="industry-dialog-title">Review company industries</h2>
+      <button class="close" value="cancel" aria-label="Close industry editor">×</button>
+    </div>
+    <div class="dialog-body">
+      <p class="dialog-note">Reviewed seeds cover only clear cases. Everything else stays Unclassified until you choose a primary industry. Overrides are company-level and local to this browser.</p>
+      <div class="field">
+        <label for="company-search">Find a company</label>
+        <input id="company-search" type="search" autocomplete="off" placeholder="Search companies">
+      </div>
+      <div class="company-editor" id="company-editor"></div>
+    </div>
+    <div class="dialog-foot">
+      <button class="button-quiet" value="cancel">Done</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="project-dialog" aria-labelledby="project-dialog-title">
+  <form method="dialog" id="project-form">
+    <div class="dialog-head">
+      <h2 id="project-dialog-title">Log a project</h2>
+      <button class="close" value="cancel" aria-label="Close project form">×</button>
+    </div>
+    <div class="dialog-body">
+      <div class="field">
+        <label for="project-name">Project name</label>
+        <input id="project-name" name="name" required maxlength="120">
+      </div>
+      <div class="field">
+        <label for="project-date">Added</label>
+        <input id="project-date" name="date" type="date" required>
+      </div>
+      <div class="field">
+        <label for="project-url">Link (optional)</label>
+        <input id="project-url" name="url" type="url" inputmode="url" placeholder="https://">
+      </div>
+      <fieldset>
+        <legend>Role evidence</legend>
+        <div class="checks" id="project-role-checks"></div>
+      </fieldset>
+      <fieldset>
+        <legend>Industry evidence</legend>
+        <div class="checks" id="project-industry-checks"></div>
+      </fieldset>
+      <div class="field">
+        <label for="project-note">What changed (optional)</label>
+        <textarea id="project-note" name="note" maxlength="500" placeholder="The capability this project now demonstrates"></textarea>
+      </div>
+    </div>
+    <div class="dialog-foot">
+      <button class="button-quiet" value="cancel">Cancel</button>
+      <button class="button" value="default">Save project</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="activity-dialog" aria-labelledby="activity-dialog-title">
+  <form method="dialog" id="activity-form">
+    <div class="dialog-head">
+      <h2 id="activity-dialog-title">Log application activity</h2>
+      <button class="close" value="cancel" aria-label="Close activity form">×</button>
+    </div>
+    <div class="dialog-body">
+      <p class="dialog-note">Use this only for your private review clock. It does not change the canonical ledger or claim a new status.</p>
+      <div class="field">
+        <label for="activity-row">Application</label>
+        <select id="activity-row" name="rowKey" required></select>
+      </div>
+      <div class="field">
+        <label for="activity-date">Last activity date</label>
+        <input id="activity-date" name="date" type="date" required>
+      </div>
+      <div class="field">
+        <label for="activity-note">Private note (optional)</label>
+        <textarea id="activity-note" name="note" maxlength="300" placeholder="Example: portfolio project added to my materials"></textarea>
+      </div>
+    </div>
+    <div class="dialog-foot">
+      <button class="button-quiet" value="cancel">Cancel</button>
+      <button class="button" value="default">Save activity</button>
+    </div>
+  </form>
+</dialog>
+
+<script>
+"use strict";
+
+const STORAGE_KEY = "job-hunt-compass:v1";
+const TIME_ZONE = "America/New_York";
+const DAY_MS = 86_400_000;
+const STATUS_ORDER = ["Conversation", "Submitted ✓", "Submitted", "Rejected"];
+const STATUS_COLORS = {
+  "Conversation": "#63e6be",
+  "Submitted ✓": "#74c0fc",
+  "Submitted": "#ffd166",
+  "Rejected": "#ff8787"
+};
+const MONTHS = Object.fromEntries(
+  "JANUARY FEBRUARY MARCH APRIL MAY JUNE JULY AUGUST SEPTEMBER OCTOBER NOVEMBER DECEMBER"
+    .split(" ")
+    .map((month, index) => [month, index + 1])
+);
+
+const INDUSTRIES = [
+  { id: "ai", label: "AI & model platforms", color: "#b197fc" },
+  { id: "devtools", label: "Developer tools, data & infrastructure", color: "#74c0fc" },
+  { id: "business", label: "Work & business software", color: "#63e6be" },
+  { id: "health", label: "Health & care", color: "#ff8f70" },
+  { id: "finance", label: "Finance, insurance & crypto", color: "#ffd166" },
+  { id: "education", label: "Education & learning", color: "#91a7ff" },
+  { id: "climate", label: "Climate & energy", color: "#69db7c" },
+  { id: "built", label: "Built world & mobility", color: "#ffa94d" },
+  { id: "commerce", label: "Commerce, travel & consumer services", color: "#f783ac" },
+  { id: "media", label: "Media, games & creative tools", color: "#da77f2" },
+  { id: "security", label: "Security, privacy & trust", color: "#4dabf7" },
+  { id: "civic", label: "Civic, legal & public sector", color: "#38d9a9" },
+  { id: "services", label: "Agencies & professional services", color: "#ffb86b" },
+  { id: "consumer", label: "Other consumer", color: "#e599f7" },
+  { id: "unclassified", label: "Unclassified", color: "#536579" }
+];
+const INDUSTRY_BY_ID = Object.fromEntries(INDUSTRIES.map(item => [item.id, item]));
+
+// Narrow reviewed seeds only. Ambiguous companies deliberately remain unclassified.
+const INDUSTRY_SEEDS = {
+  "anthropic": "ai",
+  "openai": "ai",
+  "hugging face": "ai",
+  "luma ai": "ai",
+  "runway": "ai",
+  "scenario": "ai",
+  "arize": "devtools",
+  "github": "devtools",
+  "metabase": "devtools",
+  "infisical": "security",
+  "resend": "devtools",
+  "hightouch": "devtools",
+  "mastra": "devtools",
+  "stacklok": "security",
+  "kanary": "security",
+  "secureflow": "security",
+  "airtable": "business",
+  "smartsheet": "business",
+  "customer.io": "business",
+  "ashby": "business",
+  "clover health": "health",
+  "maven clinic": "health",
+  "awell health": "health",
+  "jukebox health": "health",
+  "sailor health": "health",
+  "atria health": "health",
+  "salvohealth": "health",
+  "wildflower health": "health",
+  "bjak": "finance",
+  "symetra": "finance",
+  "ondo finance": "finance",
+  "onepay": "finance",
+  "rillet": "finance",
+  "novig": "finance",
+  "modern classrooms project": "education",
+  "opensesame": "education",
+  "timely schools": "education",
+  "prairielearn": "education",
+  "opened": "education",
+  "voltus": "climate",
+  "lumen energy": "climate",
+  "resortpass": "commerce",
+  "wme": "media",
+  "hera": "media",
+  "colonist": "media",
+  "pax historia": "media",
+  "justiguide": "civic",
+  "govstream": "civic",
+  "collier.simon": "services"
+};
+
+const ROLE_FAMILIES = [
+  "Design & creative",
+  "General software engineering",
+  "Full-stack",
+  "AI / ML",
+  "Product engineering",
+  "Solutions & implementation",
+  "Frontend",
+  "Platform & systems",
+  "Product management",
+  "Developer relations",
+  "Other / broad",
+  "Unspecified"
+];
+
+const AGE_BUCKETS = [
+  { id: "0-2", label: "0–2 days", min: 0, max: 2 },
+  { id: "3-6", label: "3–6 days", min: 3, max: 6 },
+  { id: "7-13", label: "7–13 days", min: 7, max: 13 },
+  { id: "14-29", label: "14–29 days", min: 14, max: 29 },
+  { id: "30+", label: "30+ days", min: 30, max: Infinity }
+];
+
+const DEFAULT_LOCAL = {
+  schemaVersion: 1,
+  projects: [],
+  industryOverrides: {},
+  activity: {},
+  targets: {},
+  reapplyDays: 90,
+  snapshot: null
+};
+
+const state = {
+  ledger: null,
+  rows: [],
+  local: loadLocal(),
+  industryFilter: null,
+  search: ""
+};
+
+function esc(value) {
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function safeUrl(value) {
+  try {
+    const url = new URL(String(value));
+    return ["http:", "https:"].includes(url.protocol) ? url.href : "";
+  } catch {
+    return "";
+  }
+}
+
+function normalize(value) {
+  return String(value ?? "").normalize("NFKC").trim().toLocaleLowerCase("en-US").replace(/\s+/g, " ");
+}
+
+function loadLocal() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
+    if (!parsed || parsed.schemaVersion !== 1) return structuredClone(DEFAULT_LOCAL);
+    return {
+      ...structuredClone(DEFAULT_LOCAL),
+      ...parsed,
+      projects: Array.isArray(parsed.projects) ? parsed.projects : [],
+      industryOverrides: parsed.industryOverrides && typeof parsed.industryOverrides === "object" ? parsed.industryOverrides : {},
+      activity: parsed.activity && typeof parsed.activity === "object" ? parsed.activity : {},
+      targets: parsed.targets && typeof parsed.targets === "object" ? parsed.targets : {}
+    };
+  } catch {
+    return structuredClone(DEFAULT_LOCAL);
+  }
+}
+
+function saveLocal() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state.local));
+    document.querySelector("#storage-warning")?.setAttribute("hidden", "");
+    return true;
+  } catch {
+    document.querySelector("#storage-warning")?.removeAttribute("hidden");
+    return false;
+  }
+}
+
+function dayNo(year, month, day) {
+  return Date.UTC(year, month - 1, day) / DAY_MS;
+}
+
+function applicationDate(sectionTitle, rowDate) {
+  const section = /^([A-Z]+)\s+(\d{1,2}),\s+(\d{4})\s+—/u.exec(sectionTitle);
+  const row = /^(\d{1,2})\/(\d{1,2})$/u.exec(rowDate);
+  if (!section || !row || !MONTHS[section[1]]) return { error: "Unparseable application date" };
+  const year = Number(section[3]);
+  const month = MONTHS[section[1]];
+  const day = Number(section[2]);
+  const check = new Date(Date.UTC(year, month - 1, day));
+  if (
+    check.getUTCFullYear() !== year ||
+    check.getUTCMonth() !== month - 1 ||
+    check.getUTCDate() !== day
+  ) return { error: "Invalid calendar date" };
+  if (Number(row[1]) !== month || Number(row[2]) !== day) return { error: "Row and section date mismatch" };
+  return {
+    day: dayNo(year, month, day),
+    iso: `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`
+  };
+}
+
+function todayParts(now = new Date()) {
+  return Object.fromEntries(
+    new Intl.DateTimeFormat("en-US", {
+      timeZone: TIME_ZONE,
+      year: "numeric",
+      month: "numeric",
+      day: "numeric"
+    }).formatToParts(now)
+      .filter(part => part.type !== "literal")
+      .map(part => [part.type, Number(part.value)])
+  );
+}
+
+function todayIso(now = new Date()) {
+  const parts = todayParts(now);
+  return `${parts.year}-${String(parts.month).padStart(2, "0")}-${String(parts.day).padStart(2, "0")}`;
+}
+
+function todayDay(now = new Date()) {
+  const parts = todayParts(now);
+  return dayNo(parts.year, parts.month, parts.day);
+}
+
+function isoDay(iso) {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || "");
+  if (!match) return null;
+  const year = Number(match[1]);
+  const month = Number(match[2]);
+  const date = Number(match[3]);
+  const check = new Date(Date.UTC(year, month - 1, date));
+  if (
+    check.getUTCFullYear() !== year ||
+    check.getUTCMonth() !== month - 1 ||
+    check.getUTCDate() !== date
+  ) return null;
+  const day = dayNo(year, month, date);
+  return Number.isFinite(day) ? day : null;
+}
+
+function addDaysIso(iso, days) {
+  const start = isoDay(iso);
+  if (start === null) return "";
+  return new Date((start + days) * DAY_MS).toISOString().slice(0, 10);
+}
+
+function formatDate(iso, options = {}) {
+  if (!iso) return "Unknown";
+  const [year, month, day] = iso.split("-").map(Number);
+  return new Intl.DateTimeFormat("en-US", {
+    month: options.long ? "long" : "short",
+    day: "numeric",
+    year: options.year ? "numeric" : undefined,
+    timeZone: "UTC"
+  }).format(new Date(Date.UTC(year, month - 1, day)));
+}
+
+function roleFamily(role) {
+  const text = normalize(role);
+  if (!text || text.startsWith("role not stated")) return "Unspecified";
+  if (/\b(product manager|technical product manager)\b/.test(text)) return "Product management";
+  if (/\b(developer advocate|developer relations|devrel)\b/.test(text)) return "Developer relations";
+  if (/\b(design|designer|ux|creative technologist|model designer)\b/.test(text)) return "Design & creative";
+  if (/\b(sales engineer|solutions engineer|implementation engineer|forward deployed)\b/.test(text)) return "Solutions & implementation";
+  if (/\b(ai|ml|machine learning|automation|agentic|agent builder)\b/.test(text)) return "AI / ML";
+  if (/\b(frontend|front-end|front end)\b/.test(text)) return "Frontend";
+  if (/\b(full stack|full-stack|fullstack)\b/.test(text)) return "Full-stack";
+  if (/\bproduct engineer\b/.test(text)) return "Product engineering";
+  if (/\b(platform|systems engineer)\b/.test(text)) return "Platform & systems";
+  if (/\b(software engineer|software developer|engineer|member of technical staff)\b/.test(text)) return "General software engineering";
+  if (/\btechnologist\b/.test(text)) return "Other / broad";
+  return "Other / broad";
+}
+
+function locationMode(location) {
+  const text = normalize(location);
+  if (!text || text === "—") return "Unknown";
+  if (text.includes("hybrid") || text.includes("25% office")) return "Hybrid";
+  const remote = text.includes("remote");
+  const onsite = /\b(on-site|onsite|in-person|in person|office|4d\/wk|5d\/wk|five days per week)\b/.test(text);
+  if (text.includes("remote-friendly") || (remote && onsite)) return "Flexible";
+  if (remote) return "Remote";
+  if (onsite) return "On-site";
+  return "Mode not stated";
+}
+
+function parseSalary(rawValue) {
+  const raw = String(rawValue || "").trim();
+  const flags = {
+    equity: /\b(eq|equity)\b|%/.test(raw.toLowerCase()),
+    bonus: /\bbonus\b/i.test(raw),
+    estimated: /\best\.|estimated/i.test(raw),
+    quoted: /\bquoted\b/i.test(raw),
+    competitive: /\bcompetitive\b/i.test(raw)
+  };
+  if (!raw || raw === "—") return { kind: "missing", raw, flags };
+  const match = /([$€])\s*([\d,.]+)\s*(?:[–—-]\s*([$€])?\s*([\d,.]+))?\s*([Kk])?/u.exec(raw);
+  if (!match) {
+    if (/^—/.test(raw) && flags.equity) return { kind: "equity-only", raw, flags };
+    return { kind: flags.competitive ? "qualitative" : "unparsed", raw, flags };
+  }
+  const currency = match[1];
+  let low = Number(match[2].replaceAll(",", ""));
+  let high = match[4] ? Number(match[4].replaceAll(",", "")) : null;
+  const hasK = Boolean(match[5]);
+  if (hasK) {
+    low *= 1000;
+    if (high !== null) high *= 1000;
+  } else if (low < 1000 || (high !== null && high < 1000)) {
+    return { kind: "unparsed", raw, flags };
+  }
+  const open = high === null && raw.slice(match.index + match[0].length).trimStart().startsWith("+");
+  return {
+    kind: high !== null ? "cash-range" : open ? "cash-floor" : "cash-exact",
+    raw,
+    flags,
+    currency,
+    low,
+    high,
+    midpoint: high !== null ? (low + high) / 2 : null
+  };
+}
+
+function industryForCompany(company) {
+  const key = normalize(company);
+  const override = state.local.industryOverrides[key];
+  const id = override && INDUSTRY_BY_ID[override] ? override : INDUSTRY_SEEDS[key] || "unclassified";
+  return {
+    ...INDUSTRY_BY_ID[id],
+    source: override && INDUSTRY_BY_ID[override] ? "local" : INDUSTRY_SEEDS[key] ? "reviewed" : "unclassified"
+  };
+}
+
+function flattenLedger(data) {
+  const today = todayDay();
+  const warnings = [];
+  const rows = [];
+  for (const section of data.sections || []) {
+    for (const row of section.rows || []) {
+      const parsed = applicationDate(section.title, row.date);
+      if (parsed.error) warnings.push(`${row.company}: ${parsed.error}`);
+      const age = parsed.day === undefined ? null : today - parsed.day;
+      if (Number.isInteger(age) && age < 0) warnings.push(`${row.company}: application date is in the future`);
+      const family = roleFamily(row.role);
+      const industry = industryForCompany(row.company);
+      const key = `${normalize(row.company)}::${normalize(row.role)}::${parsed.iso || row.date}`;
+      const activity = state.local.activity[key];
+      const anchorIso = activity?.date || parsed.iso || "";
+      const anchorDay = isoDay(anchorIso);
+      rows.push({
+        ...row,
+        key,
+        appliedIso: parsed.iso || "",
+        applicationAge: Number.isInteger(age) && age >= 0 ? age : null,
+        anchorIso,
+        anchorAge: anchorDay === null ? null : Math.max(0, today - anchorDay),
+        family,
+        industry,
+        locationMode: locationMode(row.location),
+        salaryParsed: parseSalary(row.salary),
+        activity: activity || null
+      });
+    }
+  }
+  return { rows, warnings };
+}
+
+function median(values) {
+  if (!values.length) return null;
+  const sorted = [...values].sort((a, b) => a - b);
+  const middle = Math.floor(sorted.length / 2);
+  return sorted.length % 2 ? sorted[middle] : (sorted[middle - 1] + sorted[middle]) / 2;
+}
+
+function countBy(items, keyFn) {
+  const counts = new Map();
+  for (const item of items) {
+    const key = keyFn(item);
+    counts.set(key, (counts.get(key) || 0) + 1);
+  }
+  return [...counts.entries()].map(([key, count]) => ({ key, count }));
+}
+
+function percent(value, total) {
+  return total ? Math.round((value / total) * 100) : 0;
+}
+
+function moneyK(value, currency = "$") {
+  if (value === null || value === undefined) return "—";
+  const amount = value / 1000;
+  return `${currency}${Number.isInteger(amount) ? amount : amount.toFixed(1)}K`;
+}
+
+function ageBucket(age) {
+  return AGE_BUCKETS.find(bucket => age >= bucket.min && age <= bucket.max)?.id || null;
+}
+
+function recommendedReview(row) {
+  if (normalize(row.company) === "novig") return { rank: 0, code: "suppressed", title: "No action flag", detail: "Standing suppression for Novig." };
+  if (!Number.isInteger(row.anchorAge)) return { rank: 85, code: "data", title: "Review date data", detail: "The application date could not be parsed." };
+  if (row.status === "Conversation") {
+    return { rank: 100, code: "conversation", title: "Review the live thread", detail: row.activity ? `${row.anchorAge} days since your recorded activity.` : "No structured last-contact date; add one if useful." };
+  }
+  if (row.status === "Rejected") return { rank: 0, code: "closed", title: "Closed", detail: "Handled in reapply radar." };
+  if (row.status === "Submitted" && row.anchorAge >= 7) {
+    return { rank: 60 + Math.min(row.anchorAge, 30), code: "review", title: "Review an optional follow-up", detail: `${row.anchorAge} days since ${row.activity ? "recorded activity" : "application"}; confirm a real contact route before acting.` };
+  }
+  if (row.status === "Submitted ✓" && row.anchorAge >= 14) {
+    return { rank: 45 + Math.min(row.anchorAge, 30), code: "quiet", title: "Quiet confirmation—review only", detail: `${row.anchorAge} days since ${row.activity ? "recorded activity" : "application"}; no follow-up is automatically due.` };
+  }
+  if (row.status === "Submitted" && row.anchorAge >= 3) {
+    return { rank: 20, code: "receipt", title: "Receipt not recorded", detail: "This is an observation, not evidence that the application failed." };
+  }
+  return { rank: 10, code: "wait", title: "Let it breathe", detail: `${row.anchorAge} days since ${row.activity ? "recorded activity" : "application"}.` };
+}
+
+function projectMatches(row) {
+  return state.local.projects.filter(project =>
+    (project.roles || []).includes(row.family) ||
+    (project.industries || []).includes(row.industry.id)
+  );
+}
+
+function snapshotDiff() {
+  const snapshot = state.local.snapshot;
+  if (!snapshot?.rows) return { hasBaseline: false, newRows: [], changed: [] };
+  const newRows = state.rows.filter(row => !snapshot.rows[row.key]);
+  const changed = state.rows
+    .filter(row => snapshot.rows[row.key] && snapshot.rows[row.key].status !== row.status)
+    .map(row => ({ row, before: snapshot.rows[row.key].status, after: row.status }));
+  return { hasBaseline: true, newRows, changed };
+}
+
+function buildBrief() {
+  const diff = snapshotDiff();
+  const items = [];
+  if (!diff.hasBaseline) {
+    items.push({ title: "Create your review baseline", detail: "Scan the page, then mark it reviewed. Future visits will show ledger changes since that point." });
+  } else if (diff.newRows.length || diff.changed.length) {
+    items.push({
+      title: `${diff.newRows.length} new · ${diff.changed.length} status change${diff.changed.length === 1 ? "" : "s"}`,
+      detail: `Since ${formatDate(state.local.snapshot.reviewedDate || state.local.snapshot.reviewedAt.slice(0, 10), { year: true })}.`
+    });
+  } else {
+    items.push({ title: "No ledger changes since your review", detail: `Baseline saved ${formatDate(state.local.snapshot.reviewedDate || state.local.snapshot.reviewedAt.slice(0, 10), { year: true })}.` });
+  }
+
+  const conversations = state.rows.filter(row => row.status === "Conversation" && normalize(row.company) !== "novig");
+  if (conversations.length) {
+    items.push({ title: `${conversations.length} open conversation${conversations.length === 1 ? "" : "s"}`, detail: conversations.map(row => row.company).join(", ") });
+  }
+
+  const queue = state.rows.map(row => ({ row, rec: recommendedReview(row) })).filter(item => item.rec.rank >= 40);
+  if (queue.length) {
+    items.push({ title: `${queue.length} applications worth reviewing`, detail: "These are prompts for judgment, not automatic follow-up tasks." });
+  }
+
+  const unclassified = new Set(state.rows.filter(row => row.industry.id === "unclassified").map(row => normalize(row.company))).size;
+  if (unclassified) {
+    items.push({ title: `${unclassified} companies still unclassified`, detail: "They remain visible and excluded from confident industry conclusions." });
+  }
+
+  return items.slice(0, 4);
+}
+
+function renderBrief() {
+  const items = buildBrief();
+  document.querySelector("#morning-brief").innerHTML = items.map((item, index) => `
+    <li class="brief-item">
+      <span class="brief-num">${index + 1}</span>
+      <div><strong>${esc(item.title)}</strong><span>${esc(item.detail)}</span></div>
+    </li>
+  `).join("");
+}
+
+function renderMetrics() {
+  const scoreboard = state.ledger.meta.scoreboard;
+  const currentConfirmed = state.rows.filter(row => row.status === "Submitted ✓").length;
+  const compText = state.rows.filter(row => row.salaryParsed.kind !== "missing").length;
+  const metrics = [
+    { label: "Applications", value: scoreboard.applications_in, note: "verified rows", tone: "mint" },
+    { label: "Submitted", value: state.rows.filter(row => row.status === "Submitted").length, note: "no receipt recorded", tone: "gold" },
+    { label: "Confirmed now", value: currentConfirmed, note: `${scoreboard.ats_confirmations} cumulative ATS`, tone: "blue" },
+    { label: "Conversation", value: scoreboard.live_conversations, note: `${scoreboard.human_replies} cumulative human replies`, tone: "violet" },
+    { label: "Rejected", value: scoreboard.rejections, note: "current closed rows", tone: "coral" },
+    { label: "Comp detail", value: compText, note: `${percent(compText, state.rows.length)}% coverage`, tone: "mint" }
+  ];
+  document.querySelector("#status-metrics").innerHTML = metrics.map(metric => `
+    <div class="metric" data-tone="${metric.tone}">
+      <dt>${esc(metric.label)}</dt>
+      <dd>${esc(metric.value)}</dd>
+      <small>${esc(metric.note)}</small>
+    </div>
+  `).join("");
+}
+
+function renderIndustry() {
+  const counts = countBy(state.rows, row => row.industry.id)
+    .map(item => ({ ...INDUSTRY_BY_ID[item.key], count: item.count }))
+    .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
+  const classified = state.rows.filter(row => row.industry.id !== "unclassified").length;
+  document.querySelector("#industry-coverage").textContent = `${classified}/${state.rows.length} classified`;
+  const total = state.rows.length;
+  let cursor = 0;
+  const stops = counts.map(item => {
+    const start = cursor;
+    cursor += (item.count / total) * 100;
+    return `${item.color} ${start.toFixed(2)}% ${cursor.toFixed(2)}%`;
+  }).join(", ");
+  document.querySelector("#industry-chart").innerHTML = `
+    <div class="donut-layout">
+      <div class="donut" style="background:conic-gradient(${stops})" role="img" aria-label="${classified} of ${total} applications have a reviewed or local industry classification">
+        <div class="donut-center"><strong>${classified}</strong><span>classified</span></div>
+      </div>
+      <div class="legend" aria-label="Filter by industry">
+        ${counts.map(item => `
+          <button type="button" data-industry-filter="${item.id}" aria-pressed="${state.industryFilter === item.id}">
+            <span class="swatch" style="--swatch:${item.color}" aria-hidden="true"></span>
+            <span>${esc(item.label)}</span>
+            <span class="count">${item.count}</span>
+          </button>
+        `).join("")}
+      </div>
+    </div>
+  `;
+
+  document.querySelectorAll("[data-industry-filter]").forEach(button => {
+    button.addEventListener("click", () => {
+      state.industryFilter = state.industryFilter === button.dataset.industryFilter ? null : button.dataset.industryFilter;
+      renderAllDynamic();
+    });
+  });
+
+  const targetEntries = INDUSTRIES
+    .filter(industry => industry.id !== "unclassified")
+    .map(industry => ({ industry, target: Number(state.local.targets[industry.id] || 0) }))
+    .filter(item => item.target > 0);
+  const note = document.querySelector("#focus-gap-note");
+  if (!targetEntries.length) {
+    note.innerHTML = "<strong>No focus plan yet.</strong> Set your own target mix before Compass calls anything over- or under-weight.";
+  } else {
+    const recent = state.rows.filter(row => Number.isInteger(row.applicationAge) && row.applicationAge <= 6 && row.industry.id !== "unclassified");
+    const recentCounts = Object.fromEntries(countBy(recent, row => row.industry.id).map(item => [item.key, item.count]));
+    const gaps = targetEntries.map(item => ({
+      ...item,
+      actual: percent(recentCounts[item.industry.id] || 0, recent.length),
+      gap: item.target - percent(recentCounts[item.industry.id] || 0, recent.length)
+    })).sort((a, b) => b.gap - a.gap);
+    const under = gaps[0];
+    note.innerHTML = `<strong>${esc(under.industry.label)} is furthest below your plan.</strong> ${under.actual}% of classified applications from the last seven calendar days versus a ${under.target}% target.`;
+  }
+}
+
+function renderRoles() {
+  const counts = countBy(state.rows, row => row.family).sort((a, b) => b.count - a.count || a.key.localeCompare(b.key));
+  const max = Math.max(...counts.map(item => item.count), 1);
+  document.querySelector("#role-chart").innerHTML = counts.map(item => `
+    <div class="bar-row">
+      <span class="bar-label" title="${esc(item.key)}">${esc(item.key)}</span>
+      <span class="bar-track" aria-hidden="true"><span class="bar-fill" style="--w:${(item.count / max) * 100}%;--bar:var(--blue)"></span></span>
+      <span class="bar-value">${item.count}</span>
+    </div>
+  `).join("");
+}
+
+function renderAge() {
+  const rows = state.rows.filter(row => Number.isInteger(row.applicationAge));
+  const matrix = AGE_BUCKETS.map(bucket => {
+    const inBucket = rows.filter(row => ageBucket(row.applicationAge) === bucket.id);
+    return {
+      ...bucket,
+      total: inBucket.length,
+      statuses: STATUS_ORDER.map(status => ({ status, count: inBucket.filter(row => row.status === status).length })).filter(item => item.count)
+    };
+  });
+  const max = Math.max(...matrix.map(item => item.total), 1);
+  document.querySelector("#age-chart").innerHTML = `
+    <div class="age-grid">
+      ${matrix.map(bucket => `
+        <div class="age-row">
+          <span class="age-label">${esc(bucket.label)}</span>
+          <div class="age-stack" aria-label="${bucket.total} applications aged ${bucket.label}">
+            ${bucket.statuses.map(item => `
+              <span class="age-segment" data-status="${esc(item.status)}" style="width:${(item.count / max) * 100}%" title="${esc(item.status)}: ${item.count}">
+                ${item.count >= 3 ? item.count : ""}
+              </span>
+            `).join("")}
+          </div>
+        </div>
+      `).join("")}
+    </div>
+    <div class="age-key">
+      ${STATUS_ORDER.map(status => `<span><i style="--dot:${STATUS_COLORS[status]}"></i>${esc(status)}</span>`).join("")}
+    </div>
+  `;
+}
+
+function renderSalary() {
+  const anyText = state.rows.filter(row => row.salaryParsed.kind !== "missing").length;
+  const cash = state.rows.filter(row => ["cash-range", "cash-floor", "cash-exact"].includes(row.salaryParsed.kind));
+  const usdClosed = cash.filter(row => row.salaryParsed.currency === "$" && row.salaryParsed.kind === "cash-range");
+  const lows = usdClosed.map(row => row.salaryParsed.low);
+  const highs = usdClosed.map(row => row.salaryParsed.high);
+  const mids = usdClosed.map(row => row.salaryParsed.midpoint);
+  const qualitative = anyText - cash.length;
+  const missing = state.rows.length - anyText;
+  document.querySelector("#salary-coverage").textContent = `${anyText}/${state.rows.length} with detail`;
+
+  const bands = [
+    { label: "Under $120K", count: usdClosed.filter(row => row.salaryParsed.midpoint < 120000).length },
+    { label: "$120–149K", count: usdClosed.filter(row => row.salaryParsed.midpoint >= 120000 && row.salaryParsed.midpoint < 150000).length },
+    { label: "$150–199K", count: usdClosed.filter(row => row.salaryParsed.midpoint >= 150000 && row.salaryParsed.midpoint < 200000).length },
+    { label: "$200K+", count: usdClosed.filter(row => row.salaryParsed.midpoint >= 200000).length }
+  ];
+  const max = Math.max(...bands.map(item => item.count), 1);
+  document.querySelector("#salary-chart").innerHTML = `
+    <div class="salary-stats">
+      <div class="salary-stat"><strong>${moneyK(median(lows))}</strong><span>median low</span></div>
+      <div class="salary-stat"><strong>${moneyK(median(mids))}</strong><span>median midpoint</span></div>
+      <div class="salary-stat"><strong>${moneyK(median(highs))}</strong><span>median high</span></div>
+    </div>
+    <div class="coverage" aria-label="${cash.length} parseable cash entries, ${qualitative} qualitative entries, ${missing} missing">
+      <span style="width:${percent(cash.length, state.rows.length)}%"></span>
+      <span style="width:${percent(qualitative, state.rows.length)}%"></span>
+      <span style="width:${percent(missing, state.rows.length)}%"></span>
+    </div>
+    <div class="bars">
+      ${bands.map(item => `
+        <div class="bar-row">
+          <span class="bar-label">${item.label}</span>
+          <span class="bar-track" aria-hidden="true"><span class="bar-fill" style="--w:${(item.count / max) * 100}%;--bar:var(--mint)"></span></span>
+          <span class="bar-value">${item.count}</span>
+        </div>
+      `).join("")}
+    </div>
+    <p class="coverage-note">${usdClosed.length} closed US-dollar ranges feed the medians and bands. ${cash.length} entries have parseable cash; ${qualitative} are qualitative/equity-only; ${missing} are missing. One euro range remains separate.</p>
+  `;
+}
+
+function filteredRows() {
+  return state.rows.filter(row => {
+    const industryMatches = !state.industryFilter || row.industry.id === state.industryFilter;
+    const searchMatches = !state.search || normalize(`${row.company} ${row.role}`).includes(normalize(state.search));
+    return industryMatches && searchMatches;
+  });
+}
+
+function renderQueue() {
+  const rows = filteredRows()
+    .map(row => ({ row, rec: recommendedReview(row) }))
+    .filter(item => item.rec.rank > 0)
+    .sort((a, b) => b.rec.rank - a.rec.rank || (b.row.anchorAge || 0) - (a.row.anchorAge || 0))
+    .slice(0, 8);
+  document.querySelector("#queue-count").textContent = `${rows.length} shown`;
+  document.querySelector("#queue-filter-label").textContent = state.industryFilter
+    ? `Filtered to ${INDUSTRY_BY_ID[state.industryFilter].label}`
+    : "Across the full ledger";
+  document.querySelector("#clear-industry-filter").hidden = !state.industryFilter;
+  const container = document.querySelector("#action-list");
+  container.innerHTML = rows.length ? rows.map(({ row, rec }) => `
+    <article class="queue-item">
+      <div>
+        <div class="queue-title">
+          <strong>${esc(row.company)}</strong>
+          <span class="status-pill" data-status="${esc(row.status)}">${esc(row.status)}</span>
+        </div>
+        <div class="queue-role">${esc(row.role)}</div>
+        <div class="queue-why"><strong>${esc(rec.title)}.</strong> ${esc(rec.detail)}</div>
+      </div>
+      <div class="queue-actions">
+        <button class="link-button" type="button" data-log-activity="${esc(row.key)}">Log activity</button>
+        ${safeUrl(row.url) ? `<a class="link-button" href="${esc(safeUrl(row.url))}" target="_blank" rel="noopener">Posting ↗</a>` : ""}
+      </div>
+    </article>
+  `).join("") : `<div class="empty">No review prompts match this view.</div>`;
+  container.querySelectorAll("[data-log-activity]").forEach(button => {
+    button.addEventListener("click", () => openActivity(button.dataset.logActivity));
+  });
+}
+
+function renderReapply() {
+  const interval = Math.max(30, Math.min(730, Number(state.local.reapplyDays) || 90));
+  document.querySelector("#reapply-setting").textContent = `${interval}-day review`;
+  const rejected = state.rows.filter(row => row.status === "Rejected" && normalize(row.company) !== "novig")
+    .map(row => {
+      const matches = projectMatches(row);
+      const reviewIso = addDaysIso(row.anchorIso || row.appliedIso, interval);
+      const reviewDay = isoDay(reviewIso);
+      const daysUntil = reviewDay === null ? null : reviewDay - todayDay();
+      return { row, matches, reviewIso, daysUntil };
+    })
+    .sort((a, b) => (a.daysUntil ?? Infinity) - (b.daysUntil ?? Infinity));
+  const container = document.querySelector("#reapply-list");
+  container.innerHTML = rejected.length ? rejected.map(item => {
+    const timing = item.daysUntil === null
+      ? "Review date unavailable"
+      : item.daysUntil <= 0
+        ? `Review window reached ${Math.abs(item.daysUntil)} day${Math.abs(item.daysUntil) === 1 ? "" : "s"} ago`
+        : `${item.daysUntil} days until ${formatDate(item.reviewIso, { year: true })}`;
+    const matchText = item.matches.length
+      ? `${item.matches.length} project match${item.matches.length === 1 ? "" : "es"}: ${item.matches.map(project => project.name).join(", ")}`
+      : "No logged project match yet";
+    return `
+      <article class="queue-item">
+        <div>
+          <div class="queue-title"><strong>${esc(item.row.company)}</strong><span class="status-pill" data-status="Rejected">Rejected</span></div>
+          <div class="queue-role">${esc(item.row.role)}</div>
+          <div class="queue-why"><strong>${esc(timing)}.</strong> ${esc(matchText)}.</div>
+        </div>
+        <div class="queue-actions"><button class="link-button" type="button" data-log-activity="${esc(item.row.key)}">Refine date</button></div>
+      </article>
+    `;
+  }).join("") : `<div class="empty">No rejected applications are available for reapplication review.</div>`;
+  container.querySelectorAll("[data-log-activity]").forEach(button => {
+    button.addEventListener("click", () => openActivity(button.dataset.logActivity));
+  });
+}
+
+function renderProjects() {
+  const container = document.querySelector("#project-list");
+  if (!state.local.projects.length) {
+    container.innerHTML = `<div class="empty">No projects logged on this device yet. Add one to connect new evidence with prior role and industry categories.</div>`;
+    return;
+  }
+  container.innerHTML = [...state.local.projects]
+    .sort((a, b) => String(b.date).localeCompare(String(a.date)))
+    .map(project => {
+      const url = safeUrl(project.url);
+      const tags = [
+        ...(project.roles || []).map(label => ({ label, type: "role" })),
+        ...(project.industries || []).map(id => ({ label: INDUSTRY_BY_ID[id]?.label || id, type: "industry" }))
+      ];
+      const matches = state.rows.filter(row => row.status === "Rejected" && (
+        (project.roles || []).includes(row.family) ||
+        (project.industries || []).includes(row.industry.id)
+      ));
+      return `
+        <article class="project">
+          <div class="project-top">
+            <div>
+              <h4>${url ? `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(project.name)}</a>` : esc(project.name)}</h4>
+              <time datetime="${esc(project.date)}">${esc(formatDate(project.date, { year: true }))}</time>
+            </div>
+            <button class="link-button" type="button" data-remove-project="${esc(project.id)}">Remove</button>
+          </div>
+          <div class="project-tags">${tags.map(tag => `<span class="project-tag">${esc(tag.label)}</span>`).join("") || `<span class="project-tag">No match tags</span>`}</div>
+          ${project.note ? `<div class="project-note">${esc(project.note)}</div>` : ""}
+          <div class="project-note">${matches.length ? `${matches.length} rejected application${matches.length === 1 ? "" : "s"} share a selected tag.` : "No rejected applications share the selected tags yet."}</div>
+        </article>
+      `;
+    }).join("");
+  container.querySelectorAll("[data-remove-project]").forEach(button => {
+    button.addEventListener("click", () => {
+      if (!confirm("Remove this project from Compass on this device?")) return;
+      state.local.projects = state.local.projects.filter(project => project.id !== button.dataset.removeProject);
+      saveLocal();
+      renderAllDynamic();
+    });
+  });
+}
+
+function renderResults() {
+  const rows = filteredRows().sort((a, b) => (a.applicationAge ?? Infinity) - (b.applicationAge ?? Infinity) || a.company.localeCompare(b.company));
+  document.querySelector("#application-results").innerHTML = rows.map(row => `
+    <tr>
+      <td><strong>${esc(row.company)}</strong></td>
+      <td>${esc(row.role)}</td>
+      <td>${esc(row.industry.label)}${row.industry.source === "local" ? ` <span class="source-pill">local</span>` : ""}</td>
+      <td><span class="status-pill" data-status="${esc(row.status)}">${esc(row.status)}</span></td>
+      <td>${Number.isInteger(row.applicationAge) ? `${row.applicationAge}d` : "—"}</td>
+      <td>${esc(row.salary)}</td>
+    </tr>
+  `).join("");
+  const filterText = state.industryFilter ? ` in ${INDUSTRY_BY_ID[state.industryFilter].label}` : "";
+  document.querySelector("#results-caption").textContent = `${rows.length} applications${filterText}`;
+  document.querySelector("#result-announcement").textContent = `${rows.length} applications shown${filterText}.`;
+}
+
+function renderAllDynamic() {
+  state.rows.forEach(row => { row.industry = industryForCompany(row.company); });
+  renderBrief();
+  renderMetrics();
+  renderIndustry();
+  renderRoles();
+  renderAge();
+  renderSalary();
+  renderQueue();
+  renderReapply();
+  renderProjects();
+  renderResults();
+}
+
+function markReviewed() {
+  state.local.snapshot = {
+    reviewedAt: new Date().toISOString(),
+    reviewedDate: todayIso(),
+    rows: Object.fromEntries(state.rows.map(row => [row.key, { status: row.status }]))
+  };
+  saveLocal();
+  renderBrief();
+}
+
+function renderTargetInputs() {
+  const container = document.querySelector("#target-inputs");
+  container.innerHTML = INDUSTRIES.filter(industry => industry.id !== "unclassified").map(industry => `
+    <label for="target-${industry.id}">${esc(industry.label)}</label>
+    <input id="target-${industry.id}" name="${industry.id}" type="number" min="0" max="100" step="1" inputmode="numeric" value="${Number(state.local.targets[industry.id] || 0)}" aria-label="${esc(industry.label)} target percentage">
+  `).join("");
+  document.querySelector("#reapply-days").value = Number(state.local.reapplyDays) || 90;
+}
+
+function renderIndustryEditor(search = "") {
+  const companies = [...new Set(state.rows.map(row => row.company))]
+    .filter(company => !search || normalize(company).includes(normalize(search)))
+    .sort((a, b) => a.localeCompare(b));
+  const options = INDUSTRIES.map(industry => `<option value="${industry.id}">${esc(industry.label)}</option>`).join("");
+  const container = document.querySelector("#company-editor");
+  container.innerHTML = companies.map(company => {
+    const key = normalize(company);
+    const effective = industryForCompany(company);
+    return `
+      <div class="company-row">
+        <strong>${esc(company)}</strong>
+        <select data-company-industry="${esc(key)}" aria-label="Primary industry for ${esc(company)}">
+          ${options}
+        </select>
+        <span class="source-pill">${effective.source === "local" ? "local override" : effective.source === "reviewed" ? "reviewed seed" : "needs review"}</span>
+      </div>
+    `;
+  }).join("");
+  container.querySelectorAll("[data-company-industry]").forEach(select => {
+    const companyKey = select.dataset.companyIndustry;
+    const company = companies.find(name => normalize(name) === companyKey);
+    select.value = industryForCompany(company).id;
+    select.addEventListener("change", () => {
+      const seed = INDUSTRY_SEEDS[companyKey] || "unclassified";
+      if (select.value === seed) delete state.local.industryOverrides[companyKey];
+      else state.local.industryOverrides[companyKey] = select.value;
+      saveLocal();
+      state.rows.forEach(row => { row.industry = industryForCompany(row.company); });
+      renderIndustryEditor(document.querySelector("#company-search").value);
+      renderAllDynamic();
+    });
+  });
+}
+
+function renderProjectChecks() {
+  document.querySelector("#project-role-checks").innerHTML = ROLE_FAMILIES.filter(role => role !== "Unspecified").map((role, index) => `
+    <label class="check"><input type="checkbox" name="roles" value="${esc(role)}"><span>${esc(role)}</span></label>
+  `).join("");
+  document.querySelector("#project-industry-checks").innerHTML = INDUSTRIES.filter(industry => industry.id !== "unclassified").map(industry => `
+    <label class="check"><input type="checkbox" name="industries" value="${industry.id}"><span>${esc(industry.label)}</span></label>
+  `).join("");
+}
+
+function renderActivityOptions() {
+  const select = document.querySelector("#activity-row");
+  select.innerHTML = [...state.rows]
+    .sort((a, b) => a.company.localeCompare(b.company) || a.role.localeCompare(b.role))
+    .map(row => `<option value="${esc(row.key)}">${esc(row.company)} — ${esc(row.role)}</option>`)
+    .join("");
+}
+
+function openActivity(rowKey = "") {
+  renderActivityOptions();
+  const dialog = document.querySelector("#activity-dialog");
+  const select = document.querySelector("#activity-row");
+  if (rowKey && state.rows.some(row => row.key === rowKey)) select.value = rowKey;
+  const existing = state.local.activity[select.value];
+  document.querySelector("#activity-date").value = existing?.date || todayIso();
+  document.querySelector("#activity-note").value = existing?.note || "";
+  dialog.showModal();
+}
+
+function wireDialogs() {
+  document.querySelector("#open-focus-dialog").addEventListener("click", () => {
+    renderTargetInputs();
+    document.querySelector("#target-error").hidden = true;
+    document.querySelector("#focus-dialog").showModal();
+  });
+  document.querySelector("#focus-form").addEventListener("submit", event => {
+    const submitter = event.submitter;
+    if (submitter?.value === "cancel") return;
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const targets = Object.fromEntries(INDUSTRIES.filter(industry => industry.id !== "unclassified").map(industry => [industry.id, Number(data.get(industry.id) || 0)]));
+    const sum = Object.values(targets).reduce((total, value) => total + value, 0);
+    const error = document.querySelector("#target-error");
+    if (sum !== 0 && sum !== 100) {
+      error.textContent = `Targets total ${sum}%. Use 100% or set every target to zero.`;
+      error.hidden = false;
+      return;
+    }
+    state.local.targets = targets;
+    state.local.reapplyDays = Math.max(30, Math.min(730, Number(data.get("reapplyDays")) || 90));
+    saveLocal();
+    document.querySelector("#focus-dialog").close();
+    renderAllDynamic();
+  });
+
+  document.querySelector("#open-industry-dialog").addEventListener("click", () => {
+    document.querySelector("#company-search").value = "";
+    renderIndustryEditor();
+    document.querySelector("#industry-dialog").showModal();
+  });
+  document.querySelector("#company-search").addEventListener("input", event => renderIndustryEditor(event.target.value));
+
+  document.querySelector("#open-project-dialog").addEventListener("click", () => {
+    document.querySelector("#project-form").reset();
+    document.querySelector("#project-date").value = todayIso();
+    document.querySelector("#project-dialog").showModal();
+  });
+  document.querySelector("#project-form").addEventListener("submit", event => {
+    if (event.submitter?.value === "cancel") return;
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const name = String(data.get("name") || "").trim();
+    const date = String(data.get("date") || "");
+    if (!name || isoDay(date) === null) return;
+    state.local.projects.push({
+      id: crypto.randomUUID(),
+      name,
+      date,
+      url: safeUrl(data.get("url")) || "",
+      roles: data.getAll("roles").filter(role => ROLE_FAMILIES.includes(role)),
+      industries: data.getAll("industries").filter(id => INDUSTRY_BY_ID[id] && id !== "unclassified"),
+      note: String(data.get("note") || "").trim()
+    });
+    saveLocal();
+    document.querySelector("#project-dialog").close();
+    renderAllDynamic();
+  });
+
+  document.querySelector("#open-activity-dialog").addEventListener("click", () => openActivity());
+  document.querySelector("#activity-row").addEventListener("change", event => {
+    const existing = state.local.activity[event.target.value];
+    document.querySelector("#activity-date").value = existing?.date || todayIso();
+    document.querySelector("#activity-note").value = existing?.note || "";
+  });
+  document.querySelector("#activity-form").addEventListener("submit", event => {
+    if (event.submitter?.value === "cancel") return;
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const rowKey = String(data.get("rowKey") || "");
+    const date = String(data.get("date") || "");
+    if (!state.rows.some(row => row.key === rowKey) || isoDay(date) === null) return;
+    state.local.activity[rowKey] = { date, note: String(data.get("note") || "").trim() };
+    saveLocal();
+    const flattened = flattenLedger(state.ledger);
+    state.rows = flattened.rows;
+    document.querySelector("#activity-dialog").close();
+    renderAllDynamic();
+  });
+}
+
+function wireLocalData() {
+  document.querySelector("#export-local").addEventListener("click", () => {
+    const blob = new Blob([JSON.stringify(state.local, null, 2)], { type: "application/json" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = `job-hunt-compass-${todayIso()}.json`;
+    link.click();
+    URL.revokeObjectURL(link.href);
+  });
+  document.querySelector("#import-local").addEventListener("click", () => document.querySelector("#import-file").click());
+  document.querySelector("#import-file").addEventListener("change", async event => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+    try {
+      const parsed = JSON.parse(await file.text());
+      if (parsed.schemaVersion !== 1 || !Array.isArray(parsed.projects)) throw new Error("Unsupported Compass export");
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(parsed));
+      state.local = loadLocal();
+      const flattened = flattenLedger(state.ledger);
+      state.rows = flattened.rows;
+      renderAllDynamic();
+    } catch (error) {
+      alert(`Could not import this Compass file: ${error.message}`);
+    } finally {
+      event.target.value = "";
+    }
+  });
+  document.querySelector("#reset-local").addEventListener("click", () => {
+    if (!confirm("Reset every project, focus target, industry override, activity date and review baseline saved by Compass in this browser?")) return;
+    localStorage.removeItem(STORAGE_KEY);
+    state.local = structuredClone(DEFAULT_LOCAL);
+    const flattened = flattenLedger(state.ledger);
+    state.rows = flattened.rows;
+    renderAllDynamic();
+  });
+}
+
+async function init() {
+  document.querySelector("#today-label").textContent = new Intl.DateTimeFormat("en-US", {
+    weekday: "long",
+    month: "short",
+    day: "numeric",
+    timeZone: TIME_ZONE
+  }).format(new Date());
+  wireDialogs();
+  wireLocalData();
+  renderProjectChecks();
+  document.querySelector("#mark-reviewed").addEventListener("click", markReviewed);
+  document.querySelector("#clear-industry-filter").addEventListener("click", () => {
+    state.industryFilter = null;
+    renderAllDynamic();
+  });
+  document.querySelector("#application-search").addEventListener("input", event => {
+    state.search = event.target.value;
+    renderResults();
+  });
+  window.addEventListener("storage", event => {
+    if (event.key !== STORAGE_KEY) return;
+    state.local = loadLocal();
+    const flattened = flattenLedger(state.ledger);
+    state.rows = flattened.rows;
+    renderAllDynamic();
+  });
+
+  try {
+    const response = await fetch(`../data.json?cb=${Date.now()}`, { cache: "no-store" });
+    if (!response.ok) throw new Error(`Ledger returned HTTP ${response.status}`);
+    state.ledger = await response.json();
+    const flattened = flattenLedger(state.ledger);
+    state.rows = flattened.rows;
+    if (state.rows.length !== state.ledger.meta.scoreboard.applications_in) {
+      throw new Error(`Ledger row count ${state.rows.length} does not match scoreboard ${state.ledger.meta.scoreboard.applications_in}`);
+    }
+    document.body.dataset.dataWarnings = String(flattened.warnings.length);
+    if (flattened.warnings.length) {
+      const warning = document.querySelector("#data-warning");
+      warning.hidden = false;
+      warning.textContent = `${flattened.warnings.length} application date${flattened.warnings.length === 1 ? "" : "s"} could not be used in time views. The affected rows remain visible.`;
+    }
+    document.querySelector("#ledger-updated").textContent = state.ledger.meta.updated;
+    document.querySelector("#loading-state").hidden = true;
+    document.querySelector("#app").hidden = false;
+    document.body.dataset.ready = "true";
+    document.body.dataset.applications = String(state.ledger.meta.scoreboard.applications_in);
+    renderAllDynamic();
+  } catch (error) {
+    document.querySelector("#loading-state").hidden = true;
+    const box = document.querySelector("#error-state");
+    box.hidden = false;
+    box.textContent = `Unable to load Compass: ${error.message}. The canonical ledger remains available from the navigation above.`;
+  }
+}
+
+init();
+</script>
+</body>
+</html>

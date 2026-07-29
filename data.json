@@ -2,10 +2,10 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "July 28, 2026 — 126 verified applications · Metabase confirmed receipt for Software Engineer (Frontend) · 61 ATS confirmations · 2 human replies · 6 rejections · 1 live conversation",
+    "updated": "July 29, 2026 — 127 verified applications · Sara Software Systems confirmed receipt for Artificial Intelligence Engineer · 62 ATS confirmations · 2 human replies · 6 rejections · 1 live conversation",
     "scoreboard": {
-      "applications_in": 126,
-      "ats_confirmations": 61,
+      "applications_in": 127,
+      "ats_confirmations": 62,
       "live_conversations": 1,
       "human_replies": 2,
       "rejections": 6,
@@ -15,6 +15,21 @@
     "counting_rule": "Submitted applications and delivered live-role emails count; drafts, bounces, opened forms, research, speculative outreach, and duplicate resends do not."
   },
   "sections": [
+    {
+      "title": "JULY 29, 2026 — 1 VERIFIED",
+      "rows": [
+        {
+          "company": "Sara Software Systems",
+          "role": "Artificial Intelligence Engineer",
+          "salary": "—",
+          "location": "United States (Remote)",
+          "status": "Submitted ✓",
+          "date": "7/29",
+          "note": "LinkedIn confirmation 7/29 — 'Your application was sent to Sara Software Systems'",
+          "url": "https://www.linkedin.com/jobs/view/4442667401/"
+        }
+      ]
+    },
     {
       "title": "JULY 28, 2026 — 18 VERIFIED",
       "rows": [

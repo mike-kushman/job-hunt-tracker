@@ -9,8 +9,10 @@ changing anything.
 | File | May an agent edit it? |
 |---|---|
 | `data.json` | **Yes — the only file edited during a routine ledger sync.** Source of truth. |
+| `compass/**` | Only when Michael explicitly requests a Compass change. Strategy UI derived from `data.json`; never a second ledger. |
 | `AGENTS.md` | Only when Michael explicitly requests a contract change. |
 | `.github/workflows/validate-ledger.yml` | Only when Michael explicitly requests a publishing-contract change. |
+| `.github/workflows/validate-compass.yml` | Only when Michael explicitly requests a Compass publishing-contract change. |
 | `index.html`, `tracker.html` | **Never.** Renderers. They contain no ledger data. |
 | `Job_Hunt_Ledger.pdf` | **Never by hand.** Rebuilt by CI. See below. |
 | `build_pdf.py`, `verify_pdf.py` | Only to re-snapshot `EXPECTED_*` counts. Never the stylesheet. |
@@ -34,11 +36,25 @@ or "update the website" step, and adding one causes drift.
 Corollary: **do not rebuild or commit the PDF yourself**, and never tell the
 user it "needs regenerating". Land `data.json` and both surfaces follow.
 
-## UI and UX are frozen
+## Existing ledger UI and UX are frozen
 
 No agent changes the look, layout, copy, colours, fonts, tab structure, or
 print stylesheet — not on the website, not in the PDF. That includes
 "improvements". The only thing that changes is ledger *content*.
+
+The separate `/compass/` route is the sole exception. Michael explicitly
+authorized it as a strategy and visual-analysis layer on July 28, 2026.
+Compass must:
+
+- fetch `../data.json` at runtime rather than copy ledger rows;
+- label derived heuristics, user-set review intervals, and incomplete coverage
+  honestly rather than present them as ledger facts;
+- keep projects, focus targets, classifications, and manual activity dates in
+  browser-local storage only;
+- never send mail, submit applications, or write back to the ledger; and
+- leave `index.html`, `tracker.html`, the PDF, and PDF generators untouched.
+
+Routine ledger syncs still edit only `data.json`. They do not rewrite Compass.
 
 ## data.json contract
 
@@ -119,7 +135,7 @@ manually merging them, but only through this guarded path:
    it with a normal merge commit using `--match-head-commit <SHA>`. Never use
    `--admin`, `--auto`, or `--delete-branch`.
 5. Then wait for the PDF rebuild and Pages deployment, and verify the public
-   data and PDF before reporting success.
+   data, PDF, and Compass application count before reporting success.
 6. If any guard is not met, leave the PR as a draft, do not merge it, and
    notify Michael of the exact blocker.
 

@@ -3,13 +3,13 @@
 Public, searchable view of Michael Kushman’s verified job-application ledger.
 
 - Live site: https://mike-kushman.github.io/job-hunt-tracker/
+- Strategy dashboard: https://mike-kushman.github.io/job-hunt-tracker/compass/
 - Simplified Google Sheet: https://docs.google.com/spreadsheets/d/1iNAL9T_iAbafWFMRKCvHP2SmOcyJGqoVvBVwnBhaGVg/edit
 - Canonical audit ledger: https://docs.google.com/spreadsheets/d/1zwuGx3hu1YXHsEX6zr-wJJU507WFZHMkp-dONqTb0rs/edit
 
-The current ledger contains 92 verified applications reconciled through July 26,
-2026. Submitted applications and delivered live-role emails count; drafts,
-bounces, opened forms, research, speculative outreach, and duplicate resends do
-not.
+Current counts and reconciliation dates live in `data.json`. Submitted
+applications and delivered live-role emails count; drafts, bounces, opened
+forms, research, speculative outreach, and duplicate resends do not.
 
 ## How it fits together
 
@@ -20,6 +20,7 @@ not.
 | `data.json` | the ledger — every row, the scoreboard, the standing rules |
 | `tracker.html` | the site: one self-contained file, no build step, no frameworks. Fetches `data.json` and renders client-side |
 | `index.html` | a byte-identical twin of `tracker.html` (GitHub Pages serves this one) — keep them in sync |
+| `compass/index.html` | the morning strategy dashboard. Fetches `../data.json`; personal projects, review history, focus targets, classifications and activity dates stay in that browser |
 | `build_xlsx_from_json.py` | generates the workbook (needs `openpyxl`) |
 | `build_pdf.py` | generates the print PDF (standard library + headless Chrome, no new deps) |
 

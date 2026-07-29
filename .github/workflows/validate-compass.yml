@@ -1,0 +1,177 @@
+name: Validate Compass
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-compass-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  compass:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate static contract
+        run: |
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+
+          path = Path("compass/index.html")
+          if not path.is_file():
+              raise SystemExit("FAIL: compass/index.html is missing")
+
+          class Page(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.ids = []
+                  self.links = set()
+                  self.landmarks = set()
+                  self.scripts = []
+                  self.in_script = False
+
+              def handle_starttag(self, tag, attrs):
+                  attrs = dict(attrs)
+                  if attrs.get("id"):
+                      self.ids.append(attrs["id"])
+                  if tag == "a" and attrs.get("href"):
+                      self.links.add(attrs["href"])
+                  if tag in {"header", "nav", "main", "footer"}:
+                      self.landmarks.add(tag)
+                  if tag == "script" and not attrs.get("src"):
+                      self.in_script = True
+
+              def handle_endtag(self, tag):
+                  if tag == "script":
+                      self.in_script = False
+
+              def handle_data(self, data):
+                  if self.in_script:
+                      self.scripts.append(data)
+
+          page = Page()
+          page.feed(path.read_text(encoding="utf-8"))
+          required_ids = {
+              "app",
+              "morning-brief",
+              "status-metrics",
+              "industry-chart",
+              "salary-chart",
+              "age-chart",
+              "role-chart",
+              "action-list",
+              "reapply-list",
+              "project-list",
+          }
+          duplicate_ids = sorted({item for item in page.ids if page.ids.count(item) > 1})
+          if duplicate_ids:
+              raise SystemExit(f"FAIL: duplicate Compass ids: {duplicate_ids}")
+          missing = required_ids - set(page.ids)
+          if missing:
+              raise SystemExit(f"FAIL: missing Compass landmarks: {sorted(missing)}")
+          if page.landmarks != {"header", "nav", "main", "footer"}:
+              raise SystemExit(f"FAIL: incomplete semantic landmarks: {sorted(page.landmarks)}")
+          for link in {"../", "../Job_Hunt_Ledger.pdf"}:
+              if link not in page.links:
+                  raise SystemExit(f"FAIL: missing navigation link {link}")
+          script = "\n".join(page.scripts)
+          if "../data.json" not in script:
+              raise SystemExit("FAIL: Compass must fetch ../data.json")
+          if "localStorage" not in script:
+              raise SystemExit("FAIL: Compass local strategy storage is missing")
+          Path("/tmp/compass-inline.js").write_text(script, encoding="utf-8")
+          print("OK: static Compass contract")
+          PY
+          node --check /tmp/compass-inline.js
+
+      - name: Render against the ledger
+        run: |
+          python3 -m http.server 8000 --bind 127.0.0.1 >/tmp/compass-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID"' EXIT
+
+          for attempt in {1..20}; do
+            if curl --fail --silent http://127.0.0.1:8000/data.json >/dev/null; then
+              break
+            fi
+            sleep 0.25
+          done
+
+          CHROME_BIN="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium)"
+          if [ -z "$CHROME_BIN" ]; then
+            echo "::error::No Chrome/Chromium available."
+            exit 1
+          fi
+
+          "$CHROME_BIN" \
+            --headless=new \
+            --disable-gpu \
+            --no-sandbox \
+            --virtual-time-budget=6000 \
+            --dump-dom \
+            http://127.0.0.1:8000/compass/ \
+            > /tmp/compass-rendered.html
+
+          APPLICATIONS="$(python3 -c "import json; print(json.load(open('data.json'))['meta']['scoreboard']['applications_in'])")"
+          APPLICATIONS="$APPLICATIONS" python3 - <<'PY'
+          import os
+          from html.parser import HTMLParser
+          from pathlib import Path
+
+          class RenderedCompass(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.body = {}
+                  self.error = {}
+                  self.error_depth = 0
+                  self.error_text = []
+
+              def handle_starttag(self, tag, attrs):
+                  attrs = dict(attrs)
+                  if tag == "body":
+                      self.body = attrs
+                  if attrs.get("id") == "error-state":
+                      self.error = attrs
+                      self.error_depth = 1
+                  elif self.error_depth:
+                      self.error_depth += 1
+
+              def handle_endtag(self, tag):
+                  if self.error_depth:
+                      self.error_depth -= 1
+
+              def handle_data(self, data):
+                  if self.error_depth:
+                      self.error_text.append(data)
+
+          page = RenderedCompass()
+          page.feed(Path("/tmp/compass-rendered.html").read_text(encoding="utf-8"))
+          expected = os.environ["APPLICATIONS"]
+          required = {
+              "data-ready": "true",
+              "data-applications": expected,
+              "data-warnings": "0",
+          }
+          mismatches = {
+              key: {"expected": value, "actual": page.body.get(key)}
+              for key, value in required.items()
+              if page.body.get(key) != value
+          }
+          if mismatches:
+              raise SystemExit(f"FAIL: Compass rendered-state mismatch: {mismatches}")
+          if "hidden" not in page.error or "".join(page.error_text).strip():
+              message = "".join(page.error_text).strip() or "error panel is visible"
+              raise SystemExit(f"FAIL: Compass rendered its error state: {message}")
+          print(f"OK: Compass rendered {expected} applications with no data warnings")
+          PY
+
+          curl --fail --silent http://127.0.0.1:8000/compass/ >/dev/null
+          curl --fail --silent http://127.0.0.1:8000/ >/dev/null
+          curl --fail --silent http://127.0.0.1:8000/Job_Hunt_Ledger.pdf >/dev/null

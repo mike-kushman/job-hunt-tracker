@@ -2,10 +2,10 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "July 28, 2026 — 125 verified applications · Runpoint confirmed receipt for AI Implementation Engineer and requested an automated Loom next step · 60 ATS confirmations · 2 human replies · 6 rejections · 1 live conversation",
+    "updated": "July 28, 2026 — 126 verified applications · Metabase confirmed receipt for Software Engineer (Frontend) · 61 ATS confirmations · 2 human replies · 6 rejections · 1 live conversation",
     "scoreboard": {
-      "applications_in": 125,
-      "ats_confirmations": 60,
+      "applications_in": 126,
+      "ats_confirmations": 61,
       "live_conversations": 1,
       "human_replies": 2,
       "rejections": 6,
@@ -16,7 +16,7 @@
   },
   "sections": [
     {
-      "title": "JULY 28, 2026 — 17 VERIFIED",
+      "title": "JULY 28, 2026 — 18 VERIFIED",
       "rows": [
         {
           "company": "Albert",
@@ -96,6 +96,16 @@
           "status": "Submitted ✓",
           "date": "7/28",
           "note": "Greenhouse confirmation 7/28 · receipt explicitly names the Product Designer, Maternity Experience role",
+          "url": ""
+        },
+        {
+          "company": "Metabase",
+          "role": "Software Engineer (Frontend)",
+          "salary": "—",
+          "location": "—",
+          "status": "Submitted ✓",
+          "date": "7/28",
+          "note": "Lever confirmation 7/28 · receipt explicitly names the Software Engineer (Frontend) role",
           "url": ""
         },
         {

@@ -2,13 +2,13 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "July 29, 2026 — 127 verified applications · Sara Software Systems confirmed receipt for Artificial Intelligence Engineer · 62 ATS confirmations · 2 human replies · 6 rejections · 1 live conversation",
+    "updated": "July 29, 2026 — 127 verified applications · Ashby rejected the Junior Design Engineer, Americas application · 62 ATS confirmations · 2 human replies · 7 rejections · 1 live conversation",
     "scoreboard": {
       "applications_in": 127,
       "ats_confirmations": 62,
       "live_conversations": 1,
       "human_replies": 2,
-      "rejections": 6,
+      "rejections": 7,
       "in_pipeline": 5,
       "backlog": 4
     },
@@ -983,9 +983,9 @@
           "role": "Junior Design Engineer, Americas",
           "salary": "$122–220K + eq",
           "location": "Remote US",
-          "status": "Submitted ✓",
+          "status": "Rejected",
           "date": "7/23",
-          "note": "Was in backlog — applied 7/23 · Ashby confirmation received (found in Gmail)",
+          "note": "Was in backlog — applied 7/23 · Ashby confirmation received · rejection 7/29 — 'we don't see an ideal fit for this position'",
           "url": "https://www.ashbyhq.com"
         },
         {

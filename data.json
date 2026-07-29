@@ -2,10 +2,10 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "July 28, 2026 — 124 verified applications · Ethena direct application sent for Sales Engineer · 59 ATS confirmations · 2 human replies · 6 rejections · 1 live conversation",
+    "updated": "July 28, 2026 — 125 verified applications · Runpoint confirmed receipt for AI Implementation Engineer and requested an automated Loom next step · 60 ATS confirmations · 2 human replies · 6 rejections · 1 live conversation",
     "scoreboard": {
-      "applications_in": 124,
-      "ats_confirmations": 59,
+      "applications_in": 125,
+      "ats_confirmations": 60,
       "live_conversations": 1,
       "human_replies": 2,
       "rejections": 6,
@@ -16,7 +16,7 @@
   },
   "sections": [
     {
-      "title": "JULY 28, 2026 — 16 VERIFIED",
+      "title": "JULY 28, 2026 — 17 VERIFIED",
       "rows": [
         {
           "company": "Albert",
@@ -126,6 +126,16 @@
           "status": "Submitted ✓",
           "date": "7/28",
           "note": "Confirmation 7/28 · receipt omitted the role title; deliberately not inferred",
+          "url": ""
+        },
+        {
+          "company": "Runpoint",
+          "role": "AI Implementation Engineer",
+          "salary": "—",
+          "location": "—",
+          "status": "Submitted ✓",
+          "date": "7/28",
+          "note": "Runpoint confirmation 7/28 · receipt explicitly names the AI Implementation Engineer role · automated Loom step requested",
           "url": ""
         },
         {

@@ -2013,7 +2013,7 @@ async function init() {
     if (state.rows.length !== state.ledger.meta.scoreboard.applications_in) {
       throw new Error(`Ledger row count ${state.rows.length} does not match scoreboard ${state.ledger.meta.scoreboard.applications_in}`);
     }
-    document.body.dataset.dataWarnings = String(flattened.warnings.length);
+    document.body.dataset.warnings = String(flattened.warnings.length);
     if (flattened.warnings.length) {
       const warning = document.querySelector("#data-warning");
       warning.hidden = false;

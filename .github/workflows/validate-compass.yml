@@ -120,15 +120,58 @@ jobs:
             > /tmp/compass-rendered.html
 
           APPLICATIONS="$(python3 -c "import json; print(json.load(open('data.json'))['meta']['scoreboard']['applications_in'])")"
-          grep -Fq 'data-ready="true"' /tmp/compass-rendered.html
-          grep -Fq "data-applications=\"$APPLICATIONS\"" /tmp/compass-rendered.html
-          grep -Fq 'data-warnings="0"' /tmp/compass-rendered.html
-          if grep -Fq 'Unable to load Compass' /tmp/compass-rendered.html; then
-            echo "::error::Compass rendered its error state."
-            exit 1
-          fi
+          APPLICATIONS="$APPLICATIONS" python3 - <<'PY'
+          import os
+          from html.parser import HTMLParser
+          from pathlib import Path
+
+          class RenderedCompass(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.body = {}
+                  self.error = {}
+                  self.error_depth = 0
+                  self.error_text = []
+
+              def handle_starttag(self, tag, attrs):
+                  attrs = dict(attrs)
+                  if tag == "body":
+                      self.body = attrs
+                  if attrs.get("id") == "error-state":
+                      self.error = attrs
+                      self.error_depth = 1
+                  elif self.error_depth:
+                      self.error_depth += 1
+
+              def handle_endtag(self, tag):
+                  if self.error_depth:
+                      self.error_depth -= 1
+
+              def handle_data(self, data):
+                  if self.error_depth:
+                      self.error_text.append(data)
+
+          page = RenderedCompass()
+          page.feed(Path("/tmp/compass-rendered.html").read_text(encoding="utf-8"))
+          expected = os.environ["APPLICATIONS"]
+          required = {
+              "data-ready": "true",
+              "data-applications": expected,
+              "data-warnings": "0",
+          }
+          mismatches = {
+              key: {"expected": value, "actual": page.body.get(key)}
+              for key, value in required.items()
+              if page.body.get(key) != value
+          }
+          if mismatches:
+              raise SystemExit(f"FAIL: Compass rendered-state mismatch: {mismatches}")
+          if "hidden" not in page.error or "".join(page.error_text).strip():
+              message = "".join(page.error_text).strip() or "error panel is visible"
+              raise SystemExit(f"FAIL: Compass rendered its error state: {message}")
+          print(f"OK: Compass rendered {expected} applications with no data warnings")
+          PY
 
           curl --fail --silent http://127.0.0.1:8000/compass/ >/dev/null
           curl --fail --silent http://127.0.0.1:8000/ >/dev/null
           curl --fail --silent http://127.0.0.1:8000/Job_Hunt_Ledger.pdf >/dev/null
-          echo "OK: Compass rendered $APPLICATIONS applications"

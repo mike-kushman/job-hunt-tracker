@@ -2,13 +2,13 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "July 30, 2026 — 127 verified applications · Moment rejected the Design Engineer application · 62 ATS confirmations · 2 human replies · 8 rejections · 1 live conversation",
+    "updated": "July 30, 2026 — 127 verified applications · Clarium and OpenSesame rejected their AI Engineer applications · 62 ATS confirmations · 2 human replies · 10 rejections · 1 live conversation",
     "scoreboard": {
       "applications_in": 127,
       "ats_confirmations": 62,
       "live_conversations": 1,
       "human_replies": 2,
-      "rejections": 8,
+      "rejections": 10,
       "in_pipeline": 5,
       "backlog": 4
     },
@@ -58,9 +58,9 @@
           "role": "AI Engineer - Data Intelligence",
           "salary": "—",
           "location": "—",
-          "status": "Submitted ✓",
+          "status": "Rejected",
           "date": "7/28",
-          "note": "Ashby confirmation 7/28 · receipt explicitly names the AI Engineer - Data Intelligence role",
+          "note": "Ashby confirmation 7/28 · rejection 7/30 — 'we will not be moving forward with your candidacy.'",
           "url": ""
         },
         {
@@ -145,12 +145,12 @@
         },
         {
           "company": "OpenSesame",
-          "role": "Role not stated (OpenSesame confirmation)",
+          "role": "AI Engineer — Workforce Reinvention",
           "salary": "—",
           "location": "—",
-          "status": "Submitted ✓",
+          "status": "Rejected",
           "date": "7/28",
-          "note": "Confirmation 7/28 · receipt omitted the role title; deliberately not inferred",
+          "note": "Confirmation 7/28 omitted the role · rejection 7/30 names it — 'decided to proceed with other candidates'",
           "url": ""
         },
         {

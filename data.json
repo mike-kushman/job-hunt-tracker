@@ -2,13 +2,13 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "July 29, 2026 — 127 verified applications · Ashby rejected the Junior Design Engineer, Americas application · 62 ATS confirmations · 2 human replies · 7 rejections · 1 live conversation",
+    "updated": "July 30, 2026 — 127 verified applications · Moment rejected the Design Engineer application · 62 ATS confirmations · 2 human replies · 8 rejections · 1 live conversation",
     "scoreboard": {
       "applications_in": 127,
       "ats_confirmations": 62,
       "live_conversations": 1,
       "human_replies": 2,
-      "rejections": 7,
+      "rejections": 8,
       "in_pipeline": 5,
       "backlog": 4
     },
@@ -303,9 +303,9 @@
           "role": "Design Engineer",
           "salary": "$175–275K",
           "location": "NYC · on-site 5d/wk",
-          "status": "Submitted ✓",
+          "status": "Rejected",
           "date": "7/27",
-          "note": "Ashby confirmation 7/27",
+          "note": "Ashby confirmation 7/27 · rejection 7/30 — 'we will not be moving forward with your candidacy.'",
           "url": "https://moment.com/careers/1db991e4-9480-4847-b300-c430cc057d56"
         },
         {

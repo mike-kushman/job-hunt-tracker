@@ -2,13 +2,13 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "July 30, 2026 — 127 verified applications · Gumloop rejected the Design Engineer application · 62 ATS confirmations · 2 human replies · 11 rejections · 1 live conversation",
+    "updated": "July 31, 2026 — 127 verified applications · Buildout rejected the (Senior) Software Engineer application · 62 ATS confirmations · 2 human replies · 12 rejections · 1 live conversation",
     "scoreboard": {
       "applications_in": 127,
       "ats_confirmations": 62,
       "live_conversations": 1,
       "human_replies": 2,
-      "rejections": 11,
+      "rejections": 12,
       "in_pipeline": 5,
       "backlog": 4
     },
@@ -48,9 +48,9 @@
           "role": "(Senior) Software Engineer",
           "salary": "—",
           "location": "—",
-          "status": "Submitted ✓",
+          "status": "Rejected",
           "date": "7/28",
-          "note": "Ashby confirmation 7/28 · receipt explicitly names the (Senior) Software Engineer role",
+          "note": "Ashby confirmation 7/28 · rejection 7/31 — 'we are in the difficult position of having to say no'",
           "url": ""
         },
         {

@@ -2,13 +2,13 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "July 30, 2026 — 127 verified applications · Clarium and OpenSesame rejected their AI Engineer applications · 62 ATS confirmations · 2 human replies · 10 rejections · 1 live conversation",
+    "updated": "July 30, 2026 — 127 verified applications · Gumloop rejected the Design Engineer application · 62 ATS confirmations · 2 human replies · 11 rejections · 1 live conversation",
     "scoreboard": {
       "applications_in": 127,
       "ats_confirmations": 62,
       "live_conversations": 1,
       "human_replies": 2,
-      "rejections": 10,
+      "rejections": 11,
       "in_pipeline": 5,
       "backlog": 4
     },
@@ -993,9 +993,9 @@
           "role": "Design Engineer",
           "salary": "—",
           "location": "NYC / SF / Vancouver on-site",
-          "status": "Submitted ✓",
+          "status": "Rejected",
           "date": "7/23",
-          "note": "Restored 7/24 audit — Ashby confirmation 7/23 · agent-legibility pitch · confirmed NYC office availability",
+          "note": "Ashby confirmation 7/23 · rejection 7/30 — 'there isn't an ideal fit at this time, and we will not be moving forward with your candidacy'",
           "url": "https://www.gumloop.com"
         },
         {

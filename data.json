@@ -2,13 +2,13 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "July 31, 2026 — 127 verified applications · Buildout rejected the (Senior) Software Engineer application · 62 ATS confirmations · 2 human replies · 12 rejections · 1 live conversation",
+    "updated": "August 1, 2026 — 127 verified applications · Customer.io rejected the Senior Software Engineer, Full Stack application · 62 ATS confirmations · 2 human replies · 13 rejections · 1 live conversation",
     "scoreboard": {
       "applications_in": 127,
       "ats_confirmations": 62,
       "live_conversations": 1,
       "human_replies": 2,
-      "rejections": 12,
+      "rejections": 13,
       "in_pipeline": 5,
       "backlog": 4
     },
@@ -233,9 +233,9 @@
           "role": "Senior Software Engineer, Full Stack",
           "salary": "$150–200K",
           "location": "Remote · Americas",
-          "status": "Submitted ✓",
+          "status": "Rejected",
           "date": "7/27",
-          "note": "Greenhouse confirmation 7/27",
+          "note": "Greenhouse confirmation 7/27 · rejection 8/1 — 'we’ve decided not to move forward with your application at this time.'",
           "url": "https://job-boards.greenhouse.io/customerio/jobs/7776591"
         },
         {

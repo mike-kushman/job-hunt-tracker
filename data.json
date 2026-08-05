@@ -2,13 +2,13 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "August 1, 2026 — 127 verified applications · Customer.io rejected the Senior Software Engineer, Full Stack application · 62 ATS confirmations · 2 human replies · 13 rejections · 1 live conversation",
+    "updated": "August 5, 2026 — 127 verified applications · Mastra, Timely Schools, Sailor Health, and Resend rejected Michael's applications · Mastra added the third human reply · 62 ATS confirmations · 3 human replies · 17 rejections · 1 live conversation",
     "scoreboard": {
       "applications_in": 127,
       "ats_confirmations": 62,
       "live_conversations": 1,
-      "human_replies": 2,
-      "rejections": 13,
+      "human_replies": 3,
+      "rejections": 17,
       "in_pipeline": 5,
       "backlog": 4
     },
@@ -188,9 +188,9 @@
           "role": "Product Designer",
           "salary": "—",
           "location": "—",
-          "status": "Submitted ✓",
+          "status": "Rejected",
           "date": "7/28",
-          "note": "Ashby confirmation 7/28 · receipt explicitly names the Product Designer role",
+          "note": "Ashby confirmation 7/28 · rejection 8/3 — “we have decided to move forward with other candidates whose skills and experience more closely align with our current needs.”",
           "url": ""
         },
         {
@@ -320,12 +320,12 @@
         },
         {
           "company": "Sailor Health",
-          "role": "Founding Engineer",
+          "role": "Founding Engineer (Senior/Staff)",
           "salary": "—",
           "location": "—",
-          "status": "Submitted ✓",
+          "status": "Rejected",
           "date": "7/27",
-          "note": "Ashby confirmation 7/27",
+          "note": "Ashby confirmation 7/27 · rejection 8/3 — “there isn't an ideal fit at this time, and we will not be moving forward with your candidacy.”",
           "url": ""
         },
         {
@@ -748,9 +748,9 @@
           "role": "Product Engineer",
           "salary": "—",
           "location": "Remote worldwide",
-          "status": "Submitted ✓",
+          "status": "Rejected",
           "date": "7/24",
-          "note": "TypeScript agent framework · Ashby confirmation 7/24 — if fit, recruiter call is next step",
+          "note": "Ashby confirmation 7/24 · Margarita replied by hand 8/5 — “We won’t be moving forward this time.” · invited Michael to reapply when the time feels right",
           "url": "https://jobs.ashbyhq.com/Mastra/3b06208b-34fe-4dda-b409-ee3fd9305cc3"
         },
         {
@@ -838,9 +838,9 @@
           "role": "Product Engineer",
           "salary": "$151–170K",
           "location": "Fully remote",
-          "status": "Submitted ✓",
+          "status": "Rejected",
           "date": "7/24",
-          "note": "Ashby confirmation 7/24 — \"a real human will review\"",
+          "note": "Ashby confirmation 7/24 · rejection 8/3 — “we've decided to pursue other candidates who we feel are a better match for this role at this time.”",
           "url": "https://resend.com/careers/9b68ba51-3895-4d29-8fd1-364bdf8956e7"
         },
         {

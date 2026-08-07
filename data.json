@@ -2,13 +2,13 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "August 5, 2026 — 127 verified applications · Mastra, Timely Schools, Sailor Health, and Resend rejected Michael's applications · Mastra added the third human reply · 62 ATS confirmations · 3 human replies · 17 rejections · 1 live conversation",
+    "updated": "August 7, 2026 — 127 verified applications · Voltus rejected Michael's Software Engineer application — 'our team did not select you for further consideration.' · 62 ATS confirmations · 3 human replies · 18 rejections · 1 live conversation",
     "scoreboard": {
       "applications_in": 127,
       "ats_confirmations": 62,
       "live_conversations": 1,
       "human_replies": 3,
-      "rejections": 17,
+      "rejections": 18,
       "in_pipeline": 5,
       "backlog": 4
     },
@@ -198,9 +198,9 @@
           "role": "Software Engineer",
           "salary": "—",
           "location": "—",
-          "status": "Submitted ✓",
+          "status": "Rejected",
           "date": "7/28",
-          "note": "Lever confirmation 7/28 · receipt explicitly names the Software Engineer role",
+          "note": "Lever confirmation 7/28 · receipt explicitly names the Software Engineer role · rejection 8/7 — 'our team did not select you for further consideration.'",
           "url": ""
         },
         {

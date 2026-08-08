@@ -2,13 +2,13 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "August 7, 2026 — 127 verified applications · Voltus rejected Michael's Software Engineer application — 'our team did not select you for further consideration.' · 62 ATS confirmations · 3 human replies · 18 rejections · 1 live conversation",
+    "updated": "August 8, 2026 — 127 verified applications · ResortPass rejected Michael's Senior Software Engineer, Frontend application after interview — 'we’ve decided to move forward with candidates whose backgrounds more closely align with our current needs.' · 62 ATS confirmations · 3 human replies · 19 rejections · 1 live conversation",
     "scoreboard": {
       "applications_in": 127,
       "ats_confirmations": 62,
       "live_conversations": 1,
       "human_replies": 3,
-      "rejections": 18,
+      "rejections": 19,
       "in_pipeline": 5,
       "backlog": 4
     },
@@ -313,9 +313,9 @@
           "role": "Senior Software Engineer, Frontend",
           "salary": "$170–210K + eq",
           "location": "Flatiron, NYC · on-site",
-          "status": "Submitted ✓",
+          "status": "Rejected",
           "date": "7/27",
-          "note": "Greenhouse confirmation 7/27",
+          "note": "Greenhouse confirmation 7/27 · Greenhouse rejection 8/8 after interview — “we’ve decided to move forward with candidates whose backgrounds more closely align with our current needs.”",
           "url": "https://job-boards.greenhouse.io/resortpass/jobs/5037441007"
         },
         {

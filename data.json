@@ -2,13 +2,13 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "August 8, 2026 — 127 verified applications · ResortPass rejected Michael's Senior Software Engineer, Frontend application after interview — 'we’ve decided to move forward with candidates whose backgrounds more closely align with our current needs.' · 62 ATS confirmations · 3 human replies · 19 rejections · 1 live conversation",
+    "updated": "August 11, 2026 — 127 verified applications · Riot IQ rejected Michael's AI-native Software Engineer application — 'we have already selected another candidate for this position and the role has been filled.' · 62 ATS confirmations · 3 human replies · 20 rejections · 1 live conversation",
     "scoreboard": {
       "applications_in": 127,
       "ats_confirmations": 62,
       "live_conversations": 1,
       "human_replies": 3,
-      "rejections": 19,
+      "rejections": 20,
       "in_pipeline": 5,
       "backlog": 4
     },
@@ -848,9 +848,9 @@
           "role": "AI-native Software Engineer",
           "salary": "—",
           "location": "Seattle / Remote US",
-          "status": "Submitted",
+          "status": "Rejected",
           "date": "7/24",
-          "note": "Direct email to robertneir@riotiq.com · delivered; no bounce",
+          "note": "Direct email to robertneir@riotiq.com · delivered; no bounce · rejection 8/11 — “we have already selected another candidate for this position and the role has been filled.”",
           "url": "https://www.riotiq.com/"
         },
         {

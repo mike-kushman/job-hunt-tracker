@@ -2,10 +2,10 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "August 11, 2026 — 127 verified applications · Riot IQ rejected Michael's AI-native Software Engineer application — 'we have already selected another candidate for this position and the role has been filled.' · 62 ATS confirmations · 3 human replies · 20 rejections · 1 live conversation",
+    "updated": "August 11, 2026 — 128 verified applications · PetSmart confirmed Michael's Pet Trainer application — 'Your application has been submitted to PetSmart.' · 63 ATS confirmations · 3 human replies · 20 rejections · 1 live conversation",
     "scoreboard": {
-      "applications_in": 127,
-      "ats_confirmations": 62,
+      "applications_in": 128,
+      "ats_confirmations": 63,
       "live_conversations": 1,
       "human_replies": 3,
       "rejections": 20,
@@ -15,6 +15,21 @@
     "counting_rule": "Submitted applications and delivered live-role emails count; drafts, bounces, opened forms, research, speculative outreach, and duplicate resends do not."
   },
   "sections": [
+    {
+      "title": "AUGUST 11, 2026 — 1 VERIFIED",
+      "rows": [
+        {
+          "company": "PetSmart",
+          "role": "Pet Trainer",
+          "salary": "—",
+          "location": "369 Tarrytown Rd, Greenburgh, NY",
+          "status": "Submitted ✓",
+          "date": "8/11",
+          "note": "PetSmart confirmation 8/11 — “Your application has been submitted to PetSmart.” · receipt explicitly names the Pet Trainer role",
+          "url": ""
+        }
+      ]
+    },
     {
       "title": "JULY 29, 2026 — 1 VERIFIED",
       "rows": [

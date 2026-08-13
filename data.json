@@ -2,13 +2,13 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "August 11, 2026 — 128 verified applications · PetSmart confirmed Michael's Pet Trainer application — 'Your application has been submitted to PetSmart.' · 63 ATS confirmations · 3 human replies · 20 rejections · 1 live conversation",
+    "updated": "August 13, 2026 — 128 verified applications · Livefront rejected Michael's AI Solutions Engineer application — 'After reviewing your work and experience, we've decided not to move forward at this time' · 63 ATS confirmations · 3 human replies · 21 rejections · 1 live conversation",
     "scoreboard": {
       "applications_in": 128,
       "ats_confirmations": 63,
       "live_conversations": 1,
       "human_replies": 3,
-      "rejections": 20,
+      "rejections": 21,
       "in_pipeline": 5,
       "backlog": 4
     },
@@ -298,9 +298,9 @@
           "role": "AI Solutions Engineer",
           "salary": "$130–175K",
           "location": "Remote USA",
-          "status": "Submitted ✓",
+          "status": "Rejected",
           "date": "7/27",
-          "note": "Greenhouse confirmation 7/27",
+          "note": "Greenhouse confirmation 7/27 · rejection 8/13 — 'After reviewing your work and experience, we've decided not to move forward at this time'",
           "url": "https://job-boards.greenhouse.io/livefront/jobs/4309632009"
         },
         {

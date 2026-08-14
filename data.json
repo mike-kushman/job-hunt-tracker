@@ -2,12 +2,12 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "August 13, 2026 — 128 verified applications · Livefront rejected Michael's AI Solutions Engineer application — 'After reviewing your work and experience, we've decided not to move forward at this time' · 63 ATS confirmations · 3 human replies · 21 rejections · 1 live conversation",
+    "updated": "August 14, 2026 — 128 verified applications · Ontix invited Michael to a half-hour teleconference and said he was 'one of the top two technical product managers to get in touch with us' · 63 ATS confirmations · 4 human replies · 21 rejections · 2 live conversations",
     "scoreboard": {
       "applications_in": 128,
       "ats_confirmations": 63,
-      "live_conversations": 1,
-      "human_replies": 3,
+      "live_conversations": 2,
+      "human_replies": 4,
       "rejections": 21,
       "in_pipeline": 5,
       "backlog": 4
@@ -813,9 +813,9 @@
           "role": "Technical Product Manager",
           "salary": "—",
           "location": "Remote US",
-          "status": "Submitted",
+          "status": "Conversation",
           "date": "7/24",
-          "note": "Direct email to l33t@ontix.io · delivered; no bounce",
+          "note": "Direct email to l33t@ontix.io · human reply 8/14 — invited to a half-hour teleconference; 'one of the top two technical product managers to get in touch with us'",
           "url": "https://ontix.io/"
         },
         {

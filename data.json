@@ -2,12 +2,12 @@
   "meta": {
     "name": "Job Hunt — Michael Kushman",
     "subtitle": "Verified application ledger · Gmail and Drive reconciled · simple tracker linked from the website",
-    "updated": "August 14, 2026 — 128 verified applications · Ontix invited Michael to a half-hour teleconference and said he was 'one of the top two technical product managers to get in touch with us' · 63 ATS confirmations · 4 human replies · 21 rejections · 2 live conversations",
+    "updated": "August 16, 2026 — 128 verified applications · Modern Classrooms Project's Head of Engineering invited Michael to a 30-minute call after seeing his application · 63 ATS confirmations · 5 human replies · 21 rejections · 3 live conversations",
     "scoreboard": {
       "applications_in": 128,
       "ats_confirmations": 63,
-      "live_conversations": 2,
-      "human_replies": 4,
+      "live_conversations": 3,
+      "human_replies": 5,
       "rejections": 21,
       "in_pipeline": 5,
       "backlog": 4
@@ -143,9 +143,9 @@
           "role": "Role not stated (ApplyToJob confirmation)",
           "salary": "—",
           "location": "—",
-          "status": "Submitted ✓",
+          "status": "Conversation",
           "date": "7/28",
-          "note": "ApplyToJob confirmation 7/28 · receipt omitted the role title; deliberately not inferred",
+          "note": "ApplyToJob confirmation 7/28 · receipt omitted the role title; deliberately not inferred · Byron Dover, Head of Engineering, replied by hand 8/16 — invited Michael to a 30-minute call after saying ‘I saw your application come through’",
           "url": ""
         },
         {
